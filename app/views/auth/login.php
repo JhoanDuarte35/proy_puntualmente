@@ -1,10 +1,9 @@
 <?php
 // Initialize the session
-session_start();
 
 // Check if the user is already logged in, if yes then redirect him to index page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: index.php");
+    header("location: index");
     exit;
 }
 // Include config file
@@ -63,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["username"] = $username;
 
                             // Redirect user to welcome page
-                            header('Location: '.controlador::$rutaAPP.'index.php?action=home');
+                            header('Location: '.controlador::$rutaAPP.'home');
                         } else {
                             // Display an error message if password is not valid
                             $password_err = "The password you entered was not valid.";

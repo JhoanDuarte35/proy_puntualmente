@@ -16,11 +16,17 @@ if($userPuntualmente->iniciar_sesion()){
             case 'home':
                 $userPuntualmente->home();
                 break;
+            case 'registrar':
+                $userPuntualmente->registrar();
+                break;
+            case 'signup':
+                $userPuntualmente->signup();
+                break;
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                 break;
             default:
-                $userPuntualmente->paginaAdmin();
+                $userPuntualmente->home();
                 break;
         }
     }
@@ -30,25 +36,29 @@ if($userPuntualmente->iniciar_sesion()){
 
         switch ($_GET["action"]){
 
-            case 'operarios':
-                $userPuntualmente->pagOperarios();
+            case 'registrar':
+                $userPuntualmente->registrar();
+                break;
+            case 'signup':
+                $userPuntualmente->singup();
                 break;
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                break;
+
+            case 'auth':
+                $userPuntualmente->auth();
+                break;
+                
             default:
-                $userPuntualmente->pagOperarios();
+                $userPuntualmente->home();
                 break;
         }
-    }
-
-    // Usuario regular
-
-    else if(0==0){
-        //
     }else{
         $userPuntualmente->home();
     }
+
+    // Usuario regular
 
 }else{
 

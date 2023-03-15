@@ -1,5 +1,5 @@
 <?php 
-      include(__dir__."/../layouts/session.php");  
+      include_once(__dir__."/../layouts/session.php");  
       ?>
 
 <?php 
@@ -7,14 +7,16 @@
       ?>
 
 <head>
-    <title><?php echo $language["Dashboard"]; ?> | Minia - Admin & Dashboard Template</title>
+    <title><?php echo $language["Dashboard"]; ?> | Puntualmente</title>
 
     <?php 
           include(__dir__."/../layouts/head.php");  
 
     ?>
 
-    <link href="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+    <link href="<?php echo controlador::$rutaAPP?>app/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
+
+    
     
     <?php 
           include(__dir__."/../layouts/head-style.php");  
@@ -1588,9 +1590,6 @@
 
 </div>
 <!-- END layout-wrapper -->
-
-
-<!-- include (__dir__."/../layouts/vendor-scripts.php") -->
 
 <!-- Right Sidebar -->
 <?php
