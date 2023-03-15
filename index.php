@@ -25,6 +25,7 @@ if($userPuntualmente->iniciar_sesion()){
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                 break;
+                
             default:
                 $userPuntualmente->home();
                 break;
@@ -46,10 +47,8 @@ if($userPuntualmente->iniciar_sesion()){
                 $userPuntualmente->cerrar_sesion();
                break;
 
-            case 'auth':
-                $userPuntualmente->auth();
-                break;
-                
+           
+
             default:
                 $userPuntualmente->home();
                 break;
@@ -66,6 +65,9 @@ if($userPuntualmente->iniciar_sesion()){
         switch ($_GET["action"]){
             case 'login':
                 $userPuntualmente->login();
+                break;
+            case 'auth':
+                $userPuntualmente->auth();
                 break;
             default:
                 $userPuntualmente->index();

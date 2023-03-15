@@ -1,90 +1,4 @@
-<?php
-// Initialize the session
 
-// Check if the user is already logged in, if yes then redirect him to index page
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: index");
-    exit;
-}
-// Include config file
-require_once (__dir__."/../layouts/config.php");
-
-// Define variables and initialize with empty values
-$username = $password = "";
-$username_err = $password_err = "";
-
-// Processing form data when form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    // Check if username is empty
-    if (empty(trim($_POST["username"]))) {
-        $username_err = "Please enter username.";
-    } else {
-        $username = trim($_POST["username"]);
-    }
-
-    // Check if password is empty
-    if (empty(trim($_POST["password"]))) {
-        $password_err = "Please enter your password.";
-    } else {
-        $password = trim($_POST["password"]);
-    }
-
-    // Validate credentials
-    if (empty($username_err) && empty($password_err)) {
-        // Prepare a select statement
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
-
-        if ($stmt = mysqli_prepare($link, $sql)) {
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_username);
-
-            // Set parameters
-            $param_username = $username;
-
-            // Attempt to execute the prepared statement
-            if (mysqli_stmt_execute($stmt)) {
-                // Store result
-                mysqli_stmt_store_result($stmt);
-
-                // Check if username exists, if yes then verify password
-                if (mysqli_stmt_num_rows($stmt) == 1) {
-                    // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    if (mysqli_stmt_fetch($stmt)) {
-                        if (password_verify($password, $hashed_password)) {
-                            // Password is correct, so start a new session
-                            session_start();
-
-                            // Store data in session variables
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;
-
-                            // Redirect user to welcome page
-                            header('Location: '.controlador::$rutaAPP.'home');
-                        } else {
-                            // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.";
-                        }
-                    }
-                } else {
-                    // Display an error message if username doesn't exist
-                    $username_err = "No account found with that username.";
-                }
-            } else {
-                echo "Oops! Something went wrong. Please try again later.";
-            }
-
-            // Close statement
-            mysqli_stmt_close($stmt);
-        }
-    }
-
-    // Close connection
-    mysqli_close($link);
-}
-?>
 <?php 
       include(__dir__."/../layouts/head-main.php");  
 ?>
@@ -119,27 +33,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     <h5 class="mb-0">Bienvenido!</h5>
                                     <p class="text-muted mt-2">Inicia sesión para continuar.</p>
                                 </div>
-                                <form class="custom-form mt-4 pt-2" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-                                    <div class="mb-3 <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                                        <label class="form-label" for="username">Nombre de Usuario</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" value="Henry">
-                                        <span class="text-danger"><?php echo $username_err; ?></span>
+                                <form class="custom-form mt-4 pt-2" id="loginform" method="post" enctype="multipart/form-data">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="cedula">Cedula</label>
+                                        <input type="text" class="form-control" id="cedula" placeholder="Cedula" name="cedula">
                                     </div>
-                                    <div class="mb-3 <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
+                                    <div class="mb-3">
                                         <div class="d-flex align-items-start">
                                             <div class="flex-grow-1">
-                                                <label class="form-label" for="password">Contraseña</label>
+                                                <label class="form-label" for="contraseña">Contraseña</label>
                                             </div>
                                         </div>
 
                                         <div class="input-group auth-pass-inputgroup">
-                                            <input type="password" class="form-control" placeholder="Enter password" name="password" value="123456" aria-label="Password" aria-describedby="password-addon">
+                                            <input type="password" class="form-control" placeholder="Ingresa tu contraseña" name="contraseña" aria-label="Password" aria-describedby="password-addon">
                                             <button class="btn btn-light ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                         </div>
-                                        <span class="text-danger"><?php echo $password_err; ?></span>
                                     </div>
+                                    <div id="error-text"></div>
                                     <div class="mb-3">
-                                        <button class="btn btn-primary w-100 waves-effect waves-light" type="submit">Ingresar</button>
+                                        <button id="buttoninput" class="btn btn-primary w-100 waves-effect waves-light" type="submit" name="submit">Ingresar</button>
                                     </div>
                                 </form>
 
@@ -281,6 +194,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     include (__dir__."/../layouts/vendor-scripts.php")?>
 <!-- password addon init -->
     <script src="<?php echo controlador::$rutaAPP?>app/assets/js/pages/pass-addon.init.js"></script>
+
+    <script src="<?php echo controlador::$rutaAPP?>app/views/auth/js/login.js"></script>
+    
 
 
 </body>

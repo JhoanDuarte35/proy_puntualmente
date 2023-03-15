@@ -37,7 +37,7 @@ class controlador{
     }
 
     public function auth(){
-        include_once(__dir__."/../model/usuarios/login.php");
+        include_once(__dir__."/../model/auth/login.php");
     }
 
     function cerrar_sesion(){
