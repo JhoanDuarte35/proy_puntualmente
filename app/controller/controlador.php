@@ -9,7 +9,7 @@ class controlador{
             session_start();
         }
 
-        if(isset($_SESSION["id"])){
+        if(isset($_SESSION["unique_id"])){
             return true;
         }
         return false;
@@ -28,16 +28,24 @@ class controlador{
         include_once(__dir__."/../views/home/index.php");
     }
 
+
+
+    // --------------------------------------------POST----------------------------------------- //
+
     public function signup(){
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             include_once(__dir__."/../model/usuarios/signup.php");
         }else{
-            include_once(__dir__."/../views/opc_admin/registrar_users.php");
+            header("location: registrar");
         }
     }
 
     public function auth(){
-        include_once(__dir__."/../model/auth/login.php");
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            include_once(__dir__."/../model/auth/login.php");
+        }else{
+            header("location: login");
+        }
     }
 
     function cerrar_sesion(){
@@ -45,7 +53,7 @@ class controlador{
             session_start();
         }
         session_destroy();
-        header('Location: '.controlador::$rutaAPP.'login');
+        header('Location: '.controlador::$rutaAPP);
     }
 
     public function index(){

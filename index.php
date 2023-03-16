@@ -70,7 +70,7 @@ if($userPuntualmente->iniciar_sesion()){
                 $userPuntualmente->auth();
                 break;
             default:
-                $userPuntualmente->index();
+                header("location: login");
                 break;
         }
     }else{

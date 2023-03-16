@@ -15,8 +15,13 @@ if (!empty($cedula) && !empty($password)) {
         $enc_pass = $row['password'];
         if ($user_pass === $enc_pass) {
             $status = "Disponible";
+            if(!isset($_SESSION)){
+                session_start();
+            }
             $sql2 = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE id = {$row['id']}");
             if ($sql2) {
+
+                
 
                 $dia = date('Y-m-d');
                 $hora = date('H:i:s');
@@ -26,7 +31,7 @@ if (!empty($cedula) && !empty($password)) {
                 $_SESSION['unique_id'] = $row['id'];
                 $_SESSION['username'] = $row['n_user'] . $row['l_user'];
                 $_SESSION['rol'] = $row['rol'];
-                session_start();
+                
                 echo "Proceso Exitoso";
             } else {
                 echo "Algo salió mal. ¡Inténtalo de nuevo!";

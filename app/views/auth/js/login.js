@@ -16,9 +16,11 @@ continueBtn.onclick = ()=>{
               if(data === "success"){
                 location.href = "home";
               }else{
-                errorText.textContent = data;
-                location.href = "home";
-
+                if(data=="Proceso Exitoso"){
+                  location.href = "home";
+                }else{
+                  errorText.textContent = data;
+                }
               }
           }
       }
