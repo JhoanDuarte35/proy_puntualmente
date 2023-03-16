@@ -68,6 +68,12 @@ class controlador{
        
     }
 
+    public function getheader(){
+
+        include_once(__dir__."/../model/chat/getheaderchat.php");
+
+    }
+
 
 
 

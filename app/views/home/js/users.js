@@ -63,10 +63,35 @@ setInterval(() =>{
 
 }, 1500);
 
+
+
+
 function hola(id){
   contenidochat = document.querySelector("#contenidochat");
+  headerchat = document.querySelector("#headerchat");
+
+ 
 
   console.log(id);
+
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "chat/getheader", true);
+  xhr.onload = ()=>{
+    if(xhr.readyState === XMLHttpRequest.DONE){
+        if(xhr.status === 200){
+          let data = xhr.response;
+          headerchat.innerHTML = data;
+          contenidochat.scrollTop = contenidochat.scrollHeight;
+
+
+        }
+    }
+  }
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.send("id_out=" + id);
+
+
+  setInterval(() =>{
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "chat/getchat", true);
   xhr.onload = ()=>{
@@ -74,11 +99,14 @@ function hola(id){
         if(xhr.status === 200){
           let data = xhr.response;
           contenidochat.innerHTML = data;
+          contenidochat.scrollTop = contenidochat.scrollHeight;
+
         }
     }
   }
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.send("id_out=" + id);
+}, 3000);
 }
 
 

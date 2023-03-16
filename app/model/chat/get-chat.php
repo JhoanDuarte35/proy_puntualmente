@@ -4,7 +4,6 @@ if (isset($_SESSION['unique_id'])) {
     include_once (__dir__."/../config.php");
     $output = '<div class="chat-conversation p-3 px-2" data-simplebar>
                     <ul class="list-unstyled mb-0">';
-    $header = "";
     $outgoing_id = $_SESSION['unique_id'];
     $incoming_id = mysqli_real_escape_string($conn, $_POST['id_out']);
     $sql2="SELECT * FROM grupos_chat WHERE id_grupo={$incoming_id}";
@@ -144,6 +143,7 @@ if (isset($_SESSION['unique_id'])) {
 
             $output .= salida($_SESSION['username'], $row['msg'], formatohora($row['hora']));
 
+
             }/*else{
             $output .= '<div class="chat outgoing" id="'. $row['msg_id'] .'">
                 <div class="details">
@@ -154,7 +154,9 @@ if (isset($_SESSION['unique_id'])) {
             }*/
     } else {
         if($row['tipo']!=1){
+
             $output .= entrada($row['n_user']." ".$row['l_user'], formatohora($row['hora']), $row['msg']);
+
           
 
 
@@ -168,15 +170,13 @@ if (isset($_SESSION['unique_id'])) {
                 </div>';
         }*/
     }
-    $header="";
-    $header = headerchat($row['img'], $row['n_user']." ".$row['l_user'], $row['status']);
 
     }
     } else {
-        $output .= headerchat("1678977893clab.jpeg","jhoan","nice").entrada("jhoan", "8", "hola");
+        $output .= entrada("", "", "NO HAY CHATS PARA MOSTRAR");
     }}
 
-        echo $header.$output;
+        echo $output;
 
     }else {
         header("location: ../login.php");
@@ -254,55 +254,4 @@ if (isset($_SESSION['unique_id'])) {
         return $output;
     }
     
-    function headerchat($imagen, $nombre, $status){
-        $output='
-                                    
-                <div class="col-xl-4 col-7">
-
-                    <div class="d-flex align-items-center">
-                    <div class="flex-shrink-0 avatar-sm me-3 d-sm-block d-none">
-                        <img src="'.controlador::$rutaAPP.'app/assets/images/users/'.$imagen.'" alt="" class="img-fluid d-block rounded-circle">
-                    </div>
-                    <div class="flex-grow-1">
-                        <h5 class="font-size-14 mb-1 text-truncate"><a href="#" class="text-dark">'.$nombre.'</a></h5>
-                        <p class="text-muted text-truncate mb-0">'.$status.'</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="col-xl-8 col-5">
-                <ul class="list-inline user-chat-nav text-end mb-0">
-                    <li class="list-inline-item">
-                        <div class="dropdown">
-                            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="bx bx-search"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-md p-2">
-                                <form class="px-2">
-                                    <div>
-                                        <input type="text" class="form-control border bg-light-subtle" placeholder="Search...">
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="list-inline-item">
-                        <div class="dropdown">
-                            <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="bx bx-dots-horizontal-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="#">Profile</a>
-                                <a class="dropdown-item" href="#">Archive</a>
-                                <a class="dropdown-item" href="#">Muted</a>
-                                <a class="dropdown-item" href="#">Delete</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>                                                                                                                                                                                                                                                                                        
-            </div>
-        ';
-        return $output;
-    }
+    

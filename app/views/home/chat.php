@@ -287,20 +287,25 @@
 
                     <div class="w-100 user-chat mt-4 mt-sm-0 ms-lg-1">
                         <div class="card">
-                            <div class="p-3 px-lg-4 border-bottom">
-                                <div class="row" id="contenidochat">
+                            <div class="p-3 px-lg-4 border-bottom" id="headerchat">
                                 
-                                </div>
+                                
+                            </div>
+                            <div class="chat-conversation p-3 px-2" data-simplebar id="contenidochat">
+
+                            
+
+                            </div>
 <!-- ------------------- -->
                             <div class="p-3 border-top">
                                 <div class="row">
                                     <div class="col">
                                         <div class="position-relative">
-                                            <input type="text" class="form-control border bg-light-subtle" placeholder="Enter Message...">
+                                            <input type="text" class="form-control border bg-light-subtle" placeholder="Escribe tu mensaje...">
                                         </div>
                                     </div>
                                     <div class="col-auto">
-                                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light"><span class="d-none d-sm-inline-block me-2">Send</span> <i class="mdi mdi-send float-end"></i></button>
+                                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light"><span class="d-none d-sm-inline-block me-2">Enviar</span> <i class="mdi mdi-send float-end"></i></button>
                                     </div>
                                 </div>
                             </div>

@@ -34,6 +34,9 @@ if($userPuntualmente->iniciar_sesion()){
             case 'chat/users':
                 $userPuntualmente->users();
                 break;
+            case 'chat/getheader':
+                $userPuntualmente->getheader();
+                break;
             default:
                 $userPuntualmente->home();
                 break;
@@ -49,7 +52,7 @@ if($userPuntualmente->iniciar_sesion()){
                 $userPuntualmente->registrar();
                 break;
             case 'signup':
-                $userPuntualmente->singup();
+                $userPuntualmente->signup();
                 break;
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
