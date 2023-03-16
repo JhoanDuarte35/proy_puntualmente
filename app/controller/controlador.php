@@ -56,7 +56,7 @@ class controlador{
     }
 
     public function getchat(){
-        if ($_SERVER["REQUEST_METHOD"] == "GET"){
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
             include_once(__dir__."/../model/chat/get-chat.php");
         }else{
             header("Location: home");

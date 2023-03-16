@@ -61,6 +61,24 @@ setInterval(() =>{
   }
   xhr.send();
 
-}, 500);
+}, 1500);
+
+function hola(id){
+  contenidochat = document.querySelector("#contenidochat");
+
+  console.log(id);
+  let xhr = new XMLHttpRequest();
+  xhr.open("POST", "chat/getchat", true);
+  xhr.onload = ()=>{
+    if(xhr.readyState === XMLHttpRequest.DONE){
+        if(xhr.status === 200){
+          let data = xhr.response;
+          contenidochat.innerHTML = data;
+        }
+    }
+  }
+  xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhr.send("id_out=" + id);
+}
 
 

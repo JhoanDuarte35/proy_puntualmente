@@ -32,7 +32,7 @@
             $output .= '
                             <li>
 
-                                <a href="chat?user_id=' . $row['id'] . '">
+                                <a type="button" id="' . $row['id'] . '" onclick="hola(this.id)">
                                     <div class="d-flex align-items-start">
                                         
                                         <div class="flex-shrink-0 user-img '. $class .' align-self-center me-3">
