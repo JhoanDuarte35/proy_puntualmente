@@ -28,9 +28,7 @@ class controlador{
         include_once(__dir__."/../views/home/index.php");
     }
 
-    public function chat(){
-        include_once(__dir__."/../views/home/chat.php");
-    }
+  
 
 
 
@@ -51,13 +49,44 @@ class controlador{
             header("location: login");
         }
     }
+//________________________________________________Chats---------------------------------------------//
+
+    public function chat(){
+        include_once(__dir__."/../views/home/chat.php");
+    }
+
+    public function getchat(){
+        if ($_SERVER["REQUEST_METHOD"] == "GET"){
+            include_once(__dir__."/../model/chat/get-chat.php");
+        }else{
+            header("Location: home");
+        }
+    }
+    public function users(){
+
+        include_once(__dir__."/../model/chat/users.php");
+       
+    }
+
+
+
+
+
+
+
 
     function cerrar_sesion(){
         if(!isset($_SESSION)){
             session_start();
         }
         session_destroy();
+        include(__dir__."/../model/config.php");
+        $status="Desconectado";
+        $sql2 = mysqli_query($conn, "UPDATE users SET status = '{$status}' WHERE id = {$_SESSION['unique_id']}");
         header('Location: '.controlador::$rutaAPP);
+        
+
+
     }
 
     public function index(){

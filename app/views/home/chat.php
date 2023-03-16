@@ -75,7 +75,7 @@
 
                         <div class="p-3">
                             <div class="search-box position-relative">
-                                <input type="text" class="form-control rounded border" placeholder="Search...">
+                                <input type="text" class="form-control rounded border" placeholder="Buscar">
                                 <i class="bx bx-search search-icon"></i>
                             </div>
                         </div>
@@ -106,28 +106,12 @@
                                     <div class="chat-message-list" data-simplebar>
                                         <div class="pt-3">
                                             <div class="px-3">
-                                                <h5 class="font-size-14 mb-3">Recent</h5>
+                                                <h5 class="font-size-14 mb-3">Reciente</h5>
                                             </div>
-                                            <ul class="list-unstyled chat-list">
-                                                <li class="active">
-                                                    <a href="#">
-                                                        <div class="d-flex align-items-start">
-                                                            
-                                                            <div class="flex-shrink-0 user-img online align-self-center me-3">
-                                                                <img src="assets/images/users/avatar-2.jpg" class="rounded-circle avatar-sm" alt="">
-                                                                <span class="user-status"></span>
-                                                            </div>
-                                                            
-                                                            <div class="flex-grow-1 overflow-hidden">
-                                                                <h5 class="text-truncate font-size-14 mb-1">Jennie Sherlock</h5>
-                                                                <p class="text-truncate mb-0">Hey! there I'm available</p>
-                                                            </div>
-                                                            <div class="flex-shrink-0">
-                                                                <div class="font-size-11">02 min</div>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
+                                            <ul class="list-unstyled chat-list" id="user-list">
+                                                
+                                              
+
                                                 <li class="unread">
                                                     <a href="#">
                                                         <div class="d-flex align-items-start">
@@ -153,6 +137,8 @@
                                                         </div>
                                                     </a>
                                                 </li>
+
+
                                                 <li>
                                                     <a href="#">
                                                         <div class="d-flex align-items-start">
@@ -738,6 +724,8 @@
 <?php include (__dir__."/../layouts/vendor-scripts.php")?>
 
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/app.js"></script>
+<script src="<?php echo controlador::$rutaAPP?>app/views/home/js/users.js"></script>
+
 </body>
 
 </html>

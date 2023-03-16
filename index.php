@@ -9,7 +9,7 @@ if($userPuntualmente->iniciar_sesion()){
 
     //ADMIN
 
-    if(isset($_GET["action"]) ){
+    if(isset($_GET["action"]) && ($_SESSION['rol']==1)){
         
         switch($_GET["action"]){
 
@@ -28,7 +28,12 @@ if($userPuntualmente->iniciar_sesion()){
             case 'chat':
                 $userPuntualmente->chat();
                 break;
-                
+            case 'chat/getchat':
+                $userPuntualmente->getchat();
+                break;
+            case 'chat/users':
+                $userPuntualmente->users();
+                break;
             default:
                 $userPuntualmente->home();
                 break;
@@ -51,6 +56,9 @@ if($userPuntualmente->iniciar_sesion()){
                break;
             case 'chat':
                 $userPuntualmente->chat();
+                break;
+            case 'chat/getchat':
+                $userPuntualmente->getchat();
                 break;
 
            
@@ -80,7 +88,7 @@ if($userPuntualmente->iniciar_sesion()){
                 break;
         }
     }else{
-        $userPuntualmente->index();
+        $userPuntualmente->home();
     }
 }
 

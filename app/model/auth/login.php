@@ -1,6 +1,6 @@
 <?php
-include_once (__dir__."/../config.php");
-date_default_timezone_set('America/Bogota');
+    include_once (__dir__."/../config.php");
+    date_default_timezone_set('America/Bogota');
 
 
 //include_once "get-ip.php";
@@ -32,7 +32,11 @@ if (!empty($cedula) && !empty($password)) {
                 $_SESSION['username'] = $row['n_user'] . " " . $row['l_user'];
                 $_SESSION['rol'] = $row['rol'];
                 $_SESSION['img'] = $row['img'];
-                $_SESSION['status']= $row['status'];
+                
+                $status = mysqli_query($conn, "SELECT (status) FROM users WHERE cedula = '{$cedula}'");
+                $row3 = mysqli_fetch_assoc($status);
+
+                $_SESSION['status']= $row3['status'];
                 
                 echo "Proceso Exitoso";
             } else {
