@@ -1,38 +1,25 @@
-<?php 
-      include_once(__dir__."/../layouts/session.php");  
-      ?>
+<?php include_once(__dir__."/../layouts/session.php");  ?>
 
-<?php 
-      include(__dir__."/../layouts/head-main.php");  
-      ?>
+<?php include(__dir__."/../layouts/head-main.php");  ?>
 
 <head>
     <title><?php echo $language["Dashboard"]; ?> | Puntualmente</title>
 
-    <?php 
-          include(__dir__."/../layouts/head.php");  
-
-    ?>
+    <?php include(__dir__."/../layouts/head.php");  ?>
 
     <link href="<?php echo controlador::$rutaAPP?>app/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />
 
     
     
-    <?php 
-          include(__dir__."/../layouts/head-style.php");  
-          ?>
+    <?php include(__dir__."/../layouts/head-style.php");  ?>
 </head>
 
-<?php  
-      include(__dir__."/../layouts/body.php");  
-      ?>
+<?php  include(__dir__."/../layouts/body.php");  ?>
 
 <!-- Begin page -->
 <div id="layout-wrapper">
 
-    <?php 
-          include(__dir__."/../layouts/menu.php");  
-          ?>
+    <?php include(__dir__."/../layouts/menu.php");  ?>
 
     <!-- ============================================================== -->
     <!-- Start right Content here -->
@@ -1583,8 +1570,7 @@
         </div>
         <!-- End Page-content -->
 
-        <?php 
-            include (__dir__."/../layouts/footer.php")?>
+        <?php include (__dir__."/../layouts/footer.php")?>
     </div>
     <!-- end main content-->
 
@@ -1592,14 +1578,11 @@
 <!-- END layout-wrapper -->
 
 <!-- Right Sidebar -->
-<?php
-    include (__dir__."/../layouts/right-sidebar.php")?>
+<?php include (__dir__."/../layouts/right-sidebar.php")?>
 <!-- /Right-bar -->
 
 <!-- JAVASCRIPT -->
-<?php  
-include (__dir__."/../layouts/vendor-scripts.php")
-?>
+<?php include (__dir__."/../layouts/vendor-scripts.php")?>
 
 <!-- apexcharts -->
 <script src="<?php echo controlador::$rutaAPP?>app/assets/libs/apexcharts/apexcharts.min.js"></script>

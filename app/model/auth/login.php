@@ -1,5 +1,5 @@
 <?php
-include_once (__dir__."/../config2.php");
+include_once (__dir__."/../config.php");
 date_default_timezone_set('America/Bogota');
 
 

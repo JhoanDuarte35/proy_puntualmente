@@ -25,6 +25,9 @@ if($userPuntualmente->iniciar_sesion()){
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                 break;
+            case 'chat':
+                $userPuntualmente->chat();
+                break;
                 
             default:
                 $userPuntualmente->home();
@@ -46,6 +49,9 @@ if($userPuntualmente->iniciar_sesion()){
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                break;
+            case 'chat':
+                $userPuntualmente->chat();
+                break;
 
            
 

@@ -1,5 +1,5 @@
 <?php
-include_once (__dir__."/../config2.php");
+include_once (__dir__."/../config.php");
 
 $fname = mysqli_real_escape_string($conn, $_POST['nombre']);
 $lname = mysqli_real_escape_string($conn, $_POST['apellido']);

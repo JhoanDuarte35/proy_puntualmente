@@ -28,6 +28,10 @@ class controlador{
         include_once(__dir__."/../views/home/index.php");
     }
 
+    public function chat(){
+        include_once(__dir__."/../views/home/chat.php");
+    }
+
 
 
     // --------------------------------------------POST----------------------------------------- //
