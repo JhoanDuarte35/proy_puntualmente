@@ -32,6 +32,7 @@ if (!empty($cedula) && !empty($password)) {
                 $_SESSION['username'] = $row['n_user'] . " " . $row['l_user'];
                 $_SESSION['rol'] = $row['rol'];
                 $_SESSION['img'] = $row['img'];
+                $_SESSION['status']= $row['status'];
                 
                 echo "Proceso Exitoso";
             } else {

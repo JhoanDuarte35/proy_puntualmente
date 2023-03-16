@@ -49,12 +49,12 @@
                         <div class="p-3 px-4 border-bottom">
                             <div class="d-flex align-items-start ">
                                 <div class="flex-shrink-0 me-3 align-self-center">
-                                    <img src="assets/images/users/avatar-1.jpg" class="avatar-sm rounded-circle" alt="">
+                                    <img src="<?php echo controlador::$rutaAPP?>app/assets/images/users/<?php echo $_SESSION['img']?>" class="avatar-sm rounded-circle" alt="">
                                 </div>
                                 
                                 <div class="flex-grow-1">
-                                    <h5 class="font-size-16 mb-1"><a href="#" class="text-dark">Shawn <i class="mdi mdi-circle text-success align-middle font-size-10 ms-1"></i></a></h5>
-                                    <p class="text-muted mb-0">Available</p>
+                                    <h5 class="font-size-16 mb-1"><a href="#" class="text-dark"><?php echo $_SESSION['username']?> <i class="mdi mdi-circle text-success align-middle font-size-10 ms-1"></i></a></h5>
+                                    <p class="text-muted mb-0"><?php echo $_SESSION['status']?></p>
                                 </div>
 
                                 <div class="flex-shrink-0">
