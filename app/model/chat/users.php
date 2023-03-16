@@ -4,6 +4,7 @@
     $sql = "SELECT * FROM users WHERE NOT id = {$outgoing_id} ORDER BY id DESC";
     $query = mysqli_query($conn, $sql);
     $output = "";
+    $class="";
     if(mysqli_num_rows($query) == 0){
         $output .= "No users are available to chat";
     }elseif(mysqli_num_rows($query) > 0){
@@ -21,16 +22,20 @@
             } else {
                 $you = "";
             }
-            ($row['status'] == "Desconectado") ? $offline = "offline" : $offline = "";
+            ($row['status'] == "Desconectado") ? $class = "" : $class = "online";
             ($outgoing_id == $row['id']) ? $hid_me = "hide" : $hid_me = "";
-        
+            
+            if($row['status']=="Desconectado"){
+
+            }
+            //class="active"
             $output .= '
-                            <li class="active">
+                            <li>
 
                                 <a href="chat?user_id=' . $row['id'] . '">
                                     <div class="d-flex align-items-start">
                                         
-                                        <div class="flex-shrink-0 user-img online align-self-center me-3">
+                                        <div class="flex-shrink-0 user-img '. $class .' align-self-center me-3">
                                             <img src="'.controlador::$rutaAPP.'app/assets/images/users/' . $row['img'] . '" class="rounded-circle avatar-sm" alt="">
                                             <span class="user-status"></span>
                                         </div>
