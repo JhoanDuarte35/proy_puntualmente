@@ -29,8 +29,9 @@ if (!empty($cedula) && !empty($password)) {
                 //$log_session= mysqli_query($conn, "INSERT INTO log_sesiones (id_usuario, fecha, hora, ip) VALUES ('{$row['unique_id']}', '{$dia}', '{$hora}', '{$ip}')");
                 
                 $_SESSION['unique_id'] = $row['id'];
-                $_SESSION['username'] = $row['n_user'] . $row['l_user'];
+                $_SESSION['username'] = $row['n_user'] . " " . $row['l_user'];
                 $_SESSION['rol'] = $row['rol'];
+                $_SESSION['img'] = $row['img'];
                 
                 echo "Proceso Exitoso";
             } else {

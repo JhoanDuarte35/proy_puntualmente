@@ -39,7 +39,7 @@ if (!empty($fname) && !empty($lname) && !empty($cedula) && !empty($f_nacimiento)
                             $status = "Desconectado";
                             $encrypt_pass = md5($password);
                             $insert_query = mysqli_query($conn, "INSERT INTO users (n_user, l_user, tel_user, cedula, password, f_nacimiento, id_area, id_empresa, f_ingreso_empre, id_grupo, rol, img, status)
-                                VALUES ('{$fname}', '{$lname}','{$telefono}', '{$cedula}', '{$encrypt_pass}', '{$f_nacimiento}','{$area}','{$empresa}', '{$f_ingreso}','{$grupo}','{$rol}','{$img_name}', '{$status}')");
+                                VALUES ('{$fname}', '{$lname}','{$telefono}', '{$cedula}', '{$encrypt_pass}', '{$f_nacimiento}','{$area}','{$empresa}', '{$f_ingreso}','{$grupo}','{$rol}','{$new_img_name}', '{$status}')");
                             if ($insert_query) {
                                 $select_sql2 = mysqli_query($conn, "SELECT * FROM users WHERE cedula = '{$cedula}'");
                                 if (mysqli_num_rows($select_sql2) > 0) {

@@ -77,7 +77,7 @@
                                                 <label for="areas" class="form-label">Area</label>
                                                 <input class="form-control" list="areas" name="area" id="area" placeholder="Areas">
                                                 <datalist id="areas">
-                                                    <option value="rellenar con db">
+                                                    <option value="1">llenar con db</option>
                                                 </datalist>
                                             </div>
                                             <br>
@@ -90,7 +90,7 @@
                                                 <label for="areas" class="form-label">Sede</label>
                                                 <input class="form-control" list="sedes" name="sede" id="sede" placeholder="Sedes">
                                                 <datalist id="sedes">
-                                                    <option value="rellenar con db">
+                                                    <option value="1">llenar con bd</option>
                                                 </datalist>
                                             </div>
                                            
@@ -103,7 +103,7 @@
                                                 <label for="empresa" class="form-label">Empresa</label>
                                                 <input class="form-control" list="empresas" name="empresa" id="empresa" placeholder="Empresas">
                                                 <datalist id="empresas">
-                                                    <option value="rellenar con db">
+                                                    <option value="1">llenar con db</option>
                                                 </datalist>
                                             </div>
                                             <br>
@@ -130,7 +130,7 @@
                                                 <label for="grupo" class="form-label">Grupo</label>
                                                 <input class="form-control" list="grupos" name="grupo" id="grupo" placeholder="Grupos">
                                                 <datalist id="grupos">
-                                                    <option value="rellenar con db">
+                                                    <option value="1">llenar con bd</option>
                                                 </datalist>
                                             </div>
                                             <div id="error-text"></div>
