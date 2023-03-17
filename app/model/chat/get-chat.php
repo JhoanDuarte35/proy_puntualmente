@@ -2,8 +2,7 @@
 date_default_timezone_set('America/Bogota');
 if (isset($_SESSION['unique_id'])) {
     include_once (__dir__."/../config.php");
-    $output = '<div class="chat-conversation p-3 px-2" data-simplebar>
-                    <ul class="list-unstyled mb-0">';
+    $output = '';
     $outgoing_id = $_SESSION['unique_id'];
     $incoming_id = mysqli_real_escape_string($conn, $_POST['id_out']);
     $sql2="SELECT * FROM grupos_chat WHERE id_grupo={$incoming_id}";
@@ -171,7 +170,8 @@ if (isset($_SESSION['unique_id'])) {
         }*/
     }
 
-    }
+    }$output .= ' </ul>
+    </div>';
     } else {
         $output .= entrada("", "", "NO HAY CHATS PARA MOSTRAR");
     }}

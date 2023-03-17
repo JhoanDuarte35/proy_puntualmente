@@ -63,6 +63,7 @@ function headerchat($imagen, $nombre, $status){
             </ul>                                                                                                                                                                                                                                                                                        
         </div>
     </div>
+    </div>
 
     ';
     return $output;

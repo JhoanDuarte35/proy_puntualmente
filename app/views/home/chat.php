@@ -291,11 +291,12 @@
                                 
                                 
                             </div>
-                            <div class="chat-conversation p-3 px-2" data-simplebar id="contenidochat">
-
-                            
-
+                            <div class="chat-conversation p-3 px-2" data-simplebar >
+                                <ul class="list-unstyled mb-0" id="contenidochat">
+                                </ul>
+                            <div><span id="final"></span></div>
                             </div>
+                        
 <!-- ------------------- -->
                             <div class="p-3 border-top">
                                 <div class="row">
