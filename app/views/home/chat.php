@@ -305,7 +305,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="position-relative">
-                                            <input type="text" name="msg" id="msg" class="form-control border bg-light-subtle" placeholder="Escribe tu mensaje...">
+                                            <input disabled type="text" name="msg" id="msg" class="form-control border bg-light-subtle" placeholder="Escribe tu mensaje...">
                                         </div>
                                     </div>
                                     <div class="col-auto">
