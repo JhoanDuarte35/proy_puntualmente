@@ -53,6 +53,14 @@ class controlador{
         }
     }
 
+    public function admintablas(){
+        if ($_SERVER["REQUEST_METHOD"] == "POST"){
+            include_once(__dir__."/../model/admintablas/admin_tablas.php");
+        }else{
+            header("location: home");
+        }
+    }
+
 //________________________________________________Chats---------------------------------------------//
 
     public function chat(){

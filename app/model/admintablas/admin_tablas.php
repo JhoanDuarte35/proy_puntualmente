@@ -1,5 +1,5 @@
 <?php
-include_once "config.php";
+    include_once (__dir__."/../config.php");
 
 if(isset($_POST['x'])){
     $data = json_decode($_POST['x']);
@@ -190,14 +190,15 @@ function mostrartabla($areas){
     
     foreach($areas as $value){
     $output .='
-            <tr>
-            <td>
-            <span>' . $value['n_area'] . '</span>
-            </td>
-            <td>
-            <button type="button" id="' . $value['id_area'] . '" onclick="borrararea(this.id)" class="btn-borde"><i class="fa-solid fa-xmark"></i></button>
-            </td>
-            </tr> ';
+        <tr data-id="1">
+        <td id="id" style="width: 80px">'.$value['id_area'].'</td>
+        <td id="name">'.$value['n_area'].'</td>
+        <td style="width: 100px">
+            <a type="button" id="'.$value['id_area'].'" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+        </td>
+        </tr> ';
                 
     }  
 

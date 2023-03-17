@@ -5,6 +5,9 @@
       <?php 
       include(__dir__."/../layouts/head-main.php");  
       ?>
+      <?php
+      include_once(__dir__."/../../model/admintablas/sqls_admin.php");
+      ?>
 
 <head>
 

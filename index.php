@@ -25,7 +25,9 @@ if($userPuntualmente->iniciar_sesion()){
             case 'admint':
                 $userPuntualmente->admint();
                 break;
-                
+            case 'admintablas':
+                $userPuntualmente->admintablas();
+                break;
             case 'chat':
                 $userPuntualmente->chat();
                 break;

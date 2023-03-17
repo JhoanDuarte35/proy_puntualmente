@@ -21,7 +21,7 @@
     <!-- Start right Content here -->
     <!-- ============================================================== -->
     <div class="main-content">
-
+    
         <div class="page-content">
             <div class="container-fluid">
 
@@ -66,16 +66,8 @@
                                                 <th>Edit</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
-                                            <tr data-id="1">
-                                                <td id="id" style="width: 80px">1</td>
-                                                <td id="name">David McHenry</td>
-                                                <td style="width: 100px">
-                                                    <a type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                                        <i class="fas fa-pencil-alt"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                        <tbody id="areatabla">
+                                            <!-- SE LLENAN LAS AREAS -->
                                         </tbody>
                                     </table>
                                 </div>
@@ -203,22 +195,45 @@
     <!-- end main content-->
 <!-- Static Backdrop Modal -->
                                     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-dialog modal-dialog-centered" role="document" id="modificarmodal">
                                             <div class="modal-content">
                                             <form method="POST">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Area</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 
                                                 <div class="modal-body">
-                                                    <label for="n_grupo" >Nombre Grupo:</label>
-                                                    <input class="form-control" type="text" name="n_grupo">
+                                                    <label for="n_grupo" >Nombre Area:</label>
+                                                    <input class="form-control" type="text" id="nombrearea" name="nombrearea">
                                                     <input type="text" hidden disabled value="1">
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Guardar</button>
+                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-primary" onclick="agregararea()">Guardar</button>
+                                                </div>
+                                            </form>
+                                            </div>
+                                        </div>
+                                    </div>
+<!-- MODAL PLANTILLA -->
+                                    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                            <form method="POST">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Modificar Area</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                
+                                                <div class="modal-body">
+                                                    <label for="n_grupo" >Nombre Area:</label>
+                                                    <input class="form-control" type="text" id="nombrearea" name="nombrearea">
+                                                    <input type="text" hidden disabled value="1">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-primary" onclick="agregararea()">Guardar</button>
                                                 </div>
                                             </form>
                                             </div>
@@ -242,6 +257,9 @@
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/pages/table-editable.int.js"></script>
 
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/app.js"></script>
+
+<script src="<?php echo controlador::$rutaAPP?>app/views/home/js/admintablas.js"></script>
+
 
 </body>
 
