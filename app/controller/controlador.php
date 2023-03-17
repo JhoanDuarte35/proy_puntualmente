@@ -28,6 +28,9 @@ class controlador{
         include_once(__dir__."/../views/home/index.php");
     }
 
+    public function admint(){
+        include_once(__dir__."/../views/home/admint.php");
+    }
   
 
 
@@ -49,6 +52,7 @@ class controlador{
             header("location: login");
         }
     }
+
 //________________________________________________Chats---------------------------------------------//
 
     public function chat(){
@@ -77,6 +81,7 @@ class controlador{
     public function insertchat(){
         include_once(__dir__."/../model/chat/insert-chat.php");
     }
+
 
 
 

@@ -22,9 +22,10 @@ if($userPuntualmente->iniciar_sesion()){
             case 'signup':
                 $userPuntualmente->signup();
                 break;
-            case 'cerrar':
-                $userPuntualmente->cerrar_sesion();
+            case 'admint':
+                $userPuntualmente->admint();
                 break;
+                
             case 'chat':
                 $userPuntualmente->chat();
                 break;
@@ -39,6 +40,10 @@ if($userPuntualmente->iniciar_sesion()){
                 break;
             case 'chat/insertchat':
                 $userPuntualmente->insertchat();
+                break;
+
+            case 'cerrar':
+                $userPuntualmente->cerrar_sesion();
                 break;
             default:
                 $userPuntualmente->home();

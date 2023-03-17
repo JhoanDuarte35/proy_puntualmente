@@ -14,6 +14,8 @@ if (isset($_SESSION['unique_id'])) {
         $query3 = mysqli_query($conn, $sql3);
         $unavez=false;
         $unavez2=false;
+        $output = '';
+
         if (mysqli_num_rows($query3) > 0) {
 
          
@@ -96,11 +98,13 @@ if (isset($_SESSION['unique_id'])) {
         WHERE (outgoing_msg_id = {$outgoing_id} AND incoming_msg_id = {$incoming_id})
         OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id}) ORDER BY msg_id";
         $query = mysqli_query($conn, $sql);
+        $output = '';
         if (mysqli_num_rows($query) > 0) {
             $unavez=false;
             $unavez2=false;
             $cuando="";
             $dia = date('Y-m-d');
+            $output="";
         while ($row = mysqli_fetch_assoc($query)) {
 
             

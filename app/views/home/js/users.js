@@ -67,8 +67,10 @@ setInterval(() =>{
 
 
 function hola(id){
+  clearInterval(chat);
   contenidochat = document.querySelector("#contenidochat");
   headerchat = document.querySelector("#headerchat");
+  
 
  
 
@@ -79,9 +81,9 @@ function hola(id){
   xhr.onload = ()=>{
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200){
-          let data = xhr.response;
-          headerchat.innerHTML = data;
-          console.log(data)
+          let data2 = xhr.response;
+          headerchat.innerHTML = data2;
+          console.log(data2)
 
         }
     }
@@ -90,7 +92,7 @@ function hola(id){
   xhr.send("id_out=" + id);
 
 
-  setInterval(() =>{
+  chat=setInterval(() =>{
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "chat/getchat", true);
   xhr.onload = ()=>{
