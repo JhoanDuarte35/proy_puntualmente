@@ -286,6 +286,7 @@
                     <!-- end chat-leftsidebar -->
 
                     <div class="w-100 user-chat mt-4 mt-sm-0 ms-lg-1">
+                        <form id="typing-area" method="POST">
                         <div class="card">
                             <div class="p-3 px-lg-4 border-bottom" id="headerchat">
                                 
@@ -302,15 +303,16 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="position-relative">
-                                            <input type="text" class="form-control border bg-light-subtle" placeholder="Escribe tu mensaje...">
+                                            <input type="text" name="msg" id="msg" class="form-control border bg-light-subtle" placeholder="Escribe tu mensaje...">
                                         </div>
                                     </div>
                                     <div class="col-auto">
-                                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light"><span class="d-none d-sm-inline-block me-2">Enviar</span> <i class="mdi mdi-send float-end"></i></button>
+                                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light" id="enviar"><span class="d-none d-sm-inline-block me-2">Enviar</span> <i class="mdi mdi-send float-end"></i></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        </form>
                     </div>
                     <!-- end user chat -->
                 </div>
@@ -339,6 +341,8 @@
 
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/app.js"></script>
 <script src="<?php echo controlador::$rutaAPP?>app/views/home/js/users.js"></script>
+<script src="<?php echo controlador::$rutaAPP?>app/views/home/js/chat.js"></script>
+
 
 </body>
 

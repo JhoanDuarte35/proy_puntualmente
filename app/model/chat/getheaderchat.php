@@ -8,12 +8,13 @@
 
     $data= mysqli_fetch_assoc($datos);
 
-$header = headerchat($data['img'], $data['n_user']." ".$data['l_user'], $data['status']);
+$header = headerchat($data['img'], $data['n_user']." ".$data['l_user'], $data['status'], $id);
 echo $header;
 
 
-function headerchat($imagen, $nombre, $status){
+function headerchat($imagen, $nombre, $status, $id_user){
     $output='
+        <input type="text" id="id_enviar" name="id_enviar" hidden dissabled value ="'.$id_user.'">
     <div class="row">
             
             <div class="col-xl-4 col-7">

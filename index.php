@@ -37,6 +37,9 @@ if($userPuntualmente->iniciar_sesion()){
             case 'chat/getheader':
                 $userPuntualmente->getheader();
                 break;
+            case 'chat/insertchat':
+                $userPuntualmente->insertchat();
+                break;
             default:
                 $userPuntualmente->home();
                 break;

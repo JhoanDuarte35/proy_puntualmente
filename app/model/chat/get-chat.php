@@ -171,7 +171,8 @@ if (isset($_SESSION['unique_id'])) {
     }
 
     }$output .= ' </ul>
-    </div>';
+    </div>'
+    ;
     } else {
         $output .= entrada("", "", "NO HAY CHATS PARA MOSTRAR");
     }}

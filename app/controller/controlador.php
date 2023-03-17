@@ -74,6 +74,10 @@ class controlador{
 
     }
 
+    public function insertchat(){
+        include_once(__dir__."/../model/chat/insert-chat.php");
+    }
+
 
 
 

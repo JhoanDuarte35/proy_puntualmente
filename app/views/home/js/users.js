@@ -3,6 +3,8 @@
 usersList = document.querySelector("#user-list");
 //listagrupos = document.querySelector(".lista-grupos");
 
+
+
 /*
 searchIcon.onclick = ()=>{
   searchBar.classList.toggle("show");
@@ -102,7 +104,7 @@ function hola(id){
   }
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.send("id_out=" + id);
-}, 8000);
+}, 500);
 }
 
 

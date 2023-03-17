@@ -1,18 +1,18 @@
 <?php 
-    session_start();
     date_default_timezone_set('America/Bogota');
     if(isset($_SESSION['unique_id'])){
         include_once (__dir__."/../config.php");
         //include_once "get-ip.php";
         $outgoing_id = $_SESSION['unique_id'];
-        $incoming_id = mysqli_real_escape_string($conn, $_POST['incoming_id']);
-        $message = mysqli_real_escape_string($conn, $_POST['message']);
+        $incoming_id =  $_POST['id_enviar'];
+        $message = $_POST['msg'];
+        echo $message;
         $dia = date('Y-m-d');
         $hora = date('H:i:s');
       //  $ip = getRealIP();
 
         if(!empty($message)){
-            $sql = mysqli_query($conn, "INSERT INTO messages (incoming_msg_id, outgoing_msg_id, msg, imagen, tipo, fecha, hora, ip) VALUES ({$incoming_id}, {$outgoing_id}, '{$message}', '', '0', '{$dia}','{$hora}','{$ip}')") or die();
+            $sql = mysqli_query($conn, "INSERT INTO messages (incoming_msg_id, outgoing_msg_id, msg, imagen, tipo, fecha, hora, ip) VALUES ({$incoming_id}, {$outgoing_id}, '{$message}', '', '0', '{$dia}','{$hora}','1')") or die();
         }else{
             if (isset($_FILES['image'])) {
                 $img_name = $_FILES['image']['name'];
