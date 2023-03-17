@@ -10,7 +10,16 @@
       ?>
 
 <head>
+    <!-- choices css -->
+    <link href="<?php echo controlador::$rutaAPP?>app/assets/libs/choices.js/public/assets/styles/choices.min.css" rel="stylesheet" type="text/css" />
 
+    <!-- color picker css -->
+    <link rel="stylesheet" href="<?php echo controlador::$rutaAPP?>app/assets/libs/@simonwep/pickr/themes/classic.min.css" /> <!-- 'classic' theme -->
+    <link rel="stylesheet" href="<?php echo controlador::$rutaAPP?>app/assets/libs/@simonwep/pickr/themes/monolith.min.css" /> <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="<?php echo controlador::$rutaAPP?>app/assets/libs/@simonwep/pickr/themes/nano.min.css" /> <!-- 'nano' theme -->
+
+    <!-- datepicker css -->
+    <link rel="stylesheet" href="<?php echo controlador::$rutaAPP?>app/assets/libs/flatpickr/flatpickr.min.css">
     <title>Registro | Admin-Puntualmente</title>
     <?php include(__dir__."/../layouts/head.php");  ?>
     <?php include(__dir__."/../layouts/head-style.php");?>
@@ -77,11 +86,17 @@
                                             </div>
                                    
                                             <div>
-                                                <label for="areas" class="form-label">Area</label>
-                                                <input class="form-control" list="areas" name="area" id="area" placeholder="Areas">
-                                                <datalist id="areas">
-                                                    <option value="1">llenar con db</option>
-                                                </datalist>
+                                         
+                                            <div class="mb-3">
+                                                <label for="choices-single-groups" class="form-label font-size-13 text-muted">Area:</label>
+                                                <select class="form-control" data-trigger name="choices-single-groups" id="area">
+                                                    <option value="">Elige un area</option>
+                                                    <?php foreach($areas as $value){?>
+                                                        <option value="<?php echo $value['id_area']?>"><?php echo $value['n_area']?></option>
+                                                    <?php }?>
+                                                </select>
+                                          
+                                        </div>
                                             </div>
                                             <br>
                                             <div>
@@ -175,7 +190,22 @@
 
 <?php include (__dir__."/../layouts/vendor-scripts.php") ?>
 
+
+<!-- choices js -->
+<script src="<?php echo controlador::$rutaAPP?>app/assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+<!-- color picker js -->
+<script src="<?php echo controlador::$rutaAPP?>app/assets/libs/@simonwep/pickr/pickr.min.js"></script>
+<script src="<?php echo controlador::$rutaAPP?>app/assets/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+<!-- datepicker js -->
+<script src="<?php echo controlador::$rutaAPP?>app/assets/libs/flatpickr/flatpickr.min.js"></script>
+
+<!-- init js -->
+<script src="<?php echo controlador::$rutaAPP?>app/assets/js/pages/form-advanced.init.js"></script>
+
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/app.js"></script>
+
 </body>
 
 </html>

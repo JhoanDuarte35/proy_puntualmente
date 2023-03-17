@@ -194,7 +194,7 @@ function mostrartabla($areas){
         <td id="id" style="width: 80px">'.$value['id_area'].'</td>
         <td id="name">'.$value['n_area'].'</td>
         <td style="width: 100px">
-            <a type="button" id="'.$value['id_area'].'" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+            <a type="button" id="'.$value['id_area'].'" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal1" data-bs-target="#staticBackdrop2" onclick=modificararea(this.id) >
                 <i class="fas fa-pencil-alt"></i>
             </a>
         </td>
