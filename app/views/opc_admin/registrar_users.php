@@ -63,10 +63,11 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-body p-4">
+                            <form action="#" id="signupform" method="POST" enctype="multipart/form-data" autocomplete="off">
+
                                 <div class="row">
                                     <div class="col-lg-6">
                                         <div>
-                                        <form action="#" id="signupform" method="POST" enctype="multipart/form-data" autocomplete="off">
                                             <div class="mb-3">
                                                 <label for="nombre" class="form-label">Nombre</label>
                                                 <input class="form-control" name="nombre" type="text" id="nombre" autocomplete="off">
@@ -88,9 +89,9 @@
                                             <div>
                                          
                                             <div class="mb-3">
-                                                <label for="choices-single-groups" class="form-label font-size-13 text-muted">Area:</label>
-                                                <select class="form-control" data-trigger name="choices-single-groups" id="area">
-                                                    <option value="">Elige un area</option>
+                                                <label for="area" class="form-label font-size-13 text-muted">Area:</label>
+                                                <select class="form-control" data-trigger name="area" id="area">
+                                                    <option value="0" selected disabled>Elige un area</option>
                                                     <?php foreach($areas as $value){?>
                                                         <option value="<?php echo $value['id_area']?>"><?php echo $value['n_area']?></option>
                                                     <?php }?>
@@ -98,18 +99,20 @@
                                           
                                         </div>
                                             </div>
-                                            <br>
+                                            
                                             <div>
                                                 <label for="foto" class="form-label">Foto</label>
                                                 <input type="file" class="form-control" name="foto" id="foto" accept="image/x-png,image/gif,image/jpeg,image/jpg" required>
                                             </div>
                                             <br>
-                                            <div>
-                                                <label for="areas" class="form-label">Sede</label>
-                                                <input class="form-control" list="sedes" name="sede" id="sede" placeholder="Sedes">
-                                                <datalist id="sedes">
-                                                    <option value="1">llenar con bd</option>
-                                                </datalist>
+                                            <div class="mb-3">
+                                                <label for="sede" class="form-label font-size-13 text-muted">Sede:</label>
+                                                <select class="form-control" data-trigger name="sede" id="sede">
+                                                    <option value="0" selected disabled>Elige una sede</option>
+                                                    <?php foreach($sedes as $sede){?>
+                                                        <option value="<?php echo $sede['id_sede']?>"><?php echo $sede['n_sede']?></option>
+                                                    <?php }?>
+                                                </select>
                                             </div>
                                            
                                         </div>
@@ -117,12 +120,14 @@
 
                                     <div class="col-lg-6">
                                         <div class="mt-3 mt-lg-0">
-                                            <div>
-                                                <label for="empresa" class="form-label">Empresa</label>
-                                                <input class="form-control" list="empresas" name="empresa" id="empresa" placeholder="Empresas">
-                                                <datalist id="empresas">
-                                                    <option value="1">llenar con db</option>
-                                                </datalist>
+                                        <div class="mb-3">
+                                                <label for="empresa" class="form-label font-size-13 text-muted">Empresas:</label>
+                                                <select class="form-control" data-trigger name="empresa" id="empresa">
+                                                    <option value="0" disabled selected>Elige una empresa</option>
+                                                    <?php foreach($empresas as $empresa){?>
+                                                        <option value="<?php echo $empresa['id_empresa']?>"><?php echo $empresa['n_empresa']?></option>
+                                                    <?php }?>
+                                                </select>
                                             </div>
                                             <br>
                                             <div class="mb-3">
@@ -140,16 +145,21 @@
                                             <div class="mb-3">
                                                 <label class="form-label">Rol</label>
                                                 <select name="rol" class="form-select">
-                                                    <option value="1" >Llenar con db</option>
+                                                    <option value="1" >Admin</option>
+                                                    <option value="2" >Usuario con privilegios</option>
+                                                    <option value="3" >Usuario Regular</option>
+
                                                 </select>
                                             </div>
                                             
-                                            <div>
-                                                <label for="grupo" class="form-label">Grupo</label>
-                                                <input class="form-control" list="grupos" name="grupo" id="grupo" placeholder="Grupos">
-                                                <datalist id="grupos">
-                                                    <option value="1">llenar con bd</option>
-                                                </datalist>
+                                            <div class="mb-3">
+                                                <label for="grupo" class="form-label font-size-13 text-muted">Grupo:</label>
+                                                <select class="form-control" data-trigger name="grupo" id="grupo">
+                                                    <option value="0" selected disabled>Elige un grupo</option>
+                                                    <?php foreach($grupos as $grupo){?>
+                                                        <option value="<?php echo $grupo['id_grupo']?>"><?php echo $grupo['n_grupo']?></option>
+                                                    <?php }?>
+                                                </select>
                                             </div>
                                             <div id="error-text"></div>
                                            
@@ -164,6 +174,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                     </div> <!-- end col -->
                 </div>
                 <!-- end row -->

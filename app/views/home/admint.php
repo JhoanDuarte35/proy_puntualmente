@@ -1,4 +1,6 @@
 <?php include_once(__dir__."/../layouts/session.php");  ?>
+<?php include_once(__dir__."/../../model/admintablas/sqls_admin.php"); ?>
+
 
 <?php include(__dir__."/../layouts/head-main.php");  ?>
 
@@ -68,6 +70,17 @@
                                         </thead>
                                         <tbody id="areatabla">
                                             <!-- SE LLENAN LAS AREAS -->
+                                            <?php foreach($areas as $area){?> 
+                                            <tr data-id="1">
+                                                <td id="id" style="width: 80px"><?php echo $area['id_area'] ?></td>
+                                                <td id="name"><?php echo $area['n_area']?></td>
+                                                <td style="width: 100px">
+                                                    <a type="button" id="<?php echo $area['id_area']?>" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal1" data-bs-target="#staticBackdrop2" onclick=modificararea(this.id) >
+                                                        <i class="fas fa-pencil-alt"></i>
+                                                    </a>
+                                                </td>
+                                            </tr> 
+                                            <?php }?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -78,12 +91,18 @@
                     <div class="col-xl-6">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Empresas</h4>
-                                <p class="card-title-desc">Administra las Areas</p>
+                                <h4 class="card-title">Sedes</h4>
+                                <p class="card-title-desc">Administra las Sedes</p>
                             </div>
                             <div class="card-body">
-
-                                <div class="table-responsive">
+                            
+                                <div>
+                                    <span>Agregar Sede:   </span> 
+                                    <a type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#agregarsede">
+                                    <i class="fas fa-plus-circle"></i></a>
+                                </div>
+                               
+                            <div class="table-responsive">
                                     <table class="table table-editable table-nowrap align-middle table-edits">
                                         <thead>
                                             <tr>
@@ -92,19 +111,23 @@
                                                 <th>Edit</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="sedetabla">
+                                            <!-- SE LLENAN LAS AREAS -->
+                                            <?php foreach($sedes as $sede){?> 
                                             <tr data-id="1">
-                                                <td data-field="id" style="width: 80px">1</td>
-                                                <td data-field="name">David McHenry</td>
+                                                <td id="id" style="width: 80px"><?php echo $sede['id_sede'] ?></td>
+                                                <td id="name"><?php echo $sede['n_sede']?></td>
                                                 <td style="width: 100px">
-                                                    <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
+                                                    <a type="button" id="<?php echo $sede['id_sede']?>" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal1" data-bs-target="#staticBackdrop2" onclick=modificarsede(this.id) >
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
                                                 </td>
-                                            </tr>
+                                            </tr> 
+                                            <?php }?>
                                         </tbody>
                                     </table>
                                 </div>
+
 
                             </div>
                         </div>
@@ -117,11 +140,15 @@
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Grupos</h4>
-                                <p class="card-title-desc">Administra las Areas</p>
+                                <p class="card-title-desc">Administra las Grupos</p>
                             </div>
                             <div class="card-body">
-
-                                <div class="table-responsive">
+                            <div>
+                                    <span>Agregar Grupos:  </span> 
+                                    <a type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#agregargrupo">
+                                    <i class="fas fa-plus-circle"></i></a>
+                                </div>
+                            <div class="table-responsive">
                                     <table class="table table-editable table-nowrap align-middle table-edits">
                                         <thead>
                                             <tr>
@@ -130,19 +157,23 @@
                                                 <th>Edit</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="grupotabla">
+                                            <!-- SE LLENAN LAS AREAS -->
+                                            <?php foreach($grupos as $grupo){?> 
                                             <tr data-id="1">
-                                                <td data-field="id" style="width: 80px">1</td>
-                                                <td data-field="name">David McHenry</td>
+                                                <td id="id" style="width: 80px"><?php echo $grupo['id_grupo'] ?></td>
+                                                <td id="name"><?php echo $grupo['n_grupo']?></td>
                                                 <td style="width: 100px">
-                                                    <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
+                                                    <a type="button" id="<?php echo $grupo['id_grupo']?>" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal1" data-bs-target="#staticBackdrop2" onclick=modificargrupo(this.id) >
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
                                                 </td>
-                                            </tr>
+                                            </tr> 
+                                            <?php }?>
                                         </tbody>
                                     </table>
                                 </div>
+
 
                             </div>
                         </div>
@@ -155,7 +186,12 @@
                             </div>
                             <div class="card-body">
 
-                                <div class="table-responsive">
+                            <div>
+                                    <span>Agregar Empresas:  </span> 
+                                    <a type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#agregarempresa">
+                                    <i class="fas fa-plus-circle"></i></a>
+                                </div>
+                            <div class="table-responsive">
                                     <table class="table table-editable table-nowrap align-middle table-edits">
                                         <thead>
                                             <tr>
@@ -164,16 +200,19 @@
                                                 <th>Edit</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody id="empresatabla">
+                                            <!-- SE LLENAN LAS AREAS -->
+                                            <?php foreach($empresas as $empresa){?> 
                                             <tr data-id="1">
-                                                <td data-field="id" style="width: 80px">1</td>
-                                                <td data-field="name">David McHenry</td>
+                                                <td id="id" style="width: 80px"><?php echo $empresa['id_empresa'] ?></td>
+                                                <td id="name"><?php echo $empresa['n_empresa']?></td>
                                                 <td style="width: 100px">
-                                                    <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
+                                                    <a type="button" id="<?php echo $empresa['id_empresa']?>" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal1" data-bs-target="#staticBackdrop2" onclick=modificarempresa(this.id) >
                                                         <i class="fas fa-pencil-alt"></i>
                                                     </a>
                                                 </td>
-                                            </tr>
+                                            </tr> 
+                                            <?php }?>
                                         </tbody>
                                     </table>
                                 </div>
@@ -217,23 +256,69 @@
                                         </div>
                                     </div>
 <!-- MODAL PLANTILLA -->
-                                    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                    <div class="modal fade" id="agregarsede" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                             <form method="POST">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="staticBackdropLabel">Modificar Area</h5>
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Agregar Sede</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
                                                 
                                                 <div class="modal-body">
-                                                    <label for="n_grupo" >Nombre Area:</label>
-                                                    <input class="form-control" type="text" id="nombrearea" name="nombrearea">
+                                                    <label for="n_grupo" >Nombre Sede:</label>
+                                                    <input class="form-control" type="text" id="nombresede" name="nombresede">
                                                     <input type="text" hidden disabled value="1">
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                                                    <button type="button" class="btn btn-primary" onclick="agregararea()">Guardar</button>
+                                                    <button type="button" class="btn btn-primary" onclick="agregarsede()">Guardar</button>
+                                                </div>
+                                            </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- --MODAL GRUPO--- -->
+                                    <div class="modal fade" id="agregargrupo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                            <form method="POST">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Agregar Grupo</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                
+                                                <div class="modal-body">
+                                                    <label for="n_grupo" >Nombre Grupo:</label>
+                                                    <input class="form-control" type="text" id="nombregrupo" name="nombregrupo">
+                                                    <input type="text" hidden disabled value="1">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-primary" onclick="agregargrupos()">Guardar</button>
+                                                </div>
+                                            </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- MODAL EMPRESAS -->
+                                    <div class="modal fade" id="agregarempresa" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                            <form method="POST">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="staticBackdropLabel">Agregar Empresas</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                
+                                                <div class="modal-body">
+                                                    <label for="n_grupo" >Nombre Empresa:</label>
+                                                    <input class="form-control" type="text" id="nombrempresa" name="nombrempresa">
+                                                    <input type="text" hidden disabled value="1">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                                    <button type="button" class="btn btn-primary" onclick="agregarempresa()">Guardar</button>
                                                 </div>
                                             </form>
                                             </div>

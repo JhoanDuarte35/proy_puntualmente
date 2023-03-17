@@ -47,11 +47,39 @@ function agregararea(){
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send("x=" + dbParam);
     }
-    /*
+
+
+//------------------------SEDES--------------------
+function agregarsede(){
+    sedetabla=document.getElementById('sedetabla');
+    snombre=document.getElementById('nombresede').value;
+    
+    console.log(snombre);
+    
+        obj = [{ "nombre": `${snombre}`, "estado": 4, borrar: false }];
+            console.log(obj)
+            dbParam = JSON.stringify(obj);
+          let xhr = new XMLHttpRequest();
+          xhr.open("POST", "admintablas", true);
+          xhr.onload = ()=>{
+          if(xhr.readyState === XMLHttpRequest.DONE){
+              if(xhr.status === 200){
+                let data = xhr.response;
+                document.getElementById('nombresede').value='';
+                sedetabla.innerHTML = data;
+              }
+          }
+        }
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send("x=" + dbParam);
+}
+
+
+    
     //------------Grupos---------------
     
     function agregargrupos(){
-        areatabla=document.getElementById('tablausers2');
+        areatabla=document.getElementById('grupotabla');
         gnombre=document.getElementById('nombregrupo').value;
     
         console.log(gnombre);
@@ -60,7 +88,7 @@ function agregararea(){
             console.log(obj)
             dbParam = JSON.stringify(obj);
           let xhr = new XMLHttpRequest();
-          xhr.open("POST", "php/guardar_config.php", true);
+          xhr.open("POST", "admintablas", true);
           xhr.onload = ()=>{
           if(xhr.readyState === XMLHttpRequest.DONE){
               if(xhr.status === 200){
@@ -74,8 +102,8 @@ function agregararea(){
         xhr.send("x=" + dbParam);
     }
     
-    function borrargrupos(id){
-        areatabla=document.getElementById('tablausers2');
+    function modificargrupo(id){
+        areatabla=document.getElementById('grupotabla');
     
         console.log(areatabla);
     
@@ -83,7 +111,7 @@ function agregararea(){
             console.log(obj)
             dbParam = JSON.stringify(obj);
           let xhr = new XMLHttpRequest();
-          xhr.open("POST", "php/guardar_config.php", true);
+          xhr.open("POST", "admintablas", true);
           xhr.onload = ()=>{
           if(xhr.readyState === XMLHttpRequest.DONE){
               if(xhr.status === 200){
@@ -95,7 +123,31 @@ function agregararea(){
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhr.send("x=" + dbParam);
     }
+
+    function agregarempresa(){
+        empresatabla=document.getElementById('empresatabla');
+        enombre=document.getElementById('nombrempresa').value;
     
+        console.log(enombre);
+    
+        obj = [{ "nombre": `${enombre}`, "estado": 5, borrar: false }];
+            console.log(obj)
+            dbParam = JSON.stringify(obj);
+          let xhr = new XMLHttpRequest();
+          xhr.open("POST", "admintablas", true);
+          xhr.onload = ()=>{
+          if(xhr.readyState === XMLHttpRequest.DONE){
+              if(xhr.status === 200){
+                let data = xhr.response;
+                document.getElementById('nombrempresa').value='';
+                empresatabla.innerHTML = data;
+              }
+          }
+        }
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send("x=" + dbParam);
+    }
+    /*
     function cambtamaño(){
       msgtamaño=document.getElementById("msjtamaño");
       t_img=document.getElementById('tarchivo').value;

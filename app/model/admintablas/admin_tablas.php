@@ -38,19 +38,19 @@ if(isset($_POST['x'])){
             $ngrupo = $data[0]->nombre;
 
 
-                $sql="INSERT INTO empresa_grupos (n_grupo) VALUES ('{$ngrupo}')";
+                $sql="INSERT INTO grupos (n_grupo) VALUES ('{$ngrupo}')";
                 $status = mysqli_query($conn, $sql);
-                $grupos = mysqli_query($conn, "SELECT * FROM empresa_grupos");
+                $grupos = mysqli_query($conn, "SELECT * FROM grupos");
                 $output=mostrartablagrupos($grupos);
                 echo $output;
 
         }else{
             $id = $data[0]->id_grupo;
 
-                $sql="DELETE FROM empresa_grupos WHERE id_grupo = '{$id}'";
+                $sql="DELETE FROM grupos WHERE id_grupo = '{$id}'";
                 $status = mysqli_query($conn, $sql);
                 if($status!=0){
-                    $grupos = mysqli_query($conn, "SELECT * FROM empresa_grupos");
+                    $grupos = mysqli_query($conn, "SELECT * FROM grupos");
                     $output=mostrartablagrupos($grupos);
                     echo $output;
                 }else{
@@ -144,6 +144,52 @@ if(isset($_POST['x'])){
         }
     
     }
+    }elseif($estado==4){
+        $borrar=$data[0]->borrar;
+        if($borrar==false){
+            $nsede = $data[0]->nombre;
+
+            $sql="INSERT INTO sedes (n_sede) VALUES ('{$nsede}')";
+            $status = mysqli_query($conn, $sql);
+            $sedes = mysqli_query($conn, "SELECT * FROM sedes");
+            $output=mostrartablasedes($sedes);
+            echo $output;
+        }else{
+            $id = $data[0]->id;
+
+            $sql="DELETE FROM areas WHERE id_area = '{$id}'";
+            $status = mysqli_query($conn, $sql);
+            if($status!=0){
+                $areas = mysqli_query($conn, "SELECT * FROM areas");
+                $output=mostrartablasedes($areas);
+                echo $output;
+            }else{
+                echo "no se pudo eliminar el dato";
+            }
+        }
+}elseif($estado==5){
+    $borrar=$data[0]->borrar;
+    if($borrar==false){
+        $nempresa = $data[0]->nombre;
+
+        $sql="INSERT INTO empresas (n_empresa) VALUES ('{$nempresa}')";
+        $status = mysqli_query($conn, $sql);
+        $empresas = mysqli_query($conn, "SELECT * FROM empresas");
+        $output=mostrartablaempresas($empresas);
+        echo $output;
+    }else{
+        $id = $data[0]->id;
+
+        $sql="DELETE FROM areas WHERE id_area = '{$id}'";
+        $status = mysqli_query($conn, $sql);
+        if($status!=0){
+            $areas = mysqli_query($conn, "SELECT * FROM areas");
+            $output=mostrartablaempresas($areas);
+            echo $output;
+        }else{
+            echo "no se pudo eliminar el dato";
+        }
+    }
 }
 }else{
     echo "no hay datos de envio";
@@ -204,20 +250,62 @@ function mostrartabla($areas){
 
     return $output;
 }
+function mostrartablasedes($areas){
+
+    $output="";
+    
+    foreach($areas as $value){
+    $output .='
+        <tr data-id="1">
+        <td id="id" style="width: 80px">'.$value['id_sede'].'</td>
+        <td id="name">'.$value['n_sede'].'</td>
+        <td style="width: 100px">
+            <a type="button" id="'.$value['id_sede'].'" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal1" data-bs-target="#staticBackdrop2" onclick=modificarsede(this.id) >
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+        </td>
+        </tr> ';
+                
+    }  
+
+    return $output;
+}
+
+function mostrartablaempresas($areas){
+
+    $output="";
+    
+    foreach($areas as $value){
+    $output .='
+        <tr data-id="1">
+        <td id="id" style="width: 80px">'.$value['id_empresa'].'</td>
+        <td id="name">'.$value['n_empresa'].'</td>
+        <td style="width: 100px">
+            <a type="button" id="'.$value['id_empresa'].'" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal1" data-bs-target="#staticBackdrop2" onclick=modificarempresa(this.id) >
+                <i class="fas fa-pencil-alt"></i>
+            </a>
+        </td>
+        </tr> ';
+                
+    }  
+
+    return $output;
+}
 
 function mostrartablagrupos($grupos){
     $output="";
     
     foreach($grupos as $value){
     $output .='
-            <tr>
-            <td>
-            <span>' . $value['n_grupo'] . '</span>
-            </td>
-            <td>
-            <button type="button" id="' . $value['id_grupo'] . '" onclick="borrargrupos(this.id)" class="btn-borde"><i class="fa-solid fa-xmark"></i></button>
-            </td>
-            </tr> ';
+    <tr data-id="1">
+    <td id="id" style="width: 80px">'.$value['id_grupo'].'</td>
+    <td id="name">'.$value['n_grupo'].'</td>
+    <td style="width: 100px">
+        <a type="button" id="'.$value['id_grupo'].'" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal1" data-bs-target="#staticBackdrop2" onclick=modificargrupo(this.id) >
+            <i class="fas fa-pencil-alt"></i>
+        </a>
+    </td>
+    </tr> ';
                 
     }  
 
