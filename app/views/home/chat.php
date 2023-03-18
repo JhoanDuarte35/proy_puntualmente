@@ -2,10 +2,24 @@
 
 <?php include(__dir__."/../layouts/head-main.php");  ?>
 
-<head>
+<?php
+      include_once(__dir__."/../../model/admintablas/sqls_admin.php");
+      ?>
 
+<head>
+    <!-- choices css -->
+    <link href="<?php echo controlador::$rutaAPP?>app/assets/libs/choices.js/public/assets/styles/choices.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- color picker css -->
+    <link rel="stylesheet" href="<?php echo controlador::$rutaAPP?>app/assets/libs/@simonwep/pickr/themes/classic.min.css" /> <!-- 'classic' theme -->
+    <link rel="stylesheet" href="<?php echo controlador::$rutaAPP?>app/assets/libs/@simonwep/pickr/themes/monolith.min.css" /> <!-- 'monolith' theme -->
+    <link rel="stylesheet" href="<?php echo controlador::$rutaAPP?>app/assets/libs/@simonwep/pickr/themes/nano.min.css" /> <!-- 'nano' theme -->
+
+    <!-- datepicker css -->
+    <link rel="stylesheet" href="<?php echo controlador::$rutaAPP?>app/assets/libs/flatpickr/flatpickr.min.css">
     
     <title>Chat | Puntualmente</title>
+    
     <?php include(__dir__."/../layouts/head.php");  ?>
     <?php include(__dir__."/../layouts/head-style.php");  ?>
 
@@ -91,7 +105,7 @@
                                 <li class="nav-item">
                                     <a href="#groups" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
                                         <i class="bx bx-group font-size-20 d-sm-none"></i>
-                                        <span class="d-none d-sm-block">Groups</span>
+                                        <span class="d-none d-sm-block">Grupos</span>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -119,9 +133,29 @@
 
                                 <div class="tab-pane" id="groups">
                                     <div class="chat-message-list" data-simplebar>
+                                       
+
+                                     
                                         <div class="pt-3">
+
                                             <div class="px-3">
-                                                <h5 class="font-size-14 mb-3">Groups</h5>
+                                            <div class="d-flex justify-content-between">
+
+                                                <h5 class="font-size-14 mb-3">Grupos</h5>
+                                                <div class="flex-shrink-0">
+                                            <div class="dropdown chat-noti-dropdown">
+                                                <button class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-plus"></i>
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-end">
+                                                    <a type="button" class="dropdown-item" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModalScrollable">Crear Grupo</a>
+                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                    <a class="dropdown-item" href="#">Add Contact</a>
+                                                    <a class="dropdown-item" href="#">Setting</a>
+                                            </div>
+                                    </div>
+                                </div>
                                             </div>
                                             <ul class="list-unstyled chat-list">
                                                 <li>
@@ -205,6 +239,7 @@
                                                 </li>
                                             </ul>
                                         </div>
+                                    </div>
                                     </div>
                                 </div>
 
@@ -305,7 +340,7 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="position-relative">
-                                            <input disabled type="text" name="msg" id="msg" class="form-control border bg-light-subtle" placeholder="Escribe tu mensaje...">
+                                            <input type="text" name="msg" id="msg" class="form-control border bg-light-subtle" placeholder="Escribe tu mensaje...">
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -329,6 +364,63 @@
     </div>
     <!-- end main content-->
 
+ 
+                            
+                                        <!-- Scrollable modal -->
+                                        <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Crear Grupos</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                    <input type="text" placeholder="Nombre Grupo" class="form-control">
+                                                    <div class="mb-3">
+                                            
+                                                <label for="area" class="form-label font-size-13 text-muted">Personas:</label>
+                                                <div class="d-flex">
+                                                    <div class="w-100">
+                                                <select class="form-control" data-trigger name="area" id="area">
+                                                    <option value="0" selected disabled>Elige un area</option>
+                                                    <?php foreach($areas as $value){?>
+                                                        <option value="<?php echo $value['id_area']?>"><?php echo $value['n_area']?></option>
+                                                    <?php }?>
+                                                </select>
+                                                    </div>
+                                                    <div>
+                                                    <button type="button" class="btn btn-light"><i class=" fas fa-user-plus"></i></button>
+
+                                                    </div>
+                                            </div>
+                                        </div>
+                                <div>
+                                    <div class="chat-message-list" data-simplebar>
+                                        <div class="pt-3">
+                                            <div class="px-3">
+                                                <h5 class="font-size-14 mb-3">Integrantes del grupo</h5>
+                                            </div>
+                                            <ul class="list-unstyled chat-list" id="user-list">
+                                                
+                                            <!-- se llena solo   -->
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                        
+                                </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                                        <button type="button" class="btn btn-primary">Guardar</button>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+
+
 </div>
 <!-- END layout-wrapper -->
 
@@ -341,6 +433,18 @@
 
 <?php include (__dir__."/../layouts/vendor-scripts.php")?>
 
+<!-- choices js -->
+<script src="<?php echo controlador::$rutaAPP?>app/assets/libs/choices.js/public/assets/scripts/choices.min.js"></script>
+
+<!-- color picker js -->
+<script src="<?php echo controlador::$rutaAPP?>app/assets/libs/@simonwep/pickr/pickr.min.js"></script>
+<script src="<?php echo controlador::$rutaAPP?>app/assets/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+<!-- datepicker js -->
+<script src="<?php echo controlador::$rutaAPP?>app/assets/libs/flatpickr/flatpickr.min.js"></script>
+
+<!-- init js -->
+<script src="<?php echo controlador::$rutaAPP?>app/assets/js/pages/form-advanced.init.js"></script>
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/app.js"></script>
 <script src="<?php echo controlador::$rutaAPP?>app/views/home/js/users.js"></script>
 <script src="<?php echo controlador::$rutaAPP?>app/views/home/js/chat.js"></script>

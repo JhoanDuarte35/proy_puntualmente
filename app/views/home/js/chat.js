@@ -31,7 +31,8 @@ sendBtn.onclick = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
               inputField.value = "";
-              document.getElementById('final').scrollIntoView(true);
+             // document.getElementById('final').scrollIntoView(true);
+             scrollToBottom();
           }
       }
     }

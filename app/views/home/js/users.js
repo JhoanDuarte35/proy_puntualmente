@@ -63,7 +63,7 @@ setInterval(() =>{
   }
   xhr.send();
 
-}, 1500);
+}, 500);
 
 
 function hola(id){
