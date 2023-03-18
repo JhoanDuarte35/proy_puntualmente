@@ -382,15 +382,14 @@
                                                 <label for="area" class="form-label font-size-13 text-muted">Personas:</label>
                                                 <div class="d-flex">
                                                     <div class="w-100">
-                                                <select class="form-control" data-trigger name="area" id="area">
-                                                    <option value="0" selected disabled>Elige un area</option>
-                                                    <?php foreach($areas as $value){?>
-                                                        <option value="<?php echo $value['id_area']?>"><?php echo $value['n_area']?></option>
+                                                <select class="form-control" data-trigger name="usuario" id="usuario" >
+                                                    <?php foreach($usuarios as $user){?>
+                                                        <option value="<?php echo $user['id']?>"><?php echo $user['n_user'] . " " . $user['l_user'] ?></option>
                                                     <?php }?>
                                                 </select>
                                                     </div>
                                                     <div>
-                                                    <button type="button" class="btn btn-light"><i class=" fas fa-user-plus"></i></button>
+                                                    <button onclick="myfuncion()" type="button" class="btn btn-light"><i class=" fas fa-user-plus"></i></button>
 
                                                     </div>
                                             </div>
@@ -401,7 +400,7 @@
                                             <div class="px-3">
                                                 <h5 class="font-size-14 mb-3">Integrantes del grupo</h5>
                                             </div>
-                                            <ul class="list-unstyled chat-list" id="user-list">
+                                            <ul class="list-unstyled chat-list" id="list-grupo">
                                                 
                                             <!-- se llena solo   -->
 
@@ -446,8 +445,11 @@
 <!-- init js -->
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/pages/form-advanced.init.js"></script>
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/app.js"></script>
+
 <script src="<?php echo controlador::$rutaAPP?>app/views/home/js/users.js"></script>
 <script src="<?php echo controlador::$rutaAPP?>app/views/home/js/chat.js"></script>
+<script src="<?php echo controlador::$rutaAPP?>app/views/home/js/crearGrupos.js"></script>
+
 
 
 </body>
