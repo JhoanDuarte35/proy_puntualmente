@@ -4,9 +4,7 @@ sendBtn = document.getElementById('enviar');
 form = document.getElementById('typing-area');
 contenidochat = document.getElementById('contenidochat');
 
-function scrollToBottom(){
-    contenidochat.scrollTop = contenidochat.scrollHeight;
-  }
+
 
 
 
@@ -31,15 +29,20 @@ sendBtn.onclick = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
               inputField.value = "";
-             // document.getElementById('final').scrollIntoView(true);
-             scrollToBottom();
-          }
+              setTimeout(function(){
+                document.getElementById('final').scrollIntoView(true);
+              }, 300);
+
+
+            }
       }
     }
     let formData = new FormData(form);
     console.log(formData);
     xhr.send(formData);
 }
+
+
 // chatBox.onmouseenter = ()=>{
 //     chatBox.classList.add("active");
 // }

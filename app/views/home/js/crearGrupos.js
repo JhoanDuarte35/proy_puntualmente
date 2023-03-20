@@ -102,11 +102,6 @@ function myfuncion(){
     const creargrupobar = document.getElementById("#nombre");
     botonguardar = document.querySelector('.btn-borde');
 
-    if(creargrupobar != ""){
-      searchBar.classList.add("active");
-    }else{
-      searchBar.classList.remove("active");
-    }
 
     $(document).ready(function(){
       $("#crear").submit(function(event){

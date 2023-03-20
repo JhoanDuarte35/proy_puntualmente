@@ -107,6 +107,11 @@ function hola(id){
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.send("id_out=" + id);
 }, 500);
+setTimeout(function(){
+  document.getElementById('final').scrollIntoView(true);
+}, 600);
+
+
 }
 
 
