@@ -319,7 +319,6 @@
 
                     </div>
                     <!-- end chat-leftsidebar -->
-
                     <div class="w-100 user-chat mt-4 mt-sm-0 ms-lg-1">
                         <form id="typing-area" method="POST">
                         <div class="card">
@@ -330,9 +329,10 @@
                             <div class="chat-conversation p-3 px-2" data-simplebar >
                                 <ul class="list-unstyled mb-0" id="contenidochat">
                                 </ul>
+                                <div><span id="final"></span></div>
                             </div>
                             
-                            <div><span id="final"></span></div>
+                           
 
                         
 <!-- ------------------- -->
@@ -359,8 +359,6 @@
         </div>
         <!-- End Page-content -->
 
-
-        <?php include (__dir__."/../layouts/footer.php")?>
     </div>
     <!-- end main content-->
 
@@ -446,9 +444,10 @@
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/pages/form-advanced.init.js"></script>
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/app.js"></script>
 
+<script src="<?php echo controlador::$rutaAPP?>app/views/home/js/crearGrupos.js"></script>
+
 <script src="<?php echo controlador::$rutaAPP?>app/views/home/js/users.js"></script>
 <script src="<?php echo controlador::$rutaAPP?>app/views/home/js/chat.js"></script>
-<script src="<?php echo controlador::$rutaAPP?>app/views/home/js/crearGrupos.js"></script>
 
 
 
