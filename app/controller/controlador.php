@@ -90,7 +90,11 @@ class controlador{
         include_once(__dir__."/../model/chat/insert-chat.php");
     }
     
+// ------------------------------------ GRUPOS-------------------------------
 
+    public function addusersgroup(){
+        include_once(__dir__."/../model/grupo/busquedauser.php");
+    }
 
 
 

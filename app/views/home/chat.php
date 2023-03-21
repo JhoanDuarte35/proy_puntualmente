@@ -365,6 +365,7 @@
  
                             
                                         <!-- Scrollable modal -->
+                                        <form method="post">
                                         <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
                                             aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-scrollable">
@@ -374,7 +375,7 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                    <input type="text" placeholder="Nombre Grupo" class="form-control">
+                                                    <input type="text" id="nombre" placeholder="Nombre Grupo" class="form-control">
                                                     <div class="mb-3">
                                             
                                                 <label for="area" class="form-label font-size-13 text-muted">Personas:</label>
@@ -406,18 +407,18 @@
                                         </div>
                                     </div>
                                     
-                                        
+                                   
                                 </div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                                                        <button type="button" class="btn btn-primary">Guardar</button>
+                                                        <button type="button" id="crear" class="btn btn-primary">Guardar</button>
                                                     </div>
                                                 </div><!-- /.modal-content -->
                                             </div><!-- /.modal-dialog -->
                                         </div><!-- /.modal -->
 
-
+                                        </form>
 </div>
 <!-- END layout-wrapper -->
 

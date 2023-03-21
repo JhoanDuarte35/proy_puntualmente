@@ -54,7 +54,7 @@ function myfuncion(){
         console.log(obj)
         dbParam = JSON.stringify(obj);
       let xhr = new XMLHttpRequest();
-      xhr.open("POST", "chat/busquedauser", true);
+      xhr.open("POST", "chat/addusersgroup", true);
       xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){

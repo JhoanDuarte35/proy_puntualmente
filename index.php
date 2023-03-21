@@ -28,6 +28,7 @@ if($userPuntualmente->iniciar_sesion()){
             case 'admintablas':
                 $userPuntualmente->admintablas();
                 break;
+                // CHAT
             case 'chat':
                 $userPuntualmente->chat();
                 break;
@@ -44,6 +45,12 @@ if($userPuntualmente->iniciar_sesion()){
                 $userPuntualmente->insertchat();
                 break;
 
+                //GRUPOS
+            
+            case 'chat/addusersgroup':
+                $userPuntualmente->addusersgroup();
+                break;
+
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                 break;
@@ -54,15 +61,12 @@ if($userPuntualmente->iniciar_sesion()){
     }
     // usuario con privilegios
 
-    else if (isset($_GET["action"])){
+    else if (isset($_GET["action"])&&($_SESSION['rol']==2)){
 
         switch ($_GET["action"]){
 
-            case 'registrar':
-                $userPuntualmente->registrar();
-                break;
-            case 'signup':
-                $userPuntualmente->signup();
+            case 'home':
+                $userPuntualmente->home();
                 break;
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
