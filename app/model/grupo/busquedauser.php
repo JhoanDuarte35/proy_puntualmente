@@ -70,9 +70,9 @@
 
                 if(!$estado){
                     $output .= '
-                    <li>
+                    <li id="' . $row['id'] . '">
 
-                    <a type="button" id="' . $row['id'] . '" onclick="hola(this.id)">
+                    <a>
                         <div class="d-flex align-items-start">
                             
                             <div class="flex-shrink-0 user-img align-self-center me-3">

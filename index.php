@@ -50,7 +50,13 @@ if($userPuntualmente->iniciar_sesion()){
             case 'chat/addusersgroup':
                 $userPuntualmente->addusersgroup();
                 break;
-
+            
+            case 'chat/guardargrupos':
+                $userPuntualmente->guardargrupos();
+                break;
+            case 'chat/mostrargrupos':
+                $userPuntualmente->mostrargrupos();
+                break;
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                 break;

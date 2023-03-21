@@ -60,6 +60,7 @@ function myfuncion(){
           if(xhr.status === 200){
             let data = xhr.response;
             usersListGroup.innerHTML = usersListGroup.innerHTML + data;
+            console.log(data);
           }
       }
     }
@@ -83,12 +84,13 @@ function myfuncion(){
         dbParam = JSON.stringify(obj);
   
         let xhr = new XMLHttpRequest();
-        xhr.open("POST", "php/busquedauser.php", true);
+        xhr.open("POST", "chat/addusersgroup", true);
         xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
             let data = xhr.response;
-            usersList.innerHTML = usersList.innerHTML + data;
+            console.log(data);
+            document.getElementById(id).remove();
           }
       }
     }
@@ -109,7 +111,7 @@ function myfuncion(){
         
         $.ajax({
             dataType:"json",
-            url:"php/grupos-guardar.php",
+            url:"chat/guardargrupos",
             type:"POST",
             data:{nombre:$("#nombre").val(), array: JSON.stringify(array)},
             success: function(data){

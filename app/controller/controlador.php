@@ -96,6 +96,14 @@ class controlador{
         include_once(__dir__."/../model/grupo/busquedauser.php");
     }
 
+    public function guardargrupos(){
+        include_once(__dir__."/../model/grupo/grupos-guardar.php");
+    }
+
+    public function mostrargrupos(){
+        include_once(__dir__."/../model/grupo/mostrargrupos.php");
+
+    }
 
 
 

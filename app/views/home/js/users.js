@@ -39,8 +39,8 @@ searchBar.onkeyup = ()=>{
 */
 
 setInterval(() =>{
- /* let xhr2 = new XMLHttpRequest();
-  xhr2.open("GET", "php/mostrar_grupos.php", true);
+ let xhr2 = new XMLHttpRequest();
+  xhr2.open("GET", "chat/mostrargrupos", true);
   xhr2.onload = ()=>{
     if(xhr2.readyState === XMLHttpRequest.DONE){
         if(xhr2.status === 200){
@@ -50,7 +50,7 @@ setInterval(() =>{
     }
   }
   xhr2.send();
-  */
+  
   let xhr = new XMLHttpRequest();
   xhr.open("GET", "chat/users", true);
   xhr.onload = ()=>{
@@ -83,7 +83,7 @@ function hola(id){
         if(xhr.status === 200){
           let data2 = xhr.response;
           headerchat.innerHTML = data2;
-          console.log(data2)
+       
 
         }
     }
@@ -100,7 +100,6 @@ function hola(id){
         if(xhr.status === 200){
           let data = xhr.response;
           contenidochat.innerHTML = data;
-          console.log(data);
         }
     }
   }

@@ -365,7 +365,7 @@
  
                             
                                         <!-- Scrollable modal -->
-                                        <form method="post">
+                                        <form method="post" id="crear">
                                         <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
                                             aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-scrollable">
@@ -409,10 +409,11 @@
                                     
                                    
                                 </div>
+                                <div id="mensaje"></div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                                                        <button type="button" id="crear" class="btn btn-primary">Guardar</button>
+                                                        <button type="submit" id="botoncrear" class="btn btn-primary">Guardar</button>
                                                     </div>
                                                 </div><!-- /.modal-content -->
                                             </div><!-- /.modal-dialog -->
