@@ -1,7 +1,7 @@
 //const searchBar = document.querySelector(".search input"),
 //searchIcon = document.querySelector(".search button"),
 usersList = document.querySelector("#user-list");
-//listagrupos = document.querySelector(".lista-grupos");
+listagrupos = document.querySelector("#lista-grupos");
 
 
 
@@ -63,7 +63,7 @@ setInterval(() =>{
   }
   xhr.send();
 
-}, 500);
+}, 1000);
 
 
 function hola(id){

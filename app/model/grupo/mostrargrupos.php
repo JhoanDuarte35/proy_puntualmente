@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once (__dir__."/../config.php");
 $outgoing_id = $_SESSION['unique_id'];
 $output = "";
@@ -10,16 +9,18 @@ if(mysqli_num_rows($sql2) == 0){
 }elseif(mysqli_num_rows($sql2) > 0){
     foreach($sql2 as $value){
     $id_grupo=$value['id_grupo'];
-    $sql3 = mysqli_query($conn, "SELECT * FROM grupos WHERE id_grupo = '{$id_grupo}'");
+    $sql3 = mysqli_query($conn, "SELECT * FROM grupos_chat WHERE id_grupo = '{$id_grupo}'");
     $row2 = mysqli_fetch_assoc($sql3);
+    $n_chat = $row2['n_grupo'];
+    $letra=$n_chat[0];
     $output .= 
     '
     <li>
-    <a href="#" id=' . $row2['id_grupo'] . '>
+    <a id="' . $id_grupo . '" type="button" id="' . $row['id'] . '" onclick="hola(this.id)" >
         <div class="d-flex align-items-center">
             <div class="flex-shrink-0 avatar-sm me-3">
                 <span class="avatar-title rounded-circle  bg-primary-subtle text-primary">
-                    N
+                    '.$letra.'
                 </span>
             </div>
             

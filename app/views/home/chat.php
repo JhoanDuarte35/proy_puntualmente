@@ -157,86 +157,8 @@
                                     </div>
                                 </div>
                                             </div>
-                                            <ul class="list-unstyled chat-list">
-                                                <li>
-                                                    <a href="#">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 avatar-sm me-3">
-                                                                <span class="avatar-title rounded-circle  bg-primary-subtle text-primary">
-                                                                    G
-                                                                </span>
-                                                            </div>
-                                                            
-                                                            <div class="flex-grow-1">
-                                                                <h5 class="font-size-14 mb-0">General</h5>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 avatar-sm me-3">
-                                                                <span class="avatar-title rounded-circle  bg-primary-subtle text-primary">
-                                                                    R
-                                                                </span>
-                                                            </div>
-                                                            
-                                                            <div class="flex-grow-1">
-                                                                <h5 class="font-size-14 mb-0">Reporting</h5>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 avatar-sm me-3">
-                                                                <span class="avatar-title rounded-circle  bg-primary-subtle text-primary">
-                                                                    M
-                                                                </span>
-                                                            </div>
-                                                            
-                                                            <div class="flex-grow-1">
-                                                                <h5 class="font-size-14 mb-0">Meeting</h5>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 avatar-sm me-3">
-                                                                <span class="avatar-title rounded-circle  bg-primary-subtle text-primary">
-                                                                    A
-                                                                </span>
-                                                            </div>
-                                                            
-                                                            <div class="flex-grow-1">
-                                                                <h5 class="font-size-14 mb-0">Project A</h5>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
-
-                                                <li>
-                                                    <a href="#">
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="flex-shrink-0 avatar-sm me-3">
-                                                                <span class="avatar-title rounded-circle  bg-primary-subtle text-primary">
-                                                                    B
-                                                                </span>
-                                                            </div>
-                                                            
-                                                            <div class="flex-grow-1">
-                                                                <h5 class="font-size-14 mb-0">Project B</h5>
-                                                            </div>
-                                                        </div>
-                                                    </a>
-                                                </li>
+                                            <ul class="list-unstyled chat-list" id="lista-grupos">
+                                               <!-- ----se llena -->
                                             </ul>
                                         </div>
                                     </div>
