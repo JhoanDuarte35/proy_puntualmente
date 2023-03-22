@@ -8,6 +8,9 @@ if (isset($_SESSION['unique_id'])) {
     $sql2="SELECT * FROM grupos_chat WHERE id_grupo={$incoming_id}";
     $query2 = mysqli_query($conn, $sql2);
 
+
+    
+
     if (mysqli_num_rows($query2) > 0) {
         $sql3 = "SELECT * FROM messages LEFT JOIN users ON id = messages.outgoing_msg_id
                 WHERE (incoming_msg_id = {$incoming_id}) ORDER BY msg_id";

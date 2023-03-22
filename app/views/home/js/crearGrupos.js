@@ -224,6 +224,7 @@ function myfuncion2(){
       pos = arrayborrar.indexOf(id);
       if(arrayborrar[pos]!=id){
         arrayborrar.push(id);
+        console.log("añadi a sarrayborrar");
         document.getElementById(id).remove();
         console.log(arrayborrar);
         obj = [{ "id_user_group": `${id}`, "estado": true }];
@@ -244,8 +245,10 @@ function myfuncion2(){
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("x=" + dbParam);
       }else{
-        console.log(array); 
         document.getElementById(id).remove();
+        console.log("Deberia")
+        console.log(arrayborrar); 
+        
 
       }
       

@@ -12,7 +12,7 @@
       //  $ip = getRealIP();
 
         if(!empty($message)){
-            $sql = mysqli_query($conn, "INSERT INTO messages (incoming_msg_id, outgoing_msg_id, msg, imagen, tipo, fecha, hora, ip) VALUES ({$incoming_id}, {$outgoing_id}, '{$message}', '', '0', '{$dia}','{$hora}','1')") or die();
+            $sql = mysqli_query($conn, "INSERT INTO messages (incoming_msg_id, outgoing_msg_id, msg, imagen, tipo, estado, fecha, hora, ip) VALUES ({$incoming_id}, {$outgoing_id}, '{$message}', '', '0', '0', '{$dia}','{$hora}','1')") or die();
         }else{
             if (isset($_FILES['image'])) {
                 $img_name = $_FILES['image']['name'];
