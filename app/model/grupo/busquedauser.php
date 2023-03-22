@@ -68,7 +68,7 @@
     }else{
             while ($row = mysqli_fetch_assoc($query3)) {
 
-                if(!$estado){
+                if($estado==false){
                     $output .= '
                     <li id="' . $row['id'] . '">
 
@@ -90,6 +90,28 @@
 
                 </li>'; 
                             // agregar borraruser   
+                        }else{
+                            $output .= '
+                            <li id="' . $row['id'] . '">
+        
+                            <a>
+                                <div class="d-flex align-items-start">
+                                    
+                                    <div class="flex-shrink-0 user-img align-self-center me-3">
+                                        <img src="'.controlador::$rutaAPP.'app/assets/images/users/' . $row['img'] . '" class="rounded-circle avatar-sm" alt="">
+                                    </div>
+                                    
+                                    <div class="flex-grow-1 overflow-hidden">
+                                        <h5 class="text-truncate font-size-14 mb-1">' . $row['n_user'] . " " . $row['l_user'] .'</h5>
+                                    </div>
+                                    <div class="flex-shrink-0">
+                                    <button id="' . $row['id'] . '" onclick="borraruser2(this.id)" type="button" class="btn btn-light"><i class=" fas fa-user-minus"></i></button>
+                                    </div>
+                                </div>
+                            </a>
+        
+                        </li>
+                        '; 
                 }
                 
                             }

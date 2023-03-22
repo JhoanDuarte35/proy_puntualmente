@@ -342,6 +342,65 @@
                                         </div><!-- /.modal -->
 
                                         </form>
+
+<!-- -----------------------------------------------------------------Editar grupos -->
+                                <!-- Scrollable modal -->
+                        <form method="post" id="editargrupos">
+                                        <div class="modal fade" id="popupeditargrupos" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Grupo</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                   
+                                                    <div class="mb-3">
+                                            
+                                                
+                                                <div class="d-flex">
+                                                    <div class="w-100">
+                                                <select class="form-control" data-trigger name="usuario2" id="usuario2" >
+                                                    <?php foreach($usuarios as $user){?>
+                                                        <option value="<?php echo $user['id']?>"><?php echo $user['n_user'] . " " . $user['l_user'] ?></option>
+                                                    <?php }?>
+                                                </select>
+                                                    </div>
+                                                    <div>
+                                                    <button onclick="myfuncion2()" type="button" class="btn btn-light"><i class=" fas fa-user-plus"></i></button>
+
+                                                    </div>
+                                            </div>
+                                        </div>
+                                <div>
+                                    <div class="chat-message-list" data-simplebar>
+                                        <div class="pt-3">
+                                            <div class="px-3">
+                                                <h5 class="font-size-14 mb-3">Integrantes del grupo</h5>
+                                            </div>
+                                            <ul class="list-unstyled chat-list" id="mensaje2">
+
+                                            <!-- se llena solo   -->
+
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <input type="text" id="nombre" placeholder="Nombre Grupo" class="form-control">
+                                    
+                                   
+                                </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                                        <button type="submit" id="botoncrear" class="btn btn-primary">Guardar</button>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+
+                                        </form>
 </div>
 <!-- END layout-wrapper -->
 

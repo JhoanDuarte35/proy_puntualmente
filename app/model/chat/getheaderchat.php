@@ -134,7 +134,7 @@ function headerchatgrupo($letra, $nombre, $id_grupo, $soyadmin){
                     </div>
                 </li>
 
-                '.admin($soyadmin).'
+                '.admin($soyadmin, $id_grupo).'
                 
             </ul>                                                                                                                                                                                                                                                                                        
         </div>
@@ -146,7 +146,7 @@ function headerchatgrupo($letra, $nombre, $id_grupo, $soyadmin){
 }
 
 
-function admin($soyadmin){
+function admin($soyadmin, $id){
 
     if($soyadmin){
         $output='
@@ -156,7 +156,8 @@ function admin($soyadmin){
                     <i class="bx bx-dots-horizontal-rounded"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" href="#">Editar Grupo</a>
+                    <a id="'.$id.'" onclick="datosgrupo(this.id)" class="dropdown-item" type="button" class="dropdown-item" data-bs-toggle="modal"
+                    data-bs-target="#popupeditargrupos">Editar Grupo</a>
                     <a class="dropdown-item" href="#">Archive</a>
                     <a class="dropdown-item" href="#">Muted</a>
                     <a class="dropdown-item" href="#">Delete</a>
