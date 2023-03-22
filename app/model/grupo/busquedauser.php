@@ -92,7 +92,8 @@
                             // agregar borraruser   
                         }else{
                             $output .= '
-                            <li id="' . $row['id'] . '">
+                            <div id="' . $row['id'] . '">
+                            <li>
         
                             <a>
                                 <div class="d-flex align-items-start">
@@ -111,6 +112,7 @@
                             </a>
         
                         </li>
+                        </div>
                         '; 
                 }
                 

@@ -156,7 +156,6 @@ console.log(id);
         if(xhr.status === 200){
           let data = xhr.response;
           mensaje.innerHTML = data;
-          console.log(data)
         }
     }
   }
@@ -232,12 +231,13 @@ function myfuncion2(){
         dbParam = JSON.stringify(obj);
   
         let xhr = new XMLHttpRequest();
-        xhr.open("POST", "php/busquedauser.php", true);
+        xhr.open("POST", "chat/addusersgroup", true);
         xhr.onload = ()=>{
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
             let data = xhr.response;
-            usersList.innerHTML = usersList.innerHTML + data;
+            document.getElementById(id).remove();
+
           }
       }
     }
@@ -245,6 +245,8 @@ function myfuncion2(){
     xhr.send("x=" + dbParam);
       }else{
         console.log(array); 
+        document.getElementById(id).remove();
+
       }
       
     }
