@@ -67,6 +67,10 @@ class controlador{
         include_once(__dir__."/../views/home/chat.php");
     }
 
+    public function notify(){
+        include_once(__dir__."/../model/notify/notify.php");
+    }
+
     public function getchat(){
         if ($_SERVER["REQUEST_METHOD"] == "POST"){
             include_once(__dir__."/../model/chat/get-chat.php");

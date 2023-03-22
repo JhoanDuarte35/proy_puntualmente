@@ -16,6 +16,9 @@ if($userPuntualmente->iniciar_sesion()){
             case 'home':
                 $userPuntualmente->home();
                 break;
+            case 'notify':
+                $userPuntualmente->notify();
+                break;
             case 'registrar':
                 $userPuntualmente->registrar();
                 break;
@@ -61,7 +64,7 @@ if($userPuntualmente->iniciar_sesion()){
                 $userPuntualmente->admingrupos();
                 break;
 
-                
+
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                 break;

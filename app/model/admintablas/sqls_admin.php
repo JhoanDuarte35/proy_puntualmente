@@ -6,6 +6,8 @@ $grupos=mysqli_query($conn, "SELECT * FROM grupos");
 $empresas=mysqli_query($conn, "SELECT * FROM empresas");
 $sedes=mysqli_query($conn, "SELECT * FROM sedes");
 $usuarios=mysqli_query($conn, "SELECT * FROM users WHERE NOT id='{$_SESSION['unique_id']}'");
+$consulnotis=mysqli_query($conn,"SELECT * FROM messages WHERE ( incoming_msg_id = {$_SESSION['unique_id']})");
+
 
 
 ?>

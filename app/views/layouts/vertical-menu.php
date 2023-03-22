@@ -1,3 +1,5 @@
+
+
 <header id="page-topbar">
     <div class="navbar-header">
         <div class="d-flex">
@@ -44,7 +46,7 @@
                 <button type="button" class="btn header-item noti-icon position-relative" id="page-header-notifications-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i data-feather="bell" class="icon-lg"></i>
-                    <span class="badge bg-danger rounded-pill">5</span>
+                    <span class="badge bg-danger rounded-pill" id="notify"> SE LLENA CON LA DB </span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                     aria-labelledby="page-header-notifications-dropdown">
@@ -129,11 +131,6 @@
                 </div>
             </div>
 
-            <div class="dropdown d-inline-block">
-                <button type="button" class="btn header-item right-bar-toggle me-2">
-                    <i data-feather="settings" class="icon-lg"></i>
-                </button>
-            </div>
 
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item topbar-light bg-light-subtle border-start border-end" id="page-header-user-dropdown"
@@ -207,5 +204,6 @@
         </div>
         <!-- Sidebar -->
     </div>
+    <script src="<?php echo controlador::$rutaAPP?>app/views/layouts/js/notify.js"></script>
 </div>
 <!-- Left Sidebar End -->
