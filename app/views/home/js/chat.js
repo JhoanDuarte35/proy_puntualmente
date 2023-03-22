@@ -31,7 +31,7 @@ sendBtn.onclick = ()=>{
               inputField.value = "";
               setTimeout(function(){
                 document.getElementById('final').scrollIntoView(true);
-              }, 300);
+              }, 500);
 
 
             }

@@ -9,7 +9,15 @@ if (isset($_SESSION['unique_id'])) {
     $query2 = mysqli_query($conn, $sql2);
 
 
-    
+    $vistos="UPDATE messages SET estado = 1 WHERE (outgoing_msg_id = {$incoming_id}) AND (outgoing_msg_id = {$outgoing_id} OR incoming_msg_id = {$outgoing_id})";
+
+    $visto=mysqli_query($conn, $vistos);
+
+    if($visto){
+        echo "vistos todos";
+    }else{
+        echo "no vistos";
+    }
 
     if (mysqli_num_rows($query2) > 0) {
         $sql3 = "SELECT * FROM messages LEFT JOIN users ON id = messages.outgoing_msg_id
