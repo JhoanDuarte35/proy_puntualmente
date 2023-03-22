@@ -46,7 +46,9 @@
                 <button type="button" class="btn header-item noti-icon position-relative" id="page-header-notifications-dropdown"
                 data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i data-feather="bell" class="icon-lg"></i>
-                    <span class="badge bg-danger rounded-pill" id="notify"> SE LLENA CON LA DB </span>
+                    <span class="badge bg-danger rounded-pill" id="notify"> 
+                        <!-- SE LLENA CON LA DB  -->
+                    </span>
                 </button>
                 <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
                     aria-labelledby="page-header-notifications-dropdown">

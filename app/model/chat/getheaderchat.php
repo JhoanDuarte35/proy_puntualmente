@@ -26,10 +26,8 @@ echo $header;
 
         
         if(mysqli_num_rows($permisos) > 0){
-            echo "soy admin";
             $soyadmin=true;
         }else{
-            echo "no soy admin";
             $soyadmin=false;
         }
 

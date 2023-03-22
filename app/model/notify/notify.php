@@ -1,7 +1,13 @@
 <?php
       include_once(__dir__."/../admintablas/sqls_admin.php");
 
-      echo getnoti($consulnotis);
+    if(getnoti($consulnotis)>0){
+        echo getnoti($consulnotis);
+    }else{
+        echo "";
+    }
+
+      
 
 
       function getnoti($notis){

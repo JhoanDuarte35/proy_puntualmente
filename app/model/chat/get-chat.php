@@ -13,11 +13,6 @@ if (isset($_SESSION['unique_id'])) {
 
     $visto=mysqli_query($conn, $vistos);
 
-    if($visto){
-        echo "vistos todos";
-    }else{
-        echo "no vistos";
-    }
 
     if (mysqli_num_rows($query2) > 0) {
         $sql3 = "SELECT * FROM messages LEFT JOIN users ON id = messages.outgoing_msg_id
