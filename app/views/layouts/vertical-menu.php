@@ -57,69 +57,23 @@
                             <div class="col">
                                 <h6 class="m-0"> Notificaciones </h6>
                             </div>
-                            <div class="col-auto">
-                                <a href="#!" class="small text-reset text-decoration-underline"> <?php echo $language["Unread"]; ?> (3)</a>
-                            </div>
+                          
                         </div>
                     </div>
                     <div data-simplebar style="max-height: 230px;">
-                        <a href="#!" class="text-reset notification-item">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <img src="assets/images/users/avatar-3.jpg" class="rounded-circle avatar-sm" alt="user-pic">
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h6 class="mb-1"><?php echo $language["James_Lemire"]; ?></h6>
-                                    <div class="font-size-13 text-muted">
-                                        <p class="mb-1"><?php echo $language["It_will_seem_like_simplified_English"]; ?>.</p>
-                                        <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span><?php echo $language["1_hours_ago"]; ?></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#!" class="text-reset notification-item">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 avatar-sm me-3">
-                                    <span class="avatar-title bg-primary rounded-circle font-size-16">
-                                        <i class="bx bx-cart"></i>
-                                    </span>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h6 class="mb-1"><?php echo $language["Your_order_is_placed"]; ?></h6>
-                                    <div class="font-size-13 text-muted">
-                                        <p class="mb-1"><?php echo $language["If_several_languages_coalesce_the_grammar"]; ?></p>
-                                        <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span><?php echo $language["3_min_ago"]; ?></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#!" class="text-reset notification-item">
+                        
+                        <a href="chat" class="text-reset notification-item">
                             <div class="d-flex">
                                 <div class="flex-shrink-0 avatar-sm me-3">
                                     <span class="avatar-title bg-success rounded-circle font-size-16">
-                                        <i class="bx bx-badge-check"></i>
+                                        <i class="fas fa-comment-dots"></i>
                                     </span>
                                 </div>
                                 <div class="flex-grow-1">
-                                    <h6 class="mb-1"><?php echo $language["Your_item_is_shipped"]; ?></h6>
+                                    <h6 class="mb-1">Mensajes Nuevos</h6>
                                     <div class="font-size-13 text-muted">
-                                        <p class="mb-1"><?php echo $language["If_several_languages_coalesce_the_grammar"]; ?></p>
+                                        <p class="mb-1" id="notify2"> </p>
                                         <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span><?php echo $language["3_min_ago"]; ?></span></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-
-                        <a href="#!" class="text-reset notification-item">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <img src="assets/images/users/avatar-6.jpg" class="rounded-circle avatar-sm" alt="user-pic">
-                                </div>
-                                <div class="flex-grow-1">
-                                    <h6 class="mb-1"><?php echo $language["Salena_Layfield"]; ?></h6>
-                                    <div class="font-size-13 text-muted">
-                                        <p class="mb-1"><?php echo $language["As_a_skeptical_Cambridge_friend_of_mine_occidental"]; ?>.</p>
-                                        <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span><?php echo $language["1_hours_ago"]; ?></span></p>
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,7 @@
 
 notyIcon=document.getElementById('notify');
+notyMenuIcon=document.getElementById('notify2');
+
 
 setInterval(() =>{
     let xhr = new XMLHttpRequest();
@@ -9,6 +11,11 @@ setInterval(() =>{
         if(xhr.status === 200){
           let data = xhr.response;
             notyIcon.innerHTML = data;
+            if(data==0){
+                notyMenuIcon.innerHTML= `No tienes mensajes nuevos`;
+            }else{
+                notyMenuIcon.innerHTML= `Tienes ${data} mensajes nuevos`;
+            }
         }
     }
   }
