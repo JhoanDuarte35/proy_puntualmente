@@ -57,6 +57,11 @@ if($userPuntualmente->iniciar_sesion()){
             case 'chat/mostrargrupos':
                 $userPuntualmente->mostrargrupos();
                 break;
+            case 'chat/admingrupos':
+                $userPuntualmente->admingrupos();
+                break;
+
+                
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                 break;

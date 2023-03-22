@@ -104,7 +104,9 @@ class controlador{
         include_once(__dir__."/../model/grupo/mostrargrupos.php");
 
     }
-
+    public function admingrupos(){
+        include_once(__dir__."/../model/grupo/admingrupos.php");
+    }
 
 
 

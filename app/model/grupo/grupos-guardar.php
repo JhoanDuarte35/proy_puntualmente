@@ -51,8 +51,13 @@ if(isset($_POST['actualizar'])){
 
     
     foreach($data as $value){ 
+        if($value==$_SESSION['unique_id']){
+            $tipo="admin";
+        }else{
+            $tipo="user";
+        }
     
-        $insert_query = mysqli_query($conn, "INSERT INTO grupo_integrante (id_grupo, id_usuario, tipo_user) VALUES ('{$id_grupo}', '{$value}', 'user')");
+        $insert_query = mysqli_query($conn, "INSERT INTO grupo_integrante (id_grupo, id_usuario, tipo_user) VALUES ('{$id_grupo}', '{$value}', '{$tipo}')");
     }
     echo "Integrantes guardados con exito";
 }

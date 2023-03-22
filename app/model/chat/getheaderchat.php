@@ -18,8 +18,23 @@ echo $header;
         $datag= mysqli_fetch_assoc($grupo);
         $n_grupo=$datag['n_grupo'];
         $letra = $n_grupo[0];
+        $tipouser="admin";
+        $admin=false;
+        //DAR PERMISOS DE ADMIN GRUPO
+        $permisos = mysqli_query($conn, "SELECT * FROM grupo_integrante WHERE id_grupo=$id AND id_usuario = '{$_SESSION['unique_id']}' AND tipo_user='{$tipouser}'");
+        $permiso= mysqli_fetch_assoc($permisos);
 
-        $header = headerchatgrupo($letra,$datag['n_grupo'], $id);
+        
+        if(mysqli_num_rows($permisos) > 0){
+            echo "soy admin";
+            $soyadmin=true;
+        }else{
+            echo "no soy admin";
+            $soyadmin=false;
+        }
+
+
+        $header = headerchatgrupo($letra,$datag['n_grupo'], $id, $soyadmin);
         echo $header;
     }
 
@@ -82,7 +97,7 @@ function headerchatuser($imagen, $nombre, $status, $id_user){
     return $output;
 }
 
-function headerchatgrupo($letra, $nombre, $id_grupo){
+function headerchatgrupo($letra, $nombre, $id_grupo, $soyadmin){
     $output='
         <input type="text" id="id_enviar" name="id_enviar" hidden dissabled value ="'.$id_grupo.'">
     <div class="row">
@@ -119,25 +134,39 @@ function headerchatgrupo($letra, $nombre, $id_grupo){
                     </div>
                 </li>
 
-                <li class="list-inline-item">
-                    <div class="dropdown">
-                        <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="bx bx-dots-horizontal-rounded"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="#">Profile</a>
-                            <a class="dropdown-item" href="#">Archive</a>
-                            <a class="dropdown-item" href="#">Muted</a>
-                            <a class="dropdown-item" href="#">Delete</a>
-                        </div>
-                    </div>
-                </li>
+                '.admin($soyadmin).'
+                
             </ul>                                                                                                                                                                                                                                                                                        
         </div>
     </div>
     </div>
 
     ';
+    return $output;
+}
+
+
+function admin($soyadmin){
+
+    if($soyadmin){
+        $output='
+        <li class="list-inline-item">
+            <div class="dropdown">
+                <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end">
+                    <a class="dropdown-item" href="#">Editar Grupo</a>
+                    <a class="dropdown-item" href="#">Archive</a>
+                    <a class="dropdown-item" href="#">Muted</a>
+                    <a class="dropdown-item" href="#">Delete</a>
+                </div>
+            </div>
+        </li>
+    ';
+    }else{
+        $output="";
+    }
     return $output;
 }
 
