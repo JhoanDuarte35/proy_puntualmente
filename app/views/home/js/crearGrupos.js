@@ -264,20 +264,21 @@ function myfuncion2(){
       arrayagregar=[];
       location.reload();
     }
-   /*
+   
 
     $(document).ready(function(){
-      $("#crear").submit(function(event){
+      $("#guardargrupos").submit(function(event){
         event.preventDefault();
+        idgrupo=document.getElementById('id_enviar').value;
         
         $.ajax({
             dataType:"json",
-            url:"php/grupos-guardar.php",
+            url:"chat/guardargrupos",
             type:"POST",
-            data:{nombre:$("#nombre").val(), borrar: JSON.stringify(arrayborrar), agregar: JSON.stringify(arrayagregar),  idgrupo: idgrupo, actualizar:true},
+            data:{nombre:$("#nuevonombre").val(), borrar: JSON.stringify(arrayborrar), agregar: JSON.stringify(arrayagregar),  idgrupo: idgrupo, actualizar:true},
             success: function(data){
                 if(data.success==false){
-                    $("#mensaje").show();
+                    $("#mensaje9").show();
                     $("#mensaje").html(data.msg);
                     $('.log-status').addClass('wrong-entry');
                     $('.alert').fadeIn(700);
@@ -287,8 +288,8 @@ function myfuncion2(){
                 }
             },
                 error: function(response) {
-                    $("#mensaje").show();
-                    $("#mensaje").html(response.responseText);
+                    $("#mensaje9").show();
+                    $("#mensaje9").html(response.responseText);
                 }
         });
     });
@@ -298,7 +299,7 @@ function myfuncion2(){
   })
 
   
-*/
+
 
 
 

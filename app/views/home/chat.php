@@ -108,12 +108,7 @@
                                         <span class="d-none d-sm-block">Grupos</span>
                                     </a>
                                 </li>
-                                <li class="nav-item">
-                                    <a href="#contacts" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
-                                        <i class="bx bx-book-content font-size-20 d-sm-none"></i>
-                                        <span class="d-none d-sm-block">Contacts</span>
-                                    </a>
-                                </li>
+
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane show active" id="chat">
@@ -345,7 +340,7 @@
 
 <!-- -----------------------------------------------------------------Editar grupos -->
                                 <!-- Scrollable modal -->
-                        <form method="post" id="editargrupos">
+                        <form method="post" id="guardargrupos">
                                         <div class="modal fade" id="popupeditargrupos" tabindex="-1" role="dialog"
                                             aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
                                             <div class="modal-dialog modal-dialog-scrollable">
@@ -387,20 +382,25 @@
                                         </div>
                                     </div>
 
-                                    <input type="text" id="nombre" placeholder="Nombre Grupo" class="form-control">
+                                    <input type="text" id="nuevonombre" placeholder="Nuevo nombre del grupo" class="form-control">
+
+                                    <span id="mensaje9"></span>
                                     
                                    
                                 </div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                                                        <button type="submit" id="botoncrear" class="btn btn-primary">Guardar</button>
+                                                        <button type="submit" id="botoncambiar" class="btn btn-primary">Guardar</button>
                                                     </div>
                                                 </div><!-- /.modal-content -->
                                             </div><!-- /.modal-dialog -->
                                         </div><!-- /.modal -->
 
                                         </form>
+
+
+                            
 </div>
 <!-- END layout-wrapper -->
 

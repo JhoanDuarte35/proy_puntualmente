@@ -156,9 +156,6 @@ function admin($soyadmin, $id){
                 <div class="dropdown-menu dropdown-menu-end">
                     <a id="'.$id.'" onclick="datosgrupo(this.id)" class="dropdown-item" type="button" class="dropdown-item" data-bs-toggle="modal"
                     data-bs-target="#popupeditargrupos">Editar Grupo</a>
-                    <a class="dropdown-item" href="#">Archive</a>
-                    <a class="dropdown-item" href="#">Muted</a>
-                    <a class="dropdown-item" href="#">Delete</a>
                 </div>
             </div>
         </li>
