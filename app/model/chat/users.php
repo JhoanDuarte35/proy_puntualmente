@@ -20,6 +20,18 @@
         }
         return $cont;
     }
+    function formatohora($hora){
+        $formato=strtotime('12:00');
+        $hora = date("H:i", strtotime($hora)); 
+        if($hora>$formato){
+            $nhora= date("H:i", strtotime($hora." - 12 hour"));
+            return $nhora . ' pm';
+        }else{
+            return $hora . ' am';
+        }
+        
+    }
+   
 
 
     if(mysqli_num_rows($query) == 0){
@@ -44,6 +56,7 @@
             }
             ($row['status'] == "Desconectado") ? $class = "" : $class = "online";
             ($outgoing_id == $row['id']) ? $hid_me = "hide" : $hid_me = "";
+
             
             $consulnotis="SELECT * FROM messages WHERE (outgoing_msg_id = {$row['id']}) AND (outgoing_msg_id = {$outgoing_id} 
             OR incoming_msg_id = {$outgoing_id})";
@@ -60,6 +73,13 @@
                 $class2='';
                 $notify='';
             }
+
+            if(!empty($row2['hora'])){
+                $tiempo=formatohora($row2['hora']);
+            }else{
+                $tiempo="";
+            }
+
             
             //class="active"
             $output .= '
@@ -78,7 +98,7 @@
                                             <p class="text-truncate mb-0">'. $msg .'</p>
                                         </div>
                                         <div class="flex-shrink-0">
-                                            <div class="font-size-11">02 min</div>
+                                            <div class="font-size-11">'.$tiempo.'</div>
                                         </div>
                                         '.$notify.'
                                     </div>
