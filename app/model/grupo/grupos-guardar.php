@@ -33,8 +33,13 @@ if(isset($_POST['actualizar'])){
     }
 
     //Actualizar Nombre
-    $up_name = mysqli_query($conn, "UPDATE grupos_chat SET n_grupo ='{$ngrupo}' WHERE id_grupo = '{$id_grupo}'");
-            echo "Grupo Actualizado con exito";
+    if(empty($ngrupo)){
+        echo "Grupo Actualizado con exito";
+    }else{
+        $up_name = mysqli_query($conn, "UPDATE grupos_chat SET n_grupo ='{$ngrupo}' WHERE id_grupo = '{$id_grupo}'");
+        echo "Grupo Actualizado con exito";
+    }
+  
 
 
 
