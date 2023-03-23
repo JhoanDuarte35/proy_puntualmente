@@ -297,7 +297,7 @@
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
-                                                    <input type="text" id="nombre" placeholder="Nombre Grupo" class="form-control">
+                                                    <input type="text" id="nombre" placeholder="Nombre Grupo" class="form-control" require>
                                                     <div class="mb-3">
                                             
                                                 <label for="area" class="form-label font-size-13 text-muted">Personas:</label>
@@ -334,7 +334,7 @@
                                 <div id="mensaje"></div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal" onclick="limpiar()">Cerrar</button>
                                                         <button type="submit" id="botoncrear" class="btn btn-primary">Guardar</button>
                                                     </div>
                                                 </div><!-- /.modal-content -->
@@ -352,7 +352,7 @@
                                                 <div class="modal-content">
                                                     <div class="modal-header">
                                                         <h5 class="modal-title" id="exampleModalScrollableTitle">Editar Grupo</h5>
-                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="limpiar()"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                    

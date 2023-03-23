@@ -193,10 +193,11 @@ function myfuncion2(){
     let pos = arrayagregar.indexOf(id);
     if(arrayagregar[pos]==id){
         console.log(arrayagregar); 
+        document.getElementById(id).remove();
+
     }else{
         arrayagregar.push(id);
         console.log(arrayagregar); 
-        //document.getElementById(id).remove();
 
         obj = [{ "id_user_group": `${id}`, "estado": true }];
         console.log(obj)
@@ -222,7 +223,14 @@ function myfuncion2(){
       let pos = 0;
       alert(id);
       pos = arrayborrar.indexOf(id);
-      if(arrayborrar[pos]!=id){
+      if(arrayborrar[pos]==id){
+
+        document.getElementById(id).remove();
+        console.log("Deberia")
+        console.log(arrayborrar); 
+
+        
+      }else{
         arrayborrar.push(id);
         console.log("añadi a sarrayborrar");
         document.getElementById(id).remove();
@@ -244,14 +252,17 @@ function myfuncion2(){
     }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("x=" + dbParam);
-      }else{
-        document.getElementById(id).remove();
-        console.log("Deberia")
-        console.log(arrayborrar); 
         
 
       }
       
+    }
+
+    function limpiar(){
+      mensaje.innerHTML="";
+      arrayborrar=[];
+      arrayagregar=[];
+      location.reload();
     }
    /*
 

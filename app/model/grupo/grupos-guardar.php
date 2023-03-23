@@ -40,26 +40,31 @@ if(isset($_POST['actualizar'])){
 
 
 }else{
-    $insert_query = mysqli_query($conn, "INSERT INTO grupos_chat (n_grupo, propietario) VALUES ('{$ngrupo}','{$outgoing_id}')");
-    echo "Grupo Creado con exito";
+    if(empty($ngrupo)){
+        echo "Todos los campos son obligatorios";
+    }else{
+        $insert_query = mysqli_query($conn, "INSERT INTO grupos_chat (n_grupo, propietario) VALUES ('{$ngrupo}','{$outgoing_id}')");
+        echo "Grupo Creado con exito";
+        
+        $sql = mysqli_query($conn, "SELECT * FROM grupos_chat WHERE n_grupo = '{$ngrupo}'");
+        $row = mysqli_fetch_assoc($sql);
+        $id_grupo = $row['id_grupo'];
+        $data = json_decode($_POST['array']);
+        array_push($data, $outgoing_id);
     
-    $sql = mysqli_query($conn, "SELECT * FROM grupos_chat WHERE n_grupo = '{$ngrupo}'");
-    $row = mysqli_fetch_assoc($sql);
-    $id_grupo = $row['id_grupo'];
-    $data = json_decode($_POST['array']);
-    array_push($data, $outgoing_id);
-
-    
-    foreach($data as $value){ 
-        if($value==$_SESSION['unique_id']){
-            $tipo="admin";
-        }else{
-            $tipo="user";
+        
+        foreach($data as $value){ 
+            if($value==$_SESSION['unique_id']){
+                $tipo="admin";
+            }else{
+                $tipo="user";
+            }
+        
+            $insert_query = mysqli_query($conn, "INSERT INTO grupo_integrante (id_grupo, id_usuario, tipo_user) VALUES ('{$id_grupo}', '{$value}', '{$tipo}')");
         }
-    
-        $insert_query = mysqli_query($conn, "INSERT INTO grupo_integrante (id_grupo, id_usuario, tipo_user) VALUES ('{$id_grupo}', '{$value}', '{$tipo}')");
+        echo "Integrantes guardados con exito";
     }
-    echo "Integrantes guardados con exito";
+    
 }
 
 
