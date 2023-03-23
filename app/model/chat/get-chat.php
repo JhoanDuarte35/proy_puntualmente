@@ -9,12 +9,15 @@ if (isset($_SESSION['unique_id'])) {
     $query2 = mysqli_query($conn, $sql2);
 
 
-    $vistos="UPDATE messages SET estado = 1 WHERE (outgoing_msg_id = {$incoming_id}) AND (outgoing_msg_id = {$outgoing_id} OR incoming_msg_id = {$outgoing_id})";
-
-    $visto=mysqli_query($conn, $vistos);
+    
 
 
     if (mysqli_num_rows($query2) > 0) {
+
+        $vistos="UPDATE mensajes_grupos SET estado = 1 WHERE (id_grupo = {$incoming_id}) AND (id_persona = {$outgoing_id})";
+
+       
+        $visto=mysqli_query($conn, $vistos);
         $sql3 = "SELECT * FROM messages LEFT JOIN users ON id = messages.outgoing_msg_id
                 WHERE (incoming_msg_id = {$incoming_id}) ORDER BY msg_id";
         $query3 = mysqli_query($conn, $sql3);
@@ -116,6 +119,11 @@ if (isset($_SESSION['unique_id'])) {
         OR (outgoing_msg_id = {$incoming_id} AND incoming_msg_id = {$outgoing_id}) ORDER BY msg_id";
         $query = mysqli_query($conn, $sql);
         $output = '';
+        $vistos="UPDATE messages SET estado = 1 WHERE (outgoing_msg_id = {$incoming_id}) AND (outgoing_msg_id = {$outgoing_id} OR incoming_msg_id = {$outgoing_id})";
+
+        $visto=mysqli_query($conn, $vistos);
+        
+
         if (mysqli_num_rows($query) > 0) {
             $unavez=false;
             $unavez2=false;

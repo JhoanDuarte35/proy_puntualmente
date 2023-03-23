@@ -76,6 +76,24 @@
                                         <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span><?php echo $language["3_min_ago"]; ?></span></p>
                                     </div>
                                 </div>
+                                
+                            </div>
+                        </a>
+                        <a href="chat" class="text-reset notification-item">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 avatar-sm me-3">
+                                    <span class="avatar-title bg-success rounded-circle font-size-16">
+                                        <i class="fas fa-comment-dots"></i>
+                                    </span>
+                                </div>
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1">Mensajes Grupos Nuevos</h6>
+                                    <div class="font-size-13 text-muted">
+                                        <p class="mb-1" id="notify3"> </p>
+                                        <p class="mb-0"><i class="mdi mdi-clock-outline"></i> <span><?php echo $language["3_min_ago"]; ?></span></p>
+                                    </div>
+                                </div>
+                                
                             </div>
                         </a>
                     </div>

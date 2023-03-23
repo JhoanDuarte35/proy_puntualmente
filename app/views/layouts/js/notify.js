@@ -21,4 +21,6 @@ setInterval(() =>{
   }
   xhr.send();
 
+  
+
 }, 1000);

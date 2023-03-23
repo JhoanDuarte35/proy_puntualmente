@@ -14,8 +14,14 @@ if(mysqli_num_rows($sql2) == 0){
     $n_chat = $row2['n_grupo'];
     $letra=$n_chat[0];
 
-    $notys=mysqli_query($conn, "SELECT * FROM messages WHERE incoming_msg_id ='{$id_grupo} '");
-
+    $notys=mysqli_query($conn, "SELECT * FROM mensajes_grupos WHERE id_grupo ='{$id_grupo}' AND id_persona ='{$_SESSION['unique_id']}' AND estado='0'");
+    $notify=0;
+    if(mysqli_num_rows($notys)>0){
+        $notify=mysqli_num_rows($notys);
+    }else{
+        $notify="";
+    }
+    
 
     $output .= 
     '
@@ -31,11 +37,9 @@ if(mysqli_num_rows($sql2) == 0){
             <div class="flex-grow-1">
                 <h5 class="font-size-14 mb-0">'.$row2['n_grupo'].'</h5>
             </div>
-            <div class="flex-shrink-0">
-                <div class="font-size-11">1 min</div>
-            </div>
+           
             <div class="unread-message">
-                <span class="badge bg-danger rounded-pill">5</span>
+                <span class="badge bg-danger rounded-pill">'.$notify.'</span>
             </div>
         </div>
     </a>
