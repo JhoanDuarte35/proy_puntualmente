@@ -3,4 +3,4 @@
 <meta content="Puntualmente" name="description"/>
 <meta content="Puntualmente" name="author"/>
 <!-- App favicon -->
-<link rel="shortcut icon" href="<?php echo controlador::$rutaAPP?>app/assets/images/favicon.ico">
+<!-- <link rel="shortcut icon" href="<?php //echo controlador::$rutaAPP?>app/assets/images/favicon.ico"> -->

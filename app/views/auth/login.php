@@ -5,7 +5,7 @@
 
 <head>
 
-    <title>Login | Puntualmente</title>
+    <title>Intranet | Puntualmente S.A.S</title>
     <?php 
         include(__dir__."/../layouts/head.php");?>
 
