@@ -2,7 +2,18 @@
     include_once (__dir__."/../config.php");
     $outgoing_id = $_SESSION['unique_id'];
     $sql = "SELECT * FROM users WHERE NOT id = {$outgoing_id} ORDER BY id DESC";
+
+    //$sql = "SELECT * FROM users JOIN messages WHERE NOT id = {$outgoing_id} AND (incoming_msg_id = {$outgoing_id}) OR outgoing_msg_id = {$outgoing_id} ORDER BY msg_id DESC";
+
+
+    //$sql = "SELECT * FROM messages JOIN users GROUP BY msg_id order by msg_id desc;";
+
+
+   //$sql = "SELECT * FROM messages LEFT JOIN users ON id = messages.outgoing_msg_id WHERE (incoming_msg_id = {$outgoing_id}) ORDER BY msg_id DESC";
     $query = mysqli_query($conn, $sql);
+
+    var_dump($query);
+
     $output = "";
     $class="";
     $sql9 = "SELECT * FROM users WHERE NOT id = {$outgoing_id} ORDER BY id DESC";
@@ -38,7 +49,7 @@
         while ($row = mysqli_fetch_assoc($query)) {
 
        
-
+            
             $sql2 = "SELECT * FROM messages WHERE (incoming_msg_id = {$row['id']}
                         OR outgoing_msg_id = {$row['id']}) AND (outgoing_msg_id = {$outgoing_id} 
                         OR incoming_msg_id = {$outgoing_id}) ORDER BY msg_id DESC LIMIT 1";
