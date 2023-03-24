@@ -214,16 +214,13 @@ if (isset($_SESSION['unique_id'])) {
 
     
     function formatohora($hora){
-        $formato=strtotime('12:00');
-        $hora = date("H:i", strtotime($hora)); 
-        if($hora>$formato){
-            $nhora= date("H:i", strtotime($hora." - 12 hour"));
-            return $nhora . ' pm';
-        }else{
-            return $hora . ' am';
-        }
+
         
-    }
+
+        return date("g:i a",strtotime($hora));;
+    
+    
+}
   
     function entrada($nombre, $hora, $mensaje){
         $output='
