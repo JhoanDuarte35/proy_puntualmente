@@ -71,7 +71,7 @@
                                     <p class="text-muted mb-0"><?php echo $_SESSION['status']?></p>
                                 </div>
 
-                                <div class="flex-shrink-0">
+                                <!-- <div class="flex-shrink-0">
                                     <div class="dropdown chat-noti-dropdown">
                                         <button class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="bx bx-dots-horizontal-rounded"></i>
@@ -83,7 +83,7 @@
                                             <a class="dropdown-item" href="#">Setting</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
@@ -145,9 +145,9 @@
                                                 <div class="dropdown-menu dropdown-menu-end">
                                                     <a type="button" class="dropdown-item" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModalScrollable">Crear Grupo</a>
-                                                    <a class="dropdown-item" href="#">Edit</a>
+                                                    <!-- <a class="dropdown-item" href="#">Edit</a>
                                                     <a class="dropdown-item" href="#">Add Contact</a>
-                                                    <a class="dropdown-item" href="#">Setting</a>
+                                                    <a class="dropdown-item" href="#">Setting</a> -->
                                             </div>
                                     </div>
                                 </div>
