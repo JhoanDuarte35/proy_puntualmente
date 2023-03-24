@@ -29,6 +29,7 @@ continueBtn.onclick = ()=>{
     xhr.send(formData);
   }
 
+  
 
 // Determinar peso de las imagenes
 /*

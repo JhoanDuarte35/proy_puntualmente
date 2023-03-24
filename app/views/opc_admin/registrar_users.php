@@ -26,6 +26,16 @@
 
 </head>
 
+<style>
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+</style>
+
 <?php include(__dir__."/../layouts/body.php");   ?>
 
 <!-- Begin page -->
@@ -91,7 +101,7 @@
                                             <div class="mb-3">
                                                 <label for="area" class="form-label font-size-13 text-muted">Area:</label>
                                                 <select class="form-control" data-trigger name="area" id="area">
-                                                    <option value="0" selected disabled>Elige un area</option>
+                                                    <option value="0" selected disabled>1. Elige un area</option>
                                                     <?php foreach($areas as $value){?>
                                                         <option value="<?php echo $value['id_area']?>"><?php echo $value['n_area']?></option>
                                                     <?php }?>
@@ -108,7 +118,7 @@
                                             <div class="mb-3">
                                                 <label for="sede" class="form-label font-size-13 text-muted">Sede:</label>
                                                 <select class="form-control" data-trigger name="sede" id="sede">
-                                                    <option value="0" selected disabled>Elige una sede</option>
+                                                    <option value="0" selected disabled>1. Elige una sede</option>
                                                     <?php foreach($sedes as $sede){?>
                                                         <option value="<?php echo $sede['id_sede']?>"><?php echo $sede['n_sede']?></option>
                                                     <?php }?>
@@ -123,13 +133,12 @@
                                         <div class="mb-3">
                                                 <label for="empresa" class="form-label font-size-13 text-muted">Empresas:</label>
                                                 <select class="form-control" data-trigger name="empresa" id="empresa">
-                                                    <option value="0" disabled selected>Elige una empresa</option>
+                                                    <option value="0" disabled selected>1. Elige una empresa</option>
                                                     <?php foreach($empresas as $empresa){?>
                                                         <option value="<?php echo $empresa['id_empresa']?>"><?php echo $empresa['n_empresa']?></option>
                                                     <?php }?>
                                                 </select>
                                             </div>
-                                            <br>
                                             <div class="mb-3">
                                                 <label for="nacimiento" class="form-label">Fecha de Nacimiento</label>
                                                 <input class="form-control" name="nacimiento" type="date" id="nacimiento">
@@ -155,7 +164,7 @@
                                             <div class="mb-3">
                                                 <label for="grupo" class="form-label font-size-13 text-muted">Grupo:</label>
                                                 <select class="form-control" data-trigger name="grupo" id="grupo">
-                                                    <option value="0" selected disabled>Elige un grupo</option>
+                                                    <option value="0" selected disabled>1. Elige un grupo</option>
                                                     <?php foreach($grupos as $grupo){?>
                                                         <option value="<?php echo $grupo['id_grupo']?>"><?php echo $grupo['n_grupo']?></option>
                                                     <?php }?>
