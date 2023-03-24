@@ -79,27 +79,109 @@ if($userPuntualmente->iniciar_sesion()){
 
         switch ($_GET["action"]){
 
-            case 'home':
-                $userPuntualmente->home();
+            case 'notify':
+                $userPuntualmente->notify();
                 break;
-            case 'cerrar':
-                $userPuntualmente->cerrar_sesion();
-               break;
+            case 'registrar':
+                $userPuntualmente->registrar();
+                break;
+            case 'signup':
+                $userPuntualmente->signup();
+                break;
+    
+                // CHAT
             case 'chat':
                 $userPuntualmente->chat();
                 break;
             case 'chat/getchat':
                 $userPuntualmente->getchat();
                 break;
+            case 'chat/users':
+                $userPuntualmente->users();
+                break;
+            case 'chat/getheader':
+                $userPuntualmente->getheader();
+                break;
+            case 'chat/insertchat':
+                $userPuntualmente->insertchat();
+                break;
 
-           
+                //GRUPOS
+            
+            case 'chat/addusersgroup':
+                $userPuntualmente->addusersgroup();
+                break;
+            
+            case 'chat/guardargrupos':
+                $userPuntualmente->guardargrupos();
+                break;
+            case 'chat/mostrargrupos':
+                $userPuntualmente->mostrargrupos();
+                break;
+            case 'chat/admingrupos':
+                $userPuntualmente->admingrupos();
+                break;
 
+
+            case 'cerrar':
+                $userPuntualmente->cerrar_sesion();
+                break;
             default:
-                $userPuntualmente->home();
+                $userPuntualmente->chat();
+                break;
+        }
+        
+    }else if (isset($_GET["action"])&&($_SESSION['rol']==3)){
+
+        switch ($_GET["action"]){
+
+            case 'notify':
+                $userPuntualmente->notify();
+                break;
+    
+                // CHAT
+            case 'chat':
+                $userPuntualmente->chat();
+                break;
+            case 'chat/getchat':
+                $userPuntualmente->getchat();
+                break;
+            case 'chat/users':
+                $userPuntualmente->users();
+                break;
+            case 'chat/getheader':
+                $userPuntualmente->getheader();
+                break;
+            case 'chat/insertchat':
+                $userPuntualmente->insertchat();
+                break;
+
+                //GRUPOS
+            
+            case 'chat/addusersgroup':
+                $userPuntualmente->addusersgroup();
+                break;
+            
+            case 'chat/guardargrupos':
+                $userPuntualmente->guardargrupos();
+                break;
+            case 'chat/mostrargrupos':
+                $userPuntualmente->mostrargrupos();
+                break;
+            case 'chat/admingrupos':
+                $userPuntualmente->admingrupos();
+                break;
+
+
+            case 'cerrar':
+                $userPuntualmente->cerrar_sesion();
+                break;
+            default:
+                $userPuntualmente->chat();
                 break;
         }
     }else{
-        $userPuntualmente->home();
+        $userPuntualmente->home()||$userPuntualmente->chat();
     }
 
     // Usuario regular

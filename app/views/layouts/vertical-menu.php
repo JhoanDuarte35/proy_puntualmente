@@ -137,8 +137,10 @@
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title" data-key="t-menu"><?php echo $language["Menu"]; ?></li>
 
+            <?php if($_SESSION['rol']==1){?>
+
+                <li class="menu-title" data-key="t-menu"><?php echo $language["Menu"]; ?></li>
                 <li>
                     <a href="home">
                         <i data-feather="home"></i>
@@ -166,6 +168,28 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="chat">
+                        <i class="fas fa-comments"></i>
+                        <span data-key="t-horizontal">Chat</span>
+                    </a>
+                </li>
+
+                <?php }elseif($_SESSION['rol']==2){ ?>
+
+                    <li>
+                    <a href="javascript: void(0);" class="has-arrow">
+                        <i data-feather="grid"></i>
+                        <span data-key="t-apps">Usuarios</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li>
+                            <a href="registrar">
+                                <span data-key="t-regisuser">Registrar usuario</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
                 <li>
                     <a href="chat">
@@ -173,6 +197,18 @@
                         <span data-key="t-horizontal">Chat</span>
                     </a>
                 </li>
+                
+
+                <?php }elseif($_SESSION['rol']==3){ ?> 
+                    
+                    <li>
+                    <a href="chat">
+                        <i class="fas fa-comments"></i>
+                        <span data-key="t-horizontal">Chat</span>
+                    </a>
+                </li>
+                    
+                    <?php }?>
 
             </ul>
         </div>
