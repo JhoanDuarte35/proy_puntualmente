@@ -203,6 +203,30 @@
 <!-- ------------------- -->
                             <div class="p-3 border-top">
                                 <div class="row">
+                                <div class="d-flex gap-2 flex-wrap">
+                                    <!-- Default dropup button -->
+                                    <div class="btn-group dropup">
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-paperclip"></i></button>
+                                        <div class="dropdown-menu">
+                                        <a type="button" class=" dropdown-item btn btn-light position-relative p-0 avatar-sm rounded-circle">
+                                            <span class="avatar-title bg-transparent text-reset">
+                                                <i class=" fas fa-image"></i>
+                                            </span>
+                                            </a>
+
+                                            <a type="button" class=" dropdown-item btn btn-light position-relative p-0 avatar-sm rounded-circle">
+                                            <span class="avatar-title bg-transparent text-reset">
+                                                <i class=" fas fa-ticket-alt"></i>
+                                            </span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    
+
+                                       
+
+                    
                                     <div class="col">
                                         <div class="position-relative">
                                             <input type="text" name="msg" id="msg" class="form-control border bg-light-subtle" placeholder="Escribe tu mensaje...">
