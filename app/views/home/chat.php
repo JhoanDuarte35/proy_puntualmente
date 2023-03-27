@@ -204,17 +204,22 @@
                             <div class="p-3 border-top">
                                 <div class="row">
                                 <div class="d-flex gap-2 flex-wrap">
+                                <span id="add_labels"></span>
+
                                     <!-- Default dropup button -->
                                     <div class="btn-group dropup">
-                                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-paperclip"></i></button>
+                                        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" id="botonopciones" aria-expanded="false" disabled><i class="fas fa-paperclip"></i></button>
                                         <div class="dropdown-menu">
-                                        <a type="button" class=" dropdown-item btn btn-light position-relative p-0 avatar-sm rounded-circle">
+                                        <a type="button" id="inputima" class="btn btn-success btn-rounded waves-effect waves-light">
                                             <span class="avatar-title bg-transparent text-reset">
                                                 <i class=" fas fa-image"></i>
                                             </span>
                                             </a>
+            
+                                           
 
-                                            <a type="button" class=" dropdown-item btn btn-light position-relative p-0 avatar-sm rounded-circle">
+
+                                            <a type="button" class="btn btn-warning btn-rounded waves-effect waves-light">
                                             <span class="avatar-title bg-transparent text-reset">
                                                 <i class=" fas fa-ticket-alt"></i>
                                             </span>
@@ -225,15 +230,14 @@
                                     
 
                                        
-
-                    
+                                    <input id="file-input" style="display:none" type="file" name="image" accept="image/png,image/jpeg">
                                     <div class="col">
                                         <div class="position-relative">
-                                            <input type="text" name="msg" id="msg" class="form-control border bg-light-subtle" placeholder="Escribe tu mensaje...">
+                                            <input type="text" name="msg" id="msg" class="form-control border bg-light-subtle" placeholder="Escribe tu mensaje..." autocomplete="off" disabled>
                                         </div>
                                     </div>
                                     <div class="col-auto">
-                                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light" id="enviar"><span class="d-none d-sm-inline-block me-2">Enviar</span> <i class="mdi mdi-send float-end"></i></button>
+                                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light" id="enviar" disabled><span class="d-none d-sm-inline-block me-2">Enviar</span> <i class="mdi mdi-send float-end"></i></button>
                                     </div>
                                 </div>
                             </div>

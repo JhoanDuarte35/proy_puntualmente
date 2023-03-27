@@ -71,6 +71,13 @@ mostrarcosas = setInterval(() =>{
 
 
 function hola(id){
+
+  document.getElementById('botonopciones').disabled=false;
+  document.getElementById('enviar').disabled=false;
+  document.getElementById('msg').disabled=false;
+
+  
+  
   clearInterval(chat);
   contenidochat = document.querySelector("#contenidochat");
   headerchat = document.querySelector("#headerchat");

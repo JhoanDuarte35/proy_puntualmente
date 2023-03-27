@@ -79,26 +79,26 @@ sendBtn.onclick = ()=>{
 //     chatBox.scrollTop = chatBox.scrollHeight;
 //   }
   
-// document.getElementById("inputima").addEventListener('click', function() {
-//     document.getElementById("file-input").click();
-// });
+document.getElementById("inputima").addEventListener('click', function() {
+    document.getElementById("file-input").click();
+});
 
-// document.getElementById("file-input").addEventListener('change', function() {
-//     let pos = this.files.length - 1;
-//     inputField.disabled = true;
-//     inputField.value = "";
-//     document.getElementById('add_labels').innerHTML="";
-//     document.getElementById("add_labels").innerHTML += `<div class="details">${this.files[pos].name} 
-//     <button onclick="limpiar()">x</button></div>`;
-//     sendBtn.classList.add("active");
-// });
+document.getElementById("file-input").addEventListener('change', function() {
+    let pos = this.files.length - 1;
+    inputField.disabled = true;
+    inputField.value = "";
+    document.getElementById('add_labels').innerHTML="";
+    document.getElementById("add_labels").innerHTML += `<div class="details">${this.files[pos].name} 
+    <button onclick="limpiar()">x</button></div>`;
+    sendBtn.classList.add("active");
+});
 
-// function limpiar(){
-//     console.log("limpiar");
-//     sendBtn.classList.remove("active");
-//     document.getElementById('file-input').value ='';
-//     document.getElementById('add_labels').innerHTML="";
-// }
+function limpiar(){
+    console.log("limpiar");
+    sendBtn.classList.remove("active");
+    document.getElementById('file-input').value ='';
+    document.getElementById('add_labels').innerHTML="";
+}
 
 // // ----------------------MODAL-------------------------------------
 

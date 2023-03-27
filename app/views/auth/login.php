@@ -45,7 +45,6 @@
 
                                         <div class="input-group auth-pass-inputgroup">
                                             <input type="password" class="form-control" placeholder="Ingresa tu contraseña" name="contraseña" aria-label="Password" aria-describedby="password-addon">
-                                            <button class="btn btn-light ms-0" type="button" id="password-addon"><i class="mdi mdi-eye-outline"></i></button>
                                         </div>
                                     </div>
                                     <div id="error-text"></div>
