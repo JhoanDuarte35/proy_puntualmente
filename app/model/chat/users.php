@@ -2,17 +2,41 @@
     include_once (__dir__."/../config.php");
     $outgoing_id = $_SESSION['unique_id'];
     $sql = "SELECT * FROM users WHERE NOT id = {$outgoing_id} ORDER BY id DESC";
-
-    //$sql = "SELECT * FROM users JOIN messages WHERE NOT id = {$outgoing_id} AND (incoming_msg_id = {$outgoing_id}) OR outgoing_msg_id = {$outgoing_id} ORDER BY msg_id DESC";
-
-
-    //$sql = "SELECT * FROM messages JOIN users GROUP BY msg_id order by msg_id desc;";
-
-
-   //$sql = "SELECT * FROM messages LEFT JOIN users ON id = messages.outgoing_msg_id WHERE (incoming_msg_id = {$outgoing_id}) ORDER BY msg_id DESC";
     $query = mysqli_query($conn, $sql);
 
-    var_dump($query);
+ 
+    $mensajes=[];
+    $noestan=[];
+    $estan=[];
+    $orden=[];
+    $mayor=0;
+   
+    foreach($query as $row){
+        $sql2 = "SELECT * FROM messages WHERE (incoming_msg_id = {$row['id']}
+        OR outgoing_msg_id = {$row['id']}) AND (outgoing_msg_id = {$outgoing_id} 
+        OR incoming_msg_id = {$outgoing_id}) ORDER BY msg_id DESC LIMIT 1";
+        $query2 = mysqli_query($conn, $sql2);
+        $row2 = mysqli_fetch_assoc($query2);
+
+        if(empty($row2['msg_id'])){
+            array_push($noestan, $row['id']);
+        }else{
+            array_push($mensajes, $row2['msg_id']);
+            if($mayor<$row2['msg_id']){
+                $mayor=$row2['msg_id'];
+                array_unshift($orden, $row['id']);
+            }else{
+                array_push($orden, $row['id']);
+            }
+        }
+    }
+
+    
+  
+    //$ordenado=$orden + $noestan;
+    $ordenado=$orden;
+   
+   
 
     $output = "";
     $class="";
@@ -46,12 +70,15 @@
         $output .= "No users are available to chat";
     }elseif(mysqli_num_rows($query) > 0){
 
-        while ($row = mysqli_fetch_assoc($query)) {
+        foreach($ordenado as $esta) {
 
-       
+            $sql = "SELECT * FROM users WHERE id= {$esta}";
+            $query = mysqli_query($conn, $sql);
+            $row8 = mysqli_fetch_assoc($query);
+
             
-            $sql2 = "SELECT * FROM messages WHERE (incoming_msg_id = {$row['id']}
-                        OR outgoing_msg_id = {$row['id']}) AND (outgoing_msg_id = {$outgoing_id} 
+            $sql2 = "SELECT * FROM messages WHERE (incoming_msg_id = {$row8['id']}
+                        OR outgoing_msg_id = {$row8['id']}) AND (outgoing_msg_id = {$outgoing_id} 
                         OR incoming_msg_id = {$outgoing_id}) ORDER BY msg_id DESC LIMIT 1";
             $query2 = mysqli_query($conn, $sql2);
             $row2 = mysqli_fetch_assoc($query2);
@@ -62,11 +89,10 @@
             } else {
                 $you = "";
             }
-            ($row['status'] == "Desconectado") ? $class = "" : $class = "online";
+            ($row8['status'] == "Desconectado") ? $class = "" : $class = "online";
             ($outgoing_id == $row['id']) ? $hid_me = "hide" : $hid_me = "";
 
-            
-            $consulnotis="SELECT * FROM messages WHERE (outgoing_msg_id = {$row['id']}) AND (outgoing_msg_id = {$outgoing_id} 
+            $consulnotis="SELECT * FROM messages WHERE (outgoing_msg_id = {$row8['id']}) AND (outgoing_msg_id = {$outgoing_id} 
             OR incoming_msg_id = {$outgoing_id})";
             $notis=mysqli_query($conn, $consulnotis);
             $unread=getnoti($notis);
@@ -93,16 +119,16 @@
             $output .= '
                             <li '.$class2.'>
 
-                                <a type="button" id="' . $row['id'] . '" onclick="hola(this.id)">
+                                <a type="button" id="' . $row8['id'] . '" onclick="hola(this.id)">
                                     <div class="d-flex align-items-start">
                                         
                                         <div class="flex-shrink-0 user-img '. $class .' align-self-center me-3">
-                                            <img src="'.controlador::$rutaAPP.'app/assets/images/users/' . $row['img'] . '" class="rounded-circle avatar-sm" alt="">
+                                            <img src="'.controlador::$rutaAPP.'app/assets/images/users/' . $row8['img'] . '" class="rounded-circle avatar-sm" alt="">
                                             <span class="user-status"></span>
                                         </div>
                                         
                                         <div class="flex-grow-1 overflow-hidden">
-                                            <h5 class="text-truncate font-size-14 mb-1">' . $row['n_user'] . " " . $row['l_user'] .'</h5>
+                                            <h5 class="text-truncate font-size-14 mb-1">' . $row8['n_user'] . " " . $row8['l_user'] .'</h5>
                                             <p class="text-truncate mb-0">'. $msg .'</p>
                                         </div>
                                         <div class="flex-shrink-0">

@@ -94,6 +94,9 @@ class controlador{
         include_once(__dir__."/../model/chat/insert-chat.php");
     }
     
+    public function buscar(){
+        include_once(__dir__."/../model/chat/search.php");
+    }
 // ------------------------------------ GRUPOS-------------------------------
 
     public function addusersgroup(){

@@ -89,7 +89,7 @@
 
                         <div class="p-3">
                             <div class="search-box position-relative">
-                                <input type="text" class="form-control rounded border" placeholder="Buscar">
+                                <input type="text" class="form-control rounded border" id="buscadorusuarios" placeholder="Buscar">
                                 <i class="bx bx-search search-icon"></i>
                             </div>
                         </div>
@@ -106,6 +106,12 @@
                                     <a href="#groups" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
                                         <i class="bx bx-group font-size-20 d-sm-none"></i>
                                         <span class="d-none d-sm-block">Grupos</span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#contacts" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                        <i class="bx bx-book-content font-size-20 d-sm-none"></i>
+                                        <span class="d-none d-sm-block">Contactos</span>
                                     </a>
                                 </li>
 

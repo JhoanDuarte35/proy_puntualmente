@@ -1,30 +1,16 @@
-//const searchBar = document.querySelector(".search input"),
-//searchIcon = document.querySelector(".search button"),
+const searchBar = document.querySelector('#buscadorusuarios'),
 usersList = document.querySelector("#user-list");
 listagrupos = document.querySelector("#lista-grupos");
 
 
 
-/*
-searchIcon.onclick = ()=>{
-  searchBar.classList.toggle("show");
-  searchIcon.classList.toggle("active");
-  searchBar.focus();
-  if(searchBar.classList.contains("active")){
-    searchBar.value = "";
-    searchBar.classList.remove("active");
-  }
-}
+
+
 
 searchBar.onkeyup = ()=>{
   let searchTerm = searchBar.value;
-  if(searchTerm != ""){
-    searchBar.classList.add("active");
-  }else{
-    searchBar.classList.remove("active");
-  }
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "php/search.php", true);
+  xhr.open("POST", "chat/busqueda", true);
   xhr.onload = ()=>{
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200){
@@ -36,7 +22,7 @@ searchBar.onkeyup = ()=>{
   xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
   xhr.send("searchTerm=" + searchTerm);
 }
-*/
+
 
 setInterval(() =>{
  let xhr2 = new XMLHttpRequest();

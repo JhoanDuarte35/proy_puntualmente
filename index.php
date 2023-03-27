@@ -105,6 +105,9 @@ if($userPuntualmente->iniciar_sesion()){
             case 'chat/insertchat':
                 $userPuntualmente->insertchat();
                 break;
+            case 'chat/busqueda':
+                $userPuntualmente->buscar();
+                break;
 
                 //GRUPOS
             
@@ -121,7 +124,7 @@ if($userPuntualmente->iniciar_sesion()){
             case 'chat/admingrupos':
                 $userPuntualmente->admingrupos();
                 break;
-
+            
 
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
