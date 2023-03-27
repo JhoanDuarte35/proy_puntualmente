@@ -1,6 +1,7 @@
 const searchBar = document.querySelector('#buscadorusuarios'),
 usersList = document.querySelector("#user-list");
 listagrupos = document.querySelector("#lista-grupos");
+listadeusuarios=document.querySelector("#listadeusuarios");
 
 
 
@@ -9,6 +10,10 @@ listagrupos = document.querySelector("#lista-grupos");
 
 searchBar.onkeyup = ()=>{
   let searchTerm = searchBar.value;
+
+    clearInterval(mostrarcosas);
+  
+
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "chat/busqueda", true);
   xhr.onload = ()=>{
@@ -24,7 +29,7 @@ searchBar.onkeyup = ()=>{
 }
 
 
-setInterval(() =>{
+mostrarcosas = setInterval(() =>{
  let xhr2 = new XMLHttpRequest();
   xhr2.open("GET", "chat/mostrargrupos", true);
   xhr2.onload = ()=>{
@@ -48,6 +53,19 @@ setInterval(() =>{
     }
   }
   xhr.send();
+
+  let xhr3 = new XMLHttpRequest();
+  xhr3.open("GET", "chat/contactos", true);
+  xhr3.onload = ()=>{
+    if(xhr.readyState === XMLHttpRequest.DONE){
+        if(xhr.status === 200){
+          let data = xhr3.response;
+            listadeusuarios.innerHTML = data;
+        }
+    }
+  }
+  xhr3.send();
+
 
 }, 1000);
 

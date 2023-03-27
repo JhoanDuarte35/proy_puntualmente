@@ -47,6 +47,12 @@ if($userPuntualmente->iniciar_sesion()){
             case 'chat/insertchat':
                 $userPuntualmente->insertchat();
                 break;
+            case 'chat/contactos':
+                $userPuntualmente->contactos();
+                break;
+            case 'chat/busqueda':
+                $userPuntualmente->buscar();
+                break;
 
                 //GRUPOS
             
@@ -108,6 +114,9 @@ if($userPuntualmente->iniciar_sesion()){
             case 'chat/busqueda':
                 $userPuntualmente->buscar();
                 break;
+            case 'chat/contactos':
+                $userPuntualmente->contactos();
+                break;
 
                 //GRUPOS
             
@@ -157,6 +166,12 @@ if($userPuntualmente->iniciar_sesion()){
                 break;
             case 'chat/insertchat':
                 $userPuntualmente->insertchat();
+                break;
+            case 'chat/contactos':
+                $userPuntualmente->contactos();
+                break;
+            case 'chat/busqueda':
+                $userPuntualmente->buscar();
                 break;
 
                 //GRUPOS

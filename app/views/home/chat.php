@@ -170,69 +170,11 @@
                                     <div class="chat-message-list" data-simplebar>
                                         <div class="pt-3">
                                             <div class="px-3">
-                                                <h5 class="font-size-14 mb-3">Contacts</h5>
+                                                <h5 class="font-size-14 mb-3">Usuarios</h5>
                                             </div>
 
-                                            <div>
-                                                <div>
-                                                    <div class="px-3 contact-list">A</div>
-
-                                                    <ul class="list-unstyled chat-list">
-                                                        <li>
-                                                            <a href="#">
-                                                                <h5 class="font-size-14 mb-0">Adam Miller</h5>
-                                                            </a>
-                                                        </li>
-    
-                                                        <li>
-                                                            <a href="#">
-                                                                <h5 class="font-size-14 mb-0">Alfonso Fisher</h5>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="mt-4">
-                                                    <div class="px-3 contact-list">B</div>
-
-                                                    <ul class="list-unstyled chat-list">
-                                                        <li>
-                                                            <a href="#">
-                                                                <h5 class="font-size-14 mb-0">Bonnie Harney</h5>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="mt-4">
-                                                    <div class="px-3 contact-list">C</div>
-
-                                                    <ul class="list-unstyled chat-list">
-                                                        <li>
-                                                            <a href="#">
-                                                                <h5 class="font-size-14 mb-0">Charles Brown</h5>
-                                                            </a>
-                                                            <a href="#">
-                                                                <h5 class="font-size-14 mb-0">Carmella Jones</h5>
-                                                            </a>
-                                                            <a href="#">
-                                                                <h5 class="font-size-14 mb-0">Carrie Williams</h5>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                                <div class="mt-4">
-                                                    <div class="px-3 contact-list">D</div>
-
-                                                    <ul class="list-unstyled chat-list">
-                                                        <li>
-                                                            <a href="#">
-                                                                <h5 class="font-size-14 mb-0">Dolores Minter</h5>
-                                                            </a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                            <div id="listadeusuarios">
+                                                
                                             </div>
                                         </div>
                                     </div>

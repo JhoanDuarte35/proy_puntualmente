@@ -58,21 +58,7 @@ function headerchatuser($imagen, $nombre, $status, $id_user){
 
         <div class="col-xl-8 col-5">
             <ul class="list-inline user-chat-nav text-end mb-0">
-                <li class="list-inline-item">
-                    <div class="dropdown">
-                        <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="bx bx-search"></i>
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-md p-2">
-                            <form class="px-2">
-                                <div>
-                                    <input type="text" class="form-control border bg-light-subtle" placeholder="Search...">
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </li>
-
+                
                 <li class="list-inline-item">
                     <div class="dropdown">
                         <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -165,5 +151,24 @@ function admin($soyadmin, $id){
     }
     return $output;
 }
+
+/*
+
+<li class="list-inline-item">
+                    <div class="dropdown">
+                        <button class="btn nav-btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="bx bx-search"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end dropdown-menu-md p-2">
+                            <form class="px-2">
+                                <div>
+                                    <input type="text" class="form-control border bg-light-subtle" placeholder="Search...">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </li>
+
+*/
 
 ?>
