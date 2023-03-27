@@ -9,13 +9,14 @@
     $query = mysqli_query($conn, $sql);
     if(mysqli_num_rows($query) > 0){
         foreach($query as $row8){
+            ($row8['status'] == "Desconectado") ? $class = "" : $class = "online";
         $output .= '
-                           <li>
-
+                           
+                            <li>
                                 <a type="button" id="' . $row8['id'] . '" onclick="hola(this.id)">
                                     <div class="d-flex align-items-start">
                                         
-                                        <div class="flex-shrink-0 user-img align-self-center me-3">
+                                        <div class="flex-shrink-0 user-img '. $class .' align-self-center me-3">
                                             <img src="'.controlador::$rutaAPP.'app/assets/images/users/' . $row8['img'] . '" class="rounded-circle avatar-sm" alt="">
                                             <span class="user-status"></span>
                                         </div>
