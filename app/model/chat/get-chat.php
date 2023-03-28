@@ -73,7 +73,11 @@ if (isset($_SESSION['unique_id'])) {
                         </div>
                         </div>';*/
                     }else{
-                        $output .= '<div class="chat outgoing" id="'. $row['msg_id'] .'">
+                        $output .= '
+                        
+                        
+                        
+                        <div class="chat outgoing" id="'. $row['msg_id'] .'">
                         <div class="details">
                             <img id="msimg" src="php/images/chat/' . $row['imagen'] . '" alt="">
                             <br> <spam class="horasali"> ' . formatohora($row['hora']) . '</spam>
@@ -172,14 +176,9 @@ if (isset($_SESSION['unique_id'])) {
             $output .= salida($_SESSION['username'], $row['msg'], formatohora($row['hora']));
 
 
-            }/*else{
-            $output .= '<div class="chat outgoing" id="'. $row['msg_id'] .'">
-                <div class="details">
-                    <img id="msimg" src="php/images/chat/' . $row['imagen'] . '" alt="">
-                    <spam class="horasali"> ' . formatohora($row['hora']) . '</spam>
-                </div>
-                </div>'; 
-            }*/
+            }else{
+            $output.=salidamostrarimagen($row['n_user']." ".$row['l_user'],formatohora($row['hora']), $row['imagen']); 
+            }
     } else {
         if($row['tipo']!=1){
 
@@ -188,15 +187,9 @@ if (isset($_SESSION['unique_id'])) {
           
 
 
-        }/*else{
-            $output .= '<div class="chat incoming" id="'. $row['msg_id'] .'">
-                <img src="php/images/grupo/' . $row['img'] . '" alt="">
-                <div class="details">
-                <img id="msimg" src="php/images/chat/' . $row['imagen'] . '" alt="">
-                <spam class="horaentra"> ' . formatohora($row['hora']) . '</spam>
-                </div>
-                </div>';
-        }*/
+        }else{
+            $output.=entradamostrarimagen($row['n_user']." ".$row['l_user'],formatohora($row['hora']), $row['imagen']); 
+        }
     }
 
     }$output .= ' </ul>
@@ -281,4 +274,70 @@ if (isset($_SESSION['unique_id'])) {
         return $output;
     }
     
-    
+    function entradamostrarimagen($nombre, $hora, $imagen){
+        $output='
+        <li >
+                                        <div class="conversation-list">
+                                            <div class="ctext-wrap">
+                                                <div class="ctext-wrap-content">
+                                                    <h5 class="conversation-name"><a href="#" class="user-name">'.$nombre.'</a> <span class="time">'.$hora.'</span></h5>
+                                                    <ul class="list-inline message-img mt-3  mb-0">
+                                                        <li class="list-inline-item message-img-list">
+                                                            <a class="d-inline-block m-1" href="">
+                                                                <img src="'.controlador::$rutaAPP.'app/assets/images/chat/'.$imagen.'" alt="" class="rounded img-thumbnail">
+                                                            </a>                                                                  
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                                <div class="dropdown align-self-start">
+                                                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                        <a class="dropdown-item" href="#">Save</a>
+                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>';
+        return $output;
+    }
+
+    function salidamostrarimagen($nombre, $hora, $imagen){
+        $output='
+        <li class="right">
+                                        <div class="conversation-list">
+                                            <div class="ctext-wrap">
+                                                <div class="ctext-wrap-content">
+                                                    <h5 class="conversation-name"><a href="#" class="user-name">'.$nombre.'</a> <span class="time">'.$hora.'</span></h5>
+                                                    <ul class="list-inline message-img mt-3  mb-0">
+                                                        <li class="list-inline-item message-img-list">
+                                                            <a class="d-inline-block m-1" href="">
+                                                                <img src="'.controlador::$rutaAPP.'app/assets/images/chat/'.$imagen.'" alt="" class="rounded img-thumbnail">
+                                                            </a>                                                                  
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                                <div class="dropdown align-self-start">
+                                                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="bx bx-dots-vertical-rounded"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Copy</a>
+                                                        <a class="dropdown-item" href="#">Save</a>
+                                                        <a class="dropdown-item" href="#">Forward</a>
+                                                        <a class="dropdown-item" href="#">Delete</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>';
+        return $output;
+    }
