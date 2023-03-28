@@ -25,12 +25,7 @@ if($userPuntualmente->iniciar_sesion()){
             case 'signup':
                 $userPuntualmente->signup();
                 break;
-            case 'admint':
-                $userPuntualmente->admint();
-                break;
-            case 'admintablas':
-                $userPuntualmente->admintablas();
-                break;
+            
                 // CHAT
             case 'chat':
                 $userPuntualmente->chat();
@@ -70,7 +65,17 @@ if($userPuntualmente->iniciar_sesion()){
                 $userPuntualmente->admingrupos();
                 break;
 
+                //TABLAS
 
+            case 'admint':
+                $userPuntualmente->admint();
+                break;
+            case 'admintablas':
+                $userPuntualmente->admintablas();
+                break;
+
+
+                
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                 break;

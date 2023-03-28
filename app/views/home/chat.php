@@ -201,7 +201,11 @@
 
                         
 <!-- ------------------- -->
-                            <div class="p-3 border-top">
+
+                            <div id="iniciodelchat">
+                                <span>Selecciona un usuario o un grupo para iniciar chat</span>
+                            </div>
+                            <div class="p-3 border-top" id="contenidodeenvio" hidden>
                                 <div class="row">
                                 <div class="d-flex gap-2 flex-wrap">
                                 <span id="add_labels"></span>

@@ -75,6 +75,9 @@ function hola(id){
   document.getElementById('botonopciones').disabled=false;
   document.getElementById('enviar').disabled=false;
   document.getElementById('msg').disabled=false;
+  document.getElementById('contenidodeenvio').hidden=false;
+  document.getElementById('iniciodelchat').hidden=true;
+
 
   
   

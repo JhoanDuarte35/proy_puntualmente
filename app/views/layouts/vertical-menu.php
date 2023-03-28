@@ -151,7 +151,7 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow">
                         <i data-feather="grid"></i>
-                        <span data-key="t-apps">Usuarios</span>
+                        <span data-key="t-apps">Admin</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
@@ -159,10 +159,19 @@
                                 <span data-key="t-regisuser">Registrar usuario</span>
                             </a>
                         </li>
-        
+                        <li>
+                            <a href="#">
+                                <span data-key="t-admin">Tabla Usuarios</span>
+                            </a>
+                        </li>
                         <li>
                             <a href="admint">
-                                <span data-key="t-admin">Admin Tablas</span>
+                                <span data-key="t-admin">Admin Tablas LogIn</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span data-key="t-admin">Tabla Tickets</span>
                             </a>
                         </li>
                     </ul>
