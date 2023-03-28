@@ -30,7 +30,7 @@ sendBtn.onclick = ()=>{
           if(xhr.status === 200){
               inputField.value = "";
               let data = xhr.response;
-              document.getElementById("mensajes99").innerHTML=data;
+              limpiar();
               setTimeout(function(){
                 document.getElementById('final').scrollIntoView(true);
               }, 500);

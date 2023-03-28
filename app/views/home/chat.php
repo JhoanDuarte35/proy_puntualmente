@@ -232,7 +232,6 @@
                                        
                                     <input id="file-input" style="display:none" type="file" name="image" accept="image/png,image/jpeg">
 
-                                    <span id="mensajes99"></span>
 
                                     <div class="col">
                                         <div class="position-relative">
