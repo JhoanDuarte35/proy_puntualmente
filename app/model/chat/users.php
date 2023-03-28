@@ -71,7 +71,7 @@
     }elseif(mysqli_num_rows($query) > 0){
 
         foreach($ordenado as $esta) {
-
+            $msg="";
             $sql = "SELECT * FROM users WHERE id= {$esta}";
             $query = mysqli_query($conn, $sql);
             $row8 = mysqli_fetch_assoc($query);
@@ -112,6 +112,12 @@
                 $tiempo=formatohora($row2['hora']);
             }else{
                 $tiempo="";
+            }
+
+            if($msg==""){
+                $msg='<i class="fas fa-image">  Foto </i>';
+            }else{
+                $msg=$msg;
             }
 
             
