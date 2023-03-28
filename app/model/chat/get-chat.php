@@ -200,17 +200,7 @@ if (isset($_SESSION['unique_id'])) {
                                                     <h5 class="conversation-name"><a href="#" class="user-name">'.$nombre.'</a> <span class="time">'.$hora.'</span></h5>
                                                     <p class="mb-0">'.$mensaje.'</p>
                                                 </div>
-                                                <div class="dropdown align-self-start">
-                                                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Copy</a>
-                                                        <a class="dropdown-item" href="#">Save</a>
-                                                        <a class="dropdown-item" href="#">Forward</a>
-                                                        <a class="dropdown-item" href="#">Delete</a>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                         
@@ -230,17 +220,7 @@ if (isset($_SESSION['unique_id'])) {
                             <h5 class="conversation-name"><a href="#" class="user-name">'.$nombre.'</a> <span class="time">'.$hora.'</span></h5>
                             <p class="mb-0">'.$mensaje.'</p>
                         </div>
-                        <div class="dropdown align-self-start">
-                            <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="bx bx-dots-vertical-rounded"></i>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Copy</a>
-                                <a class="dropdown-item" href="#">Save</a>
-                                <a class="dropdown-item" href="#">Forward</a>
-                                <a class="dropdown-item" href="#">Delete</a>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
                 
@@ -265,17 +245,7 @@ if (isset($_SESSION['unique_id'])) {
 
                                                     </ul>
                                                 </div>
-                                                <div class="dropdown align-self-start">
-                                                    <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        <i class="bx bx-dots-vertical-rounded"></i>
-                                                    </a>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item" href="#">Copy</a>
-                                                        <a class="dropdown-item" href="#">Save</a>
-                                                        <a class="dropdown-item" href="#">Forward</a>
-                                                        <a class="dropdown-item" href="#">Delete</a>
-                                                    </div>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </li>
@@ -298,8 +268,17 @@ if (isset($_SESSION['unique_id'])) {
                                                         </li>
 
                                                     </ul>
-                                                </div>
-                                                <div class="dropdown align-self-start">
+                                                
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>';
+        return $output;
+    }
+
+
+    /* PARA EL MENU LATERAL DE LOS MENSAJES
+    <div class="dropdown align-self-start">
                                                     <a class="dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                         <i class="bx bx-dots-vertical-rounded"></i>
                                                     </a>
@@ -310,9 +289,4 @@ if (isset($_SESSION['unique_id'])) {
                                                         <a class="dropdown-item" href="#">Delete</a>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>';
-        return $output;
-    }
+                                                */
