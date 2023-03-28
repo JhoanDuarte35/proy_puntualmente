@@ -216,10 +216,10 @@
                                             </span>
                                             </a>
             
-                                           
+                                            
 
 
-                                            <a type="button" class="btn btn-warning btn-rounded waves-effect waves-light">
+                                            <a type="button" class="btn btn-warning btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#modalcrearticket">
                                             <span class="avatar-title bg-transparent text-reset">
                                                 <i class=" fas fa-ticket-alt"></i>
                                             </span>
@@ -370,6 +370,55 @@
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
                                                         <button type="submit" id="botoncambiar" class="btn btn-primary">Guardar</button>
+                                                    </div>
+                                                </div><!-- /.modal-content -->
+                                            </div><!-- /.modal-dialog -->
+                                        </div><!-- /.modal -->
+
+                                        </form>
+
+
+<!------------------------------------------------------------------CREAR TICKETS -->
+                                <!-- Scrollable modal -->
+                        <form method="post" id="formcrearticket">
+                                        <div class="modal fade" id="modalcrearticket" tabindex="-1" role="dialog"
+                                            aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalScrollableTitle">Crear Ticket</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="limpiar()"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+
+                                                    <div class="mb-3">
+                                                        <label for="area" class="form-label font-size-13 text-muted">Area destino ticket:</label>
+                                                        <select class="form-control" data-trigger name="area" id="area">
+                                                            <option value="0" selected disabled>1. Elige un area</option>
+                                                            <?php foreach($areas as $value){?>
+                                                                <option value="<?php echo $value['id_area']?>"><?php echo $value['n_area']?></option>
+                                                            <?php }?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="area" class="form-label font-size-13 text-muted">Etiqueta:</label>
+                                                        <select class="form-control" data-trigger name="area" id="area">
+                                                            <option value="0" selected disabled>1. Elige una etiqueta</option>
+                                                            <?php foreach($areas as $value){?>
+                                                                <option value="<?php echo $value['id_area']?>"><?php echo $value['n_area']?></option>
+                                                            <?php }?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label for="descripticket">Descripción</label>
+                                                        <textarea class="form-control" name="descripticket" id="descripticket"></textarea>
+                                                    </div>
+                                                    
+                                
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                                        <button type="submit" id="botoncambiar" class="btn btn-primary">Crear Ticket</button>
                                                     </div>
                                                 </div><!-- /.modal-content -->
                                             </div><!-- /.modal-dialog -->
