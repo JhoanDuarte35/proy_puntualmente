@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-03-2023 a las 22:54:07
+-- Tiempo de generación: 28-03-2023 a las 18:34:01
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.2.0
 
@@ -90,19 +90,6 @@ CREATE TABLE `grupos_chat` (
   `propietario` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `grupos_chat`
---
-
-INSERT INTO `grupos_chat` (`id_grupo`, `n_grupo`, `propietario`) VALUES
-(45, 'Nuevo grupo', 11),
-(46, 'Otro grupo', 16),
-(47, 'Mas grupos', 16),
-(48, 'Grupo 1', 16),
-(49, 'Grupo 2', 16),
-(50, 'hsagd', 16),
-(51, 'Más grupos', 19);
-
 -- --------------------------------------------------------
 
 --
@@ -115,17 +102,6 @@ CREATE TABLE `grupo_integrante` (
   `id_usuario` int(10) NOT NULL,
   `tipo_user` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `grupo_integrante`
---
-
-INSERT INTO `grupo_integrante` (`id`, `id_grupo`, `id_usuario`, `tipo_user`) VALUES
-(124, 50, 11, 'user'),
-(125, 50, 16, 'admin'),
-(126, 47, 18, 'user'),
-(127, 47, 16, 'user'),
-(128, 47, 19, 'admin');
 
 -- --------------------------------------------------------
 
@@ -140,25 +116,6 @@ CREATE TABLE `mensajes_grupos` (
   `id_grupo` int(10) NOT NULL,
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `mensajes_grupos`
---
-
-INSERT INTO `mensajes_grupos` (`id`, `id_msg`, `id_persona`, `id_grupo`, `estado`) VALUES
-(105, 215, 11, 50, 0),
-(106, 215, 16, 50, 1),
-(107, 220, 11, 50, 0),
-(108, 220, 16, 50, 1),
-(109, 221, 18, 47, 1),
-(110, 221, 16, 47, 1),
-(111, 221, 19, 47, 1),
-(112, 222, 18, 47, 1),
-(113, 222, 16, 47, 1),
-(114, 222, 19, 47, 1),
-(115, 223, 18, 47, 1),
-(116, 223, 16, 47, 1),
-(117, 223, 19, 47, 1);
 
 -- --------------------------------------------------------
 
@@ -178,15 +135,6 @@ CREATE TABLE `messages` (
   `hora` time NOT NULL,
   `ip` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `messages`
---
-
-INSERT INTO `messages` (`msg_id`, `incoming_msg_id`, `outgoing_msg_id`, `msg`, `imagen`, `tipo`, `estado`, `fecha`, `hora`, `ip`) VALUES
-(257, 11, 16, 'Hola', '', 0, 0, '2023-03-24', '16:21:04', '::1'),
-(258, 19, 16, 'Hola', '', 0, 0, '2023-03-24', '16:21:12', '::1'),
-(259, 21, 16, 'hey', '', 0, 0, '2023-03-24', '16:21:19', '::1');
 
 -- --------------------------------------------------------
 
@@ -236,10 +184,10 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `n_user`, `l_user`, `tel_user`, `cedula`, `password`, `f_nacimiento`, `id_area`, `id_empresa`, `f_ingreso_empre`, `id_grupo`, `rol`, `img`, `status`) VALUES
 (11, 'Edward', 'Galindo', '3003551529', '123', 'c93ccd78b2076528346216b3b2f701e6', '1999-04-30', 1, 1, '1999-04-30', 1, 1, '1679055552img1.jpg', 'Desconectado'),
 (16, 'Jhoan', 'Duarte', '3214096428', '1069766798', 'c93ccd78b2076528346216b3b2f701e6', '1999-04-30', 19, 3, '1999-04-30', 6, 1, '1679089658giftbox.png', 'Disponible'),
-(18, 'Andres ', 'Moreno', '987', '987', 'c93ccd78b2076528346216b3b2f701e6', '1999-04-30', 19, 2, '1999-04-30', 6, 1, '1679402634clab.jpeg', 'Desconectado'),
+(18, 'Andres ', 'Moreno', '987', '987', 'c93ccd78b2076528346216b3b2f701e6', '1999-04-30', 19, 2, '1999-04-30', 6, 1, '1679402634clab.jpeg', 'Disponible'),
 (19, 'Pepito', 'Perez', '3003551529', '000', 'c93ccd78b2076528346216b3b2f701e6', '1999-04-30', 22, 6, '1999-04-30', 7, 1, '1679504329auth.jpeg', 'Disponible'),
 (20, 'Usuario', 'Privis', '222', '222', 'c93ccd78b2076528346216b3b2f701e6', '1999-04-30', 22, 3, '1999-04-30', 7, 2, '1679665160logo.jpeg', 'Desconectado'),
-(21, 'Usuario ', 'Regular', '333', '333', 'c93ccd78b2076528346216b3b2f701e6', '1999-04-30', 22, 6, '1999-04-30', 7, 3, '1679666819img1.jpg', 'Desconectado');
+(21, 'Usuario ', 'Regular', '333', '333', 'c93ccd78b2076528346216b3b2f701e6', '1999-04-30', 22, 6, '1999-04-30', 7, 3, '1679666819img1.jpg', 'Disponible');
 
 --
 -- Índices para tablas volcadas
@@ -326,25 +274,25 @@ ALTER TABLE `grupos`
 -- AUTO_INCREMENT de la tabla `grupos_chat`
 --
 ALTER TABLE `grupos_chat`
-  MODIFY `id_grupo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_grupo` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de la tabla `grupo_integrante`
 --
 ALTER TABLE `grupo_integrante`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 
 --
 -- AUTO_INCREMENT de la tabla `mensajes_grupos`
 --
 ALTER TABLE `mensajes_grupos`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
 
 --
 -- AUTO_INCREMENT de la tabla `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=260;
+  MODIFY `msg_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=374;
 
 --
 -- AUTO_INCREMENT de la tabla `sedes`
