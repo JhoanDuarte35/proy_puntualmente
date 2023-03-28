@@ -73,9 +73,19 @@ if($userPuntualmente->iniciar_sesion()){
             case 'admintablas':
                 $userPuntualmente->admintablas();
                 break;
+            case 'adminusers':
+                $userPuntualmente->adminusers();
+                break;
+
+                //TICKETS
+
+            case 'adetiquetas':
+                $userPuntualmente->adminEtiquetas();
+                break;
 
 
-                
+
+
             case 'cerrar':
                 $userPuntualmente->cerrar_sesion();
                 break;

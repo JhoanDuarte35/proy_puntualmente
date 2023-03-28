@@ -121,6 +121,19 @@ class controlador{
     }
 
 
+// ----------------TICKETS-----------------
+
+    public function adminetiquetas(){
+        include_once(__dir__."/../views/home/adminEtiquetas.php");
+    }
+
+
+
+// -----------------Admin users----------------
+
+    public function adminusers(){
+        include_once(__dir__."/../views/home/adminusers.php");
+    }
 
 
 

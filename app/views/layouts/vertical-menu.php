@@ -160,7 +160,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="adminusers">
                                 <span data-key="t-admin">Tabla Usuarios</span>
                             </a>
                         </li>
@@ -170,8 +170,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <span data-key="t-admin">Tabla Tickets</span>
+                            <a href="adetiquetas">
+                                <span data-key="t-admin">Tabla Etiquetas</span>
                             </a>
                         </li>
                     </ul>
