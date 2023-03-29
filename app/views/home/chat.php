@@ -214,20 +214,16 @@
                                     <div class="btn-group dropup">
                                         <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" id="botonopciones" aria-expanded="false" disabled><i class="fas fa-paperclip"></i></button>
                                         <div class="dropdown-menu">
-                                        <a type="button" id="inputima" class="btn btn-success btn-rounded waves-effect waves-light">
-                                            <span class="avatar-title bg-transparent text-reset">
-                                                <i class=" fas fa-image"></i>
-                                            </span>
-                                            </a>
+
+                                        
+                                            <button type="button" id="inputima" class="btn btn-success waves-effect waves-light">
+                                            <i class=" fas fa-image font-size-16 align-middle me-2"></i>Imagen
+                                            </button>
+
+                                            <button type="button" class="btn btn-warning waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#modalcrearticket">
+                                            <i class=" fas fa-ticket-alt font-size-16 align-middle me-2"></i> Ticket </button>
             
                                             
-
-
-                                            <a type="button" class="btn btn-warning btn-rounded waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#modalcrearticket">
-                                            <span class="avatar-title bg-transparent text-reset">
-                                                <i class=" fas fa-ticket-alt"></i>
-                                            </span>
-                                            </a>
                                         </div>
                                     </div>
 
