@@ -9,18 +9,15 @@ $usuarios=mysqli_query($conn, "SELECT * FROM users WHERE NOT id='{$_SESSION['uni
 $consulnotis=mysqli_query($conn,"SELECT * FROM messages WHERE ( incoming_msg_id = {$_SESSION['unique_id']})");
 $grupos_chat=mysqli_query($conn, "SELECT * FROM grupos_chat");
 $etiquetas=mysqli_query($conn, "SELECT * FROM etiquetas");
+
+$noty_grupos = mysqli_query($conn, "SELECT * FROM mensajes_grupos WHERE id_persona = '{$_SESSION['unique_id']}' AND estado='0'");
+
 //Consultas para funciones
 
 
 
 
 
-function consultarArea($id, $conn){
-    $area=mysqli_query($conn, "SELECT * FROM areas WHERE id_area='{$id}'");
-    $dato=mysqli_fetch_assoc($area);
-    var_dump($dato);
-    return $dato['n_area'];
 
-}
 
 ?>

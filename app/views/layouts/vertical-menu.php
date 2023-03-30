@@ -83,7 +83,7 @@
                             <div class="d-flex">
                                 <div class="flex-shrink-0 avatar-sm me-3">
                                     <span class="avatar-title bg-success rounded-circle font-size-16">
-                                        <i class="fas fa-comment-dots"></i>
+                                        <i class=" fas fa-users"></i>
                                     </span>
                                 </div>
                                 <div class="flex-grow-1">
