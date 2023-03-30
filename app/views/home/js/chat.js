@@ -40,7 +40,6 @@ sendBtn.onclick = ()=>{
       }
     }
     let formData = new FormData(form);
-    console.log(formData);
     xhr.send(formData);
 }
 
@@ -96,7 +95,6 @@ document.getElementById("file-input").addEventListener('change', function() {
 });
 
 function limpiar(){
-    console.log("limpiar");
     sendBtn.classList.remove("active");
     document.getElementById('file-input').value ='';
     document.getElementById('add_labels').innerHTML="";
@@ -138,7 +136,6 @@ function limpiar(){
     function areaselect(id){
 
         mostrar_etiqueta=document.getElementById('etiqueta');
-        console.log(id);
 
         obj = [{ "id_area": id, "tipo": 1 }];
         console.log(obj)
@@ -150,9 +147,7 @@ function limpiar(){
           if(xhr.status === 200){
             let data = xhr.response;
             mostrar_etiqueta.innerHTML = data;
-            console.log(data);
           }else{
-            console.log(data);
           }
       }
     }

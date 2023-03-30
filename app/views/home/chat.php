@@ -151,7 +151,10 @@
 
                                                 <h5 class="font-size-14 mb-3">Grupos</h5>
                                                 <div class="flex-shrink-0">
-                                            <div class="dropdown chat-noti-dropdown">
+
+
+                                    <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2){?>
+                                        <div class="dropdown chat-noti-dropdown">
                                                 <button class="btn dropdown-toggle p-0" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-plus"></i>
                                                 </button>
@@ -159,7 +162,9 @@
                                                     <a type="button" class="dropdown-item" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModalScrollable">Crear Grupo</a>
                                             </div>
-                                    </div>
+                                        </div>
+                                    <?php } ?>
+
                                 </div>
                                             </div>
                                             <ul class="list-unstyled chat-list" id="lista-grupos">
@@ -280,7 +285,7 @@
     <!-- end main content-->
 
  
-                            
+            <?php if($_SESSION['rol']==1 || $_SESSION['rol']==2){?>
                                         <!-- Scrollable modal -->
                                         <form method="post" id="crear">
                                         <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog"
@@ -399,7 +404,7 @@
 
                                         </form>
 
-
+                <?php } ?>
 <!------------------------------------------------------------------CREAR TICKETS -->
                                 <!-- Scrollable modal -->
                         <form method="post" id="formcrearticket">

@@ -120,28 +120,30 @@ if($userPuntualmente->iniciar_sesion()){
                 break;
     
                 // CHAT
-            case 'chat' || 'chat/':
-                $userPuntualmente->chat();
-                break;
-            case 'chat/getchat':
-                $userPuntualmente->getchat();
-                break;
-            case 'chat/users':
-                $userPuntualmente->users();
-                break;
-            case 'chat/getheader':
-                $userPuntualmente->getheader();
-                break;
-            case 'chat/insertchat':
-                $userPuntualmente->insertchat();
-                break;
-            case 'chat/busqueda':
-                $userPuntualmente->buscar();
-                break;
-            case 'chat/contactos':
-                $userPuntualmente->contactos();
-                break;
-
+                case 'chat':
+                    $userPuntualmente->chat();
+                    break;
+                case 'chat/getchat':
+                    $userPuntualmente->getchat();
+                    break;
+                case 'chat/users':
+                    $userPuntualmente->users();
+                    break;
+                case 'chat/getheader':
+                    $userPuntualmente->getheader();
+                    break;
+                case 'chat/insertchat':
+                    $userPuntualmente->insertchat();
+                    break;
+                case 'chat/contactos':
+                    $userPuntualmente->contactos();
+                    break;
+                case 'chat/busqueda':
+                    $userPuntualmente->buscar();
+                    break;
+                case 'chat/otrasconsultastick':
+                    $userPuntualmente->otrasconsultastick();
+                    break;
                 //GRUPOS
             
             case 'chat/addusersgroup':
@@ -176,27 +178,31 @@ if($userPuntualmente->iniciar_sesion()){
                 break;
     
                 // CHAT
-            case 'chat':
-                $userPuntualmente->chat();
-                break;
-            case 'chat/getchat':
-                $userPuntualmente->getchat();
-                break;
-            case 'chat/users':
-                $userPuntualmente->users();
-                break;
-            case 'chat/getheader':
-                $userPuntualmente->getheader();
-                break;
-            case 'chat/insertchat':
-                $userPuntualmente->insertchat();
-                break;
-            case 'chat/contactos':
-                $userPuntualmente->contactos();
-                break;
-            case 'chat/busqueda':
-                $userPuntualmente->buscar();
-                break;
+                case 'chat':
+                    $userPuntualmente->chat();
+                    break;
+                case 'chat/getchat':
+                    $userPuntualmente->getchat();
+                    break;
+                case 'chat/users':
+                    $userPuntualmente->users();
+                    break;
+                case 'chat/getheader':
+                    $userPuntualmente->getheader();
+                    break;
+                case 'chat/insertchat':
+                    $userPuntualmente->insertchat();
+                    break;
+                case 'chat/contactos':
+                    $userPuntualmente->contactos();
+                    break;
+                case 'chat/busqueda':
+                    $userPuntualmente->buscar();
+                    break;
+                case 'chat/otrasconsultastick':
+                    $userPuntualmente->otrasconsultastick();
+                    break;
+               
 
                 //GRUPOS
             
