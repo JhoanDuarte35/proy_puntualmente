@@ -87,10 +87,6 @@ function hola(id){
   headerchat = document.querySelector("#headerchat");
   
 
- 
-
-  console.log(id);
-
   let xhr = new XMLHttpRequest();
   xhr.open("POST", "chat/getheader", true);
   xhr.onload = ()=>{

@@ -41,17 +41,13 @@ searchBar.onkeyup = ()=>{
 
 function myfuncion(){
     id=document.getElementById('usuario').value;
-    alert(id);
     let pos = array.indexOf(id);
     if(array[pos]==id){
-        console.log(array); 
     }else{
         array.push(id);
-        console.log(array); 
         //id.setAttribute('disabled', '');
 
         obj = [{ "id_user_group": `${id}`, "estado": false }];
-        console.log(obj)
         dbParam = JSON.stringify(obj);
       let xhr = new XMLHttpRequest();
       xhr.open("POST", "chat/addusersgroup", true);
@@ -60,7 +56,6 @@ function myfuncion(){
           if(xhr.status === 200){
             let data = xhr.response;
             usersListGroup.innerHTML = usersListGroup.innerHTML + data;
-            console.log(data);
           }
       }
     }
@@ -73,14 +68,11 @@ function myfuncion(){
 
     function borraruser(id){
       let pos = 0;
-      alert(id);
       pos = array.indexOf(id);
       if(array[pos]==id){
         array.splice(pos, 1);
         document.getElementById(id).remove();
-        console.log(array);
         obj = [{ "id_user_group": `${id}`, "estado": true }];
-        console.log(obj)
         dbParam = JSON.stringify(obj);
   
         let xhr = new XMLHttpRequest();
@@ -89,7 +81,6 @@ function myfuncion(){
       if(xhr.readyState === XMLHttpRequest.DONE){
           if(xhr.status === 200){
             let data = xhr.response;
-            console.log(data);
             document.getElementById(id).remove();
           }
       }
@@ -97,7 +88,6 @@ function myfuncion(){
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send("x=" + dbParam);
       }else{
-        console.log(array); 
       }
       
     }
@@ -146,7 +136,6 @@ mensaje=document.getElementById('mensaje2');
 function datosgrupo(id){
 
 
-console.log(id);
 
 
   let xhr = new XMLHttpRequest();
@@ -192,15 +181,12 @@ function myfuncion2(){
     alert(id);
     let pos = arrayagregar.indexOf(id);
     if(arrayagregar[pos]==id){
-        console.log(arrayagregar); 
         document.getElementById(id).remove();
 
     }else{
         arrayagregar.push(id);
-        console.log(arrayagregar); 
 
         obj = [{ "id_user_group": `${id}`, "estado": true }];
-        console.log(obj)
         dbParam = JSON.stringify(obj);
       let xhr = new XMLHttpRequest();
       xhr.open("POST", "chat/addusersgroup", true);
@@ -221,22 +207,17 @@ function myfuncion2(){
 
     function borraruser2(id){
       let pos = 0;
-      alert(id);
       pos = arrayborrar.indexOf(id);
       if(arrayborrar[pos]==id){
 
         document.getElementById(id).remove();
-        console.log("Deberia")
-        console.log(arrayborrar); 
+   
 
         
       }else{
         arrayborrar.push(id);
-        console.log("añadi a sarrayborrar");
         document.getElementById(id).remove();
-        console.log(arrayborrar);
         obj = [{ "id_user_group": `${id}`, "estado": true }];
-        console.log(obj)
         dbParam = JSON.stringify(obj);
   
         let xhr = new XMLHttpRequest();
