@@ -2,6 +2,7 @@ const searchBar = document.querySelector('#buscadorusuarios'),
 usersList = document.querySelector("#user-list");
 listagrupos = document.querySelector("#lista-grupos");
 listadeusuarios=document.querySelector("#listadeusuarios");
+contentsearch=document.querySelector("#contentsearch");
 
 
 
@@ -10,8 +11,8 @@ listadeusuarios=document.querySelector("#listadeusuarios");
 
 searchBar.onkeyup = ()=>{
   let searchTerm = searchBar.value;
-
-    clearInterval(mostrarcosas);
+    document.getElementById('botonbuscar').click();
+   // clearInterval(mostrarcosas);
   
 
   let xhr = new XMLHttpRequest();
@@ -20,7 +21,7 @@ searchBar.onkeyup = ()=>{
     if(xhr.readyState === XMLHttpRequest.DONE){
         if(xhr.status === 200){
           let data = xhr.response;
-          usersList.innerHTML = data;
+          contentsearch.innerHTML = data;
         }
     }
   }

@@ -8,10 +8,11 @@
     $output = "";
     $query = mysqli_query($conn, $sql);
     if(mysqli_num_rows($query) > 0){
+        $output='';
         foreach($query as $row8){
             ($row8['status'] == "Desconectado") ? $class = "" : $class = "online";
         $output .= '
-                           
+                 
                             <li>
                                 <a type="button" id="' . $row8['id'] . '" onclick="hola(this.id)">
                                     <div class="d-flex align-items-start">
@@ -28,7 +29,7 @@
                                     </div>
                                 </a>
                             </li>
-                            
+                  
                         ';
         }
     }else{

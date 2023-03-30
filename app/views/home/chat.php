@@ -115,6 +115,13 @@
                                     </a>
                                 </li>
 
+                                <li class="nav-item" hidden>
+                                    <a id="botonbuscar" href="#busqueda" data-bs-toggle="tab" aria-expanded="false" class="nav-link">
+                                    </a>
+                                </li>
+
+
+
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane show active" id="chat">
@@ -151,9 +158,6 @@
                                                 <div class="dropdown-menu dropdown-menu-end">
                                                     <a type="button" class="dropdown-item" data-bs-toggle="modal"
                                                     data-bs-target="#exampleModalScrollable">Crear Grupo</a>
-                                                    <!-- <a class="dropdown-item" href="#">Edit</a>
-                                                    <a class="dropdown-item" href="#">Add Contact</a>
-                                                    <a class="dropdown-item" href="#">Setting</a> -->
                                             </div>
                                     </div>
                                 </div>
@@ -179,6 +183,24 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                <div class="tab-pane" id="busqueda">
+                                    <div class="chat-message-list" data-simplebar>
+                                        <div class="pt-3" >
+                                        <div class="px-3">
+                                            <h5 class="font-size-14 mb-3">Usuarios</h5>
+                                        </div>
+
+                                        <ul class="list-unstyled chat-list" id="contentsearch">
+                                                
+                                            <!-- se llena solo   -->
+
+                                        </ul>
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
 
