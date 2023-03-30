@@ -132,6 +132,10 @@ class controlador{
         include_once(__dir__."/../model/tickets/tickets.php");
     }
 
+    public function otrasconsultastick(){
+        include_once(__dir__."/../model/tickets/otrasconsultastick.php");
+    }
+
 
 // -----------------Admin users----------------
 

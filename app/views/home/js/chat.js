@@ -135,29 +135,30 @@ function limpiar(){
 //         $("#partici").show();
 //     }
  
-//     function areaselect(id){
+    function areaselect(id){
 
-//         mostrar_etiqueta=document.getElementById('etiqueta');
+        mostrar_etiqueta=document.getElementById('etiqueta');
+        console.log(id);
 
-//         obj = [{ "id_area": id, "tipo": 1 }];
-//         console.log(obj)
-//         dbParam = JSON.stringify(obj);
-//       let xhr = new XMLHttpRequest();
-//       xhr.open("POST", "php/get-names.php", true);
-//       xhr.onload = ()=>{
-//       if(xhr.readyState === XMLHttpRequest.DONE){
-//           if(xhr.status === 200){
-//             let data = xhr.response;
-//             mostrar_etiqueta.innerHTML = data;
-//             console.log(data);
-//           }else{
-//             console.log(data);
-//           }
-//       }
-//     }
-//     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-//     xhr.send("x=" + dbParam);
-//     }
+        obj = [{ "id_area": id, "tipo": 1 }];
+        console.log(obj)
+        dbParam = JSON.stringify(obj);
+      let xhr = new XMLHttpRequest();
+      xhr.open("POST", "chat/otrasconsultastick", true);
+      xhr.onload = ()=>{
+      if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+            let data = xhr.response;
+            mostrar_etiqueta.innerHTML = data;
+            console.log(data);
+          }else{
+            console.log(data);
+          }
+      }
+    }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send("x=" + dbParam);
+    }
 
 //     function areaselect2(id){
 

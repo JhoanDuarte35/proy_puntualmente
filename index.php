@@ -48,6 +48,9 @@ if($userPuntualmente->iniciar_sesion()){
             case 'chat/busqueda':
                 $userPuntualmente->buscar();
                 break;
+            case 'chat/otrasconsultastick':
+                $userPuntualmente->otrasconsultastick();
+                break;
 
                 //GRUPOS
             

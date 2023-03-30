@@ -393,20 +393,16 @@
 
                                                     <div class="mb-3">
                                                         <label for="area" class="form-label font-size-13 text-muted">Area destino ticket:</label>
-                                                        <select class="form-control" data-trigger name="area" id="area">
+                                                        <select class="form-control" data-trigger name="area" id="area" onchange="areaselect(this.value)">
                                                             <option value="0" selected disabled>1. Elige un area</option>
                                                             <?php foreach($areas as $value){?>
                                                                 <option value="<?php echo $value['id_area']?>"><?php echo $value['n_area']?></option>
                                                             <?php }?>
                                                         </select>
                                                     </div>
-                                                    <div class="mb-3">
-                                                        <label for="area" class="form-label font-size-13 text-muted">Etiqueta:</label>
-                                                        <select class="form-control" data-trigger name="area" id="area">
-                                                            <option value="0" selected disabled>1. Elige una etiqueta</option>
-                                                            <?php foreach($areas as $value){?>
-                                                                <option value="<?php echo $value['id_area']?>"><?php echo $value['n_area']?></option>
-                                                            <?php }?>
+                                                    <div class="mb-3" id="etiqueta">
+                                                        <select class="form-select" name="#" id="#">
+                                                            <option value="-">< ------- ></option>
                                                         </select>
                                                     </div>
                                                     <div class="mb-3">
