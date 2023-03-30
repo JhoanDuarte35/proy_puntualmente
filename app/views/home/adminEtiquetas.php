@@ -67,12 +67,15 @@
 
 
                                     <tbody>
+
+                                    <?php foreach($etiquetas as $etiqueta){?>
+
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
+                                            <td><?php echo $etiqueta['id_etiqueta']?></td>
+                                            <td><?php echo $etiqueta['id_area']?></td>
+                                            <td><?php echo $etiqueta['descrip_etiq']?></td>
+                                            <td><?php echo $etiqueta['t_estimado']?></td>
+                                            <td><?php echo $etiqueta['tipo_t']?></td>
                                             <td>
                                                 <a type="button" id="<?php //echo $empresa['id_etiqueta']?>" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal1" data-bs-target="#staticBackdrop2">
                                                 <i class="fas fa-pencil-alt"></i>
@@ -82,6 +85,7 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                    <?php } ?>
                                     </tbody>
                                 </table>
 
@@ -106,7 +110,7 @@
                                                     
                                                     <div class="mb-3">
                                                 <label for="area" class="form-label font-size-13 text-muted">Area:</label>
-                                                <select class="form-control" data-trigger name="area" id="area">
+                                                <select class="form-control" data-trigger name="area_etiqueta" id="area_etiqueta">
                                                     <option value="0" selected disabled require>1. Elige un area</option>
                                                     <?php foreach($areas as $value){?>
                                                         <option value="<?php echo $value['id_area']?>"><?php echo $value['n_area']?></option>
@@ -115,21 +119,27 @@
                                                 <label for="descripetic">Descripción:</label>
                                                 <textarea name="descripetic" id="descripetic" class="form-control"></textarea>
                                                 </div>
-                                                <label class="form-label font-size-13 text-muted">Tiempo Estimado</label>
-                                                <div class="d-flex" >
-                                                    <input type="number" id="t_estimado" class="form-control">
-                                                    <select class="form-select" name="t_estimado" id="t_estimado">
-                                                        <option value="1">Minutos</option>
-                                                        <option value="2">Horas</option>
-                                                        <option value="3">Dias</option>
-                                                    </select>
+                                                <label class="form-label font-size-13 text-muted">Tiempo Estimado: </label>
+                                                <div class="d-flex justify-content-center" >
+                                                    <div>
+                                                        <input type="number" id="t_estimado" class="form-control">
+                                                    </div>
+                                                    <div>
+                                                        <select class="form-select" name="tipo_t" id="tipo_t">
+                                                            <option value="Minutos">Minutos</option>
+                                                            <option value="Horas">Horas</option>
+                                                            <option value="Dias">Dias</option>
+                                                        </select>
+                                                    </div>
+                                                <div id="mensaje_etiqueta"></div>
+                                                    
                                                 </div>
 
                                 <div id="mensaje"></div>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal" onclick="limpiar()">Cerrar</button>
-                                                        <button type="submit" id="botoncrear" class="btn btn-primary">Guardar</button>
+                                                        <button type="button" onclick="agregaretiqueta()"  class="btn btn-primary">Guardar</button>
                                                     </div>
                                                 </div><!-- /.modal-content -->
                                             </div><!-- /.modal-dialog -->
@@ -176,6 +186,8 @@
 
 <!-- init js -->
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/pages/form-advanced.init.js"></script>
+
+<script src="<?php echo controlador::$rutaAPP?>app/views/home/js/adminetiquetas.js"></script>
 
 <script src="<?php echo controlador::$rutaAPP?>app/assets/js/app.js"></script>
 

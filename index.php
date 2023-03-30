@@ -83,6 +83,10 @@ if($userPuntualmente->iniciar_sesion()){
                 $userPuntualmente->adminEtiquetas();
                 break;
 
+            case 'adetiquetas/guardaretiqueta':
+                $userPuntualmente->guardar_etiqueta();
+                break;
+
 
 
 
@@ -90,7 +94,9 @@ if($userPuntualmente->iniciar_sesion()){
                 $userPuntualmente->cerrar_sesion();
                 break;
             default:
-                $userPuntualmente->home();
+               // $userPuntualmente->home();
+               header('Location:'.controlador::$rutaAPP.'home');
+
                 break;
         }
     }
@@ -111,7 +117,7 @@ if($userPuntualmente->iniciar_sesion()){
                 break;
     
                 // CHAT
-            case 'chat':
+            case 'chat' || 'chat/':
                 $userPuntualmente->chat();
                 break;
             case 'chat/getchat':

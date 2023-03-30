@@ -26,6 +26,7 @@ class controlador{
 
     public function home(){
         include_once(__dir__."/../views/home/index.php");
+
     }
 
     public function admint(){
@@ -127,6 +128,9 @@ class controlador{
         include_once(__dir__."/../views/home/adminEtiquetas.php");
     }
 
+    public function guardar_etiqueta(){
+        include_once(__dir__."/../model/tickets/tickets.php");
+    }
 
 
 // -----------------Admin users----------------

@@ -8,7 +8,7 @@ $sedes=mysqli_query($conn, "SELECT * FROM sedes");
 $usuarios=mysqli_query($conn, "SELECT * FROM users WHERE NOT id='{$_SESSION['unique_id']}'");
 $consulnotis=mysqli_query($conn,"SELECT * FROM messages WHERE ( incoming_msg_id = {$_SESSION['unique_id']})");
 $grupos_chat=mysqli_query($conn, "SELECT * FROM grupos_chat");
-
+$etiquetas=mysqli_query($conn, "SELECT * FROM etiquetas");
 //Consultas para funciones
 
 
