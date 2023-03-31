@@ -109,7 +109,12 @@
             }
 
             if(!empty($row2['hora'])){
-                $tiempo=formatohora($row2['hora']);
+                $f_actual=date("Y-m-d");
+                if($row2['fecha']===$f_actual){
+                    $tiempo=formatohora($row2['hora']);
+                }else{
+                    $tiempo=$row2['fecha'];
+                }
             }else{
                 $tiempo="";
             }
