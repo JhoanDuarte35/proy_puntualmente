@@ -113,7 +113,8 @@
                 if($row2['fecha']===$f_actual){
                     $tiempo=formatohora($row2['hora']);
                 }else{
-                    $tiempo=$row2['fecha'];
+                    $newDate = date("d-m-Y", strtotime($row2['fecha']));
+                    $tiempo=$newDate;
                 }
             }else{
                 $tiempo="";
